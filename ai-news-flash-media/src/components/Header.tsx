@@ -14,7 +14,7 @@ const HeaderContent: React.FC = () => {
           {/* Logo */}
           <a href="/" className="flex items-center space-x-3 hover:opacity-70">
             <TechnyanImage size="small" className="p-1" />
-            <span className="text-xl font-semibold">AI NEWS FLASH</span>
+            <span className="text-xl font-semibold">Technyan's AI Digests</span>
           </a>
 
           {/* Desktop Navigation */}

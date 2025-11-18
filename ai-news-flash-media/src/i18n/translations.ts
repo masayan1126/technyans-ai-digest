@@ -39,10 +39,10 @@ export const translations = {
     noArticlesFound: 'No articles found matching your criteria.',
 
     // About Page
-    aboutTitle: 'About AI NEWS FLASH',
+    aboutTitle: 'About Technyan\'s AI Digests',
     aboutSubtitle: 'Supporting busy people who are doing their best to keep up with AI.',
     ourMission: 'Our Mission',
-    missionParagraph1: 'AI NEWS FLASH was founded to support busy people trying to stay current with AI developments. We know how challenging it can be to keep up with the rapid pace of AI innovation while managing your daily responsibilities.',
+    missionParagraph1: 'Technyan\'s AI Digests was founded to support busy people trying to stay current with AI developments. We know how challenging it can be to keep up with the rapid pace of AI innovation while managing your daily responsibilities.',
     missionParagraph2: 'Our mission is simple: make AI news accessible, easy to digest, and enjoyable to read. We\'re here to cheer you on as you stay informed about AI. You\'re doing amazing by being here!',
     whatWeCover: 'What We Cover',
     languageModels: 'Language Models',
@@ -64,7 +64,7 @@ export const translations = {
     independenceDescription: 'We maintain editorial independence and provide unbiased coverage of the AI landscape.',
     meetTechnyan: 'Meet Technyan!',
     technyanDesc: 'A studious and enthusiastic AI-savvy cat who cheers on busy people trying to keep up with AI news! Technyan (Tech × Nyan) is here to make your daily AI catch-up easier and more enjoyable. You\'re doing great! 🐱✨',
-    mascotAlt: 'Technyan - AI News Flash mascot',
+    mascotAlt: 'Technyan - Technyan\'s AI Digests mascot',
     technyanGreeting: 'Keep going! You\'re awesome! 🐱✨',
     stayConnected: 'Stay Connected',
     stayConnectedDescription: 'Explore our latest articles and join thousands of readers staying informed about AI.',
@@ -121,10 +121,10 @@ export const translations = {
     noArticlesFound: '条件に一致する記事が見つかりませんでした。',
 
     // About Page
-    aboutTitle: 'AI NEWS FLASHについて',
+    aboutTitle: 'Technyan\'s AI Digestsについて',
     aboutSubtitle: '忙しい毎日の中でAI情報のキャッチアップを頑張る、あなたを応援します。',
     ourMission: 'ミッション',
-    missionParagraph1: 'AI NEWS FLASHは、忙しい日々の中でAIの最新情報を追い続けようと頑張る人たちを応援するために設立されました。日々の仕事や生活で忙しい中、急速に進化するAI技術に追いつくのは大変だということを、私たちは理解しています。',
+    missionParagraph1: 'Technyan\'s AI Digestsは、忙しい日々の中でAIの最新情報を追い続けようと頑張る人たちを応援するために設立されました。日々の仕事や生活で忙しい中、急速に進化するAI技術に追いつくのは大変だということを、私たちは理解しています。',
     missionParagraph2: '私たちのミッションはシンプルです。AIニュースをわかりやすく、読みやすく、楽しく。あなたがAIの情報をキャッチアップし続けることを、全力で応援します。ここに来てくれて、本当にありがとう！',
     whatWeCover: 'カバーする内容',
     languageModels: '言語モデル',
@@ -146,7 +146,7 @@ export const translations = {
     independenceDescription: '私たちは編集の独立性を維持し、AI業界の偏りのないカバレッジを提供します。',
     meetTechnyan: 'テクにゃんに会おう！',
     technyanDesc: '忙しい毎日の中でAI情報のキャッチアップを頑張る人を応援する、勉強熱心な猫です！テクにゃん（Tech × にゃん）は、あなたの日々のAI情報収集をもっと楽しく、もっと簡単にするためにいます。いつも頑張ってるね！🐱✨',
-    mascotAlt: 'テクにゃん - AI NEWS FLASHマスコット',
+    mascotAlt: 'テクにゃん - Technyan\'s AI Digestsマスコット',
     technyanGreeting: '頑張ってるね！応援してるよ！🐱✨',
     stayConnected: 'つながり続ける',
     stayConnectedDescription: '最新記事を探索し、AIの情報を常に把握している何千もの読者に参加しましょう。',

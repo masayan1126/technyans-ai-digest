@@ -1,4 +1,4 @@
-# Technyan's AI Digest
+# Technyan's AI Digests
 
 AI技術関連のニュースを配信するメディアサイト
 

@@ -10,7 +10,7 @@ const FooterContent: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* About Section */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">AI NEWS FLASH</h3>
+            <h3 className="text-lg font-semibold mb-4">Technyan's AI Digests</h3>
             <p className="text-sm leading-relaxed opacity-90">
               {t('footerDescription')}
             </p>
@@ -68,7 +68,7 @@ const FooterContent: React.FC = () => {
 
         {/* Copyright */}
         <div className="mt-8 pt-8 border-t-1.5 border-cream/20 text-center text-sm opacity-75">
-          <p>&copy; {new Date().getFullYear()} AI NEWS FLASH. {t('allRightsReserved')}</p>
+          <p>&copy; {new Date().getFullYear()} Technyan's AI Digests. {t('allRightsReserved')}</p>
         </div>
       </div>
     </footer>
