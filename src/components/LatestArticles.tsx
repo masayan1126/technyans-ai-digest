@@ -54,6 +54,7 @@ const LatestArticles: React.FC<LatestArticlesProps> = ({ articles }) => {
             date={article.date}
             category={article.category}
             slug={article.slug}
+            locale={article.locale}
           />
         ))
       ) : (

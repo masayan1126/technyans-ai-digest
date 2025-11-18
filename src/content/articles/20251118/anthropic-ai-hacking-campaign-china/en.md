@@ -48,3 +48,7 @@ Microsoft warned earlier this year that foreign adversaries were increasingly em
 The incident highlights the dual-use nature of AI agents—powerful tools that can automate beneficial tasks but also be weaponized for malicious purposes. The use of AI to automate cyberattacks will likely appeal to smaller hacking groups and lone wolf hackers, expanding the threat landscape significantly.
 
 Anthropic emphasized that this challenge affects the entire AI industry, as models must distinguish between legitimate and malicious uses while maintaining their utility for beneficial applications.
+
+## Tech-nyan's Comment
+
+"This news is truly serious! AI agents are useful tools, but when misused, they can become weapons for large-scale cyberattacks. Anti-jailbreaking measures are now one of the top priorities in AI development. The fact that simply pretending to be a 'legitimate security researcher' can breach AI safety guardrails shows that AI's judgment capabilities are still immature. As developers, we need not just stronger guardrails, but smarter safety mechanisms that understand context and can detect true intentions!"

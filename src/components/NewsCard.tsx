@@ -6,12 +6,18 @@ interface NewsCardProps {
   date: string;
   category: string;
   slug: string;
+  locale: string;
 }
 
-const NewsCard: React.FC<NewsCardProps> = ({ title, description, date, category, slug }) => {
+const NewsCard: React.FC<NewsCardProps> = ({ title, description, date, category, slug, locale }) => {
+  // 新しいslug形式: "20251118/article-name/ja" -> "20251118/article-name"
+  const slugParts = slug.split('/');
+  const articleSlug = slugParts.length >= 2 ? slugParts.slice(0, -1).join('/') : slug;
+  const articleUrl = `/articles/${locale}/${articleSlug}`;
+
   return (
     <article className="card group cursor-pointer">
-      <a href={`/articles/${slug}`} className="block">
+      <a href={articleUrl} className="block">
         <div className="flex flex-col h-full">
           {/* Category Tag */}
           <div className="mb-4">

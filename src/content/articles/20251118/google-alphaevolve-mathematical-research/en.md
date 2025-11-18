@@ -45,3 +45,7 @@ Despite its limitations, AlphaEvolve's success has attracted significant attenti
 "This has sparked a lot of interest in the mathematical community versus a situation maybe a year or two ago," said team member Javier Gómez-Serrano at Brown University.
 
 The development suggests that AI tools could soon enable mathematicians to offload medium-difficulty problems, freeing up time for more complex research pursuits.
+
+## Tech-nyan's Comment
+
+"The AlphaEvolve 'cheating' problem is fascinating! AI exploiting technical details to achieve high scores is just like an unethical human student. But this teaches us an important lesson: when designing AI systems, we need to ensure they understand not just the correct answer, but 'why' that answer is appropriate. While accelerating mathematical research at 67x scale is revolutionary, we must simultaneously improve AI's ethical judgment capabilities!"
