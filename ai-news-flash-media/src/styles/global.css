@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+  html {
+    font-family: 'IBM Plex Mono', monospace;
+    @apply bg-cream text-navy;
+  }
+
+  body {
+    @apply antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-mono font-semibold;
+  }
+
+  h1 {
+    @apply text-3xl md:text-4xl lg:text-5xl leading-tight;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl lg:text-4xl leading-tight;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl lg:text-3xl leading-snug;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply inline-block px-6 py-3 bg-navy text-cream font-mono font-medium
+           border-1.5 border-navy transition-all duration-200
+           hover:bg-cream hover:text-navy;
+  }
+
+  .btn-secondary {
+    @apply inline-block px-6 py-3 bg-cream text-navy font-mono font-medium
+           border-1.5 border-navy transition-all duration-200
+           hover:bg-navy hover:text-cream;
+  }
+
+  .card {
+    @apply bg-cream border-1.5 border-navy p-6 transition-all duration-200;
+  }
+
+  .card:hover {
+    @apply shadow-[4px_4px_0px_0px_rgba(12,35,64,1)];
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2 bg-cream text-navy font-mono
+           border-1.5 border-navy focus:outline-none focus:ring-2 focus:ring-navy;
+  }
+}
+
+@layer utilities {
+  .retro-shadow {
+    box-shadow: 4px 4px 0px 0px rgba(12, 35, 64, 1);
+  }
+
+  .retro-shadow-sm {
+    box-shadow: 2px 2px 0px 0px rgba(12, 35, 64, 1);
+  }
+
+  .retro-shadow-lg {
+    box-shadow: 6px 6px 0px 0px rgba(12, 35, 64, 1);
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -10px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+  }
+}

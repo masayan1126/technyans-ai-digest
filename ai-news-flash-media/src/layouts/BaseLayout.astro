@@ -1,0 +1,33 @@
+---
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Latest AI news and insights from around the world' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/technyan.ico" />
+    <link rel="icon" type="image/svg+xml" href="/technyan.svg" />
+    <link rel="apple-touch-icon" href="/technyan.webp" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header client:load />
+    <main class="min-h-screen">
+      <slot />
+    </main>
+    <Footer client:load />
+  </body>
+</html>

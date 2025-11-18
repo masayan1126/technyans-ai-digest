@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LatestArticles from '../components/LatestArticles';
+import HomeContent from '../components/HomeContent';
+import CategorySection from '../components/CategorySection';
+import { getCollection } from 'astro:content';
+
+const allArticles = await getCollection('articles');
+const sortedArticles = allArticles.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const latestArticles = sortedArticles.slice(0, 12).map((article) => ({
+  slug: article.slug,
+  title: article.data.title,
+  description: article.data.description,
+  date: article.data.date.toISOString(),
+  category: article.data.category,
+  locale: article.data.locale,
+}));
+---
+
+<BaseLayout title="AI NEWS FLASH - Latest AI News and Insights">
+  <div class="container-custom py-12 md:py-20">
+    <HomeContent client:load articlesCount={allArticles.length} />
+
+    <!-- Latest Articles -->
+    <LatestArticles client:load articles={latestArticles} />
+
+    <CategorySection client:load />
+  </div>
+</BaseLayout>

@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleList from '../components/ArticleList';
+import ArticlesPageHeader from '../components/ArticlesPageHeader';
+import { getCollection } from 'astro:content';
+
+const allArticles = await getCollection('articles');
+const sortedArticles = allArticles
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .map((article) => ({
+    slug: article.slug,
+    title: article.data.title,
+    description: article.data.description,
+    date: article.data.date.toISOString(),
+    category: article.data.category,
+    locale: article.data.locale,
+  }));
+---
+
+<BaseLayout title="All Articles - AI NEWS FLASH" description="Browse all AI news articles and updates">
+  <div class="container-custom py-12 md:py-20">
+    <ArticlesPageHeader client:load />
+
+    <!-- Article List with Filters -->
+    <ArticleList client:load articles={sortedArticles} />
+  </div>
+</BaseLayout>

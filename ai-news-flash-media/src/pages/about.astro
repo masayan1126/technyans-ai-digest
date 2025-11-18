@@ -1,0 +1,10 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AboutPageContent from '../components/AboutPageContent';
+---
+
+<BaseLayout title="About - AI NEWS FLASH" description="Learn about AI NEWS FLASH, your trusted source for AI news and insights">
+  <div class="container-custom py-12 md:py-20">
+    <AboutPageContent client:load />
+  </div>
+</BaseLayout>

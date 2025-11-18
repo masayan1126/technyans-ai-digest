@@ -1,0 +1,10 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NotFoundPageContent from '../components/NotFoundPageContent';
+---
+
+<BaseLayout title="404 - Page Not Found | AI NEWS FLASH" description="The page you're looking for doesn't exist">
+  <div class="container-custom py-12 md:py-20">
+    <NotFoundPageContent client:load />
+  </div>
+</BaseLayout>
