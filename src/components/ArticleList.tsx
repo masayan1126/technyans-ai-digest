@@ -11,6 +11,7 @@ interface Article {
   date: string;
   category: string;
   locale: string;
+  technyanComment?: string;
 }
 
 interface ArticleListProps {
@@ -92,6 +93,7 @@ const ArticleListInner: React.FC<ArticleListProps> = ({ articles }) => {
               category={article.category}
               slug={article.slug}
               locale={article.locale}
+              technyanComment={article.technyanComment}
             />
           ))}
         </div>

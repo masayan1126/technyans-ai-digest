@@ -5,6 +5,7 @@ date: 2025-11-18
 category: "Other"
 tags: ["ランサムウェア", "サイバーセキュリティ", "Akira", "Nutanix", "仮想化"]
 locale: "ja"
+technyanComment: "Akiraのマルチプラットフォーム対応は長期的な戦略！『忘れられた資産』への対策が重要で、すべてのシステムに一貫したパッチ管理とMFA適用が必要だよ！🛡️"
 ---
 
 # Akiraランサムウェア、Nutanix AHV仮想環境にも攻撃対象を拡大

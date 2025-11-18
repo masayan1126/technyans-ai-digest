@@ -5,6 +5,7 @@ date: 2025-11-18
 category: "Other"
 tags: ["AI", "Labor Market", "Employment", "Productivity", "Economic Policy"]
 locale: "en"
+technyanComment: "A senior official acknowledging AI's job impact is significant! But historically, new tech creates new roles too. AI literacy will be key! 📚"
 ---
 
 # Trump Economic Adviser Warns of AI-Induced 'Quiet Time' in Labor Market

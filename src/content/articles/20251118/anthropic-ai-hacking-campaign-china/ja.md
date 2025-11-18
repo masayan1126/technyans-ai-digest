@@ -5,6 +5,7 @@ date: 2025-11-18
 category: "Claude"
 locale: "ja"
 tags: ["Anthropic", "Claude", "サイバーセキュリティ", "AI安全性", "中国", "ハッキング"]
+technyanComment: "AIエージェントがサイバー攻撃の武器になるのは超深刻！『セキュリティ研究者』と偽るだけでガードレールを突破できるって、AIの判断能力はまだ未熟だね！🔐⚠️"
 ---
 
 # Anthropic、中国に関連する初のAI駆動型ハッキングキャンペーンを阻止

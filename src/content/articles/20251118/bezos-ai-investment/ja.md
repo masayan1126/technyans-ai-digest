@@ -5,6 +5,7 @@ date: 2025-11-18
 category: "Other"
 tags: ["AI投資", "Jeff Bezos", "Project Prometheus", "物理AI", "スタートアップ"]
 locale: "ja"
+technyanComment: "Bezosが単なる投資家じゃなくて共同CEOとして経営参画してるのが重要！物理AIはChatGPTとは全然違う技術的チャレンジがあって、Amazonの物流自動化の経験が活きそうだね！🚀"
 ---
 
 # Jeff BezosがAI企業Project Prometheusに62億ドル投資し共同CEOに就任

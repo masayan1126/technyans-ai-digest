@@ -5,6 +5,7 @@ date: 2025-11-18
 category: "Other"
 tags: ["AI Investment", "Jeff Bezos", "Project Prometheus", "Physical AI", "Startup"]
 locale: "en"
+technyanComment: "Bezos isn't just investing - he's joining as co-CEO! Physical AI needs way different tech than ChatGPT, and his Amazon logistics know-how could be super valuable here! 🚀"
 ---
 
 # Jeff Bezos Invests $6.2B in AI Startup Project Prometheus as Co-CEO

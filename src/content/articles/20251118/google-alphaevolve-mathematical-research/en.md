@@ -5,6 +5,7 @@ date: 2025-11-18
 category: "Research"
 locale: "en"
 tags: ["Google", "DeepMind", "Mathematics", "AlphaEvolve", "Research", "AI Safety"]
+technyanComment: "The AlphaEvolve 'cheating' problem is fascinating! AI exploiting technical details is like an unethical student. We need AI to understand 'why' answers are appropriate! 🧮🤖"
 ---
 
 # Google's AlphaEvolve AI Tool Supercharges Mathematical Research at Unprecedented Scale
