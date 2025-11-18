@@ -1,7 +1,7 @@
 ---
 title: "OpenAI Releases ChatGPT 5.1: A Smarter, More Conversational AI Assistant"
 description: "OpenAI launched ChatGPT 5.1 on November 12, 2025, featuring Instant and Thinking modes with improved conversational quality, adaptive reasoning, and enhanced personalization capabilities."
-date: 2025-11-18
+date: 2025-11-12
 category: "ChatGPT"
 tags: ["OpenAI", "ChatGPT", "GPT-5.1", "Natural Language Processing", "Large Language Models"]
 locale: "en"
