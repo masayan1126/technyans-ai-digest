@@ -5,6 +5,7 @@ date: 2025-11-18
 category: "Other"
 tags: ["AI Safety", "Children's AI", "OpenAI", "Toys", "Regulation"]
 locale: "en"
+technyanComment: "AI toy safety is super serious! Just adding filters isn't enough - systems need age-appropriate designs for kids' developmental stages! 🧸⚠️"
 ---
 
 # AI-Powered Teddy Bear Exposed Children to Inappropriate Content, OpenAI Cuts Access

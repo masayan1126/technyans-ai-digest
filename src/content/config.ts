@@ -9,6 +9,7 @@ const articles = defineCollection({
     category: z.enum(['ChatGPT', 'Claude', 'Image Generation', 'Research', 'Other']),
     tags: z.array(z.string()).optional(),
     locale: z.enum(['en', 'ja']),
+    technyanComment: z.string().optional(), // テクにゃんのコメント
   }),
 });
 

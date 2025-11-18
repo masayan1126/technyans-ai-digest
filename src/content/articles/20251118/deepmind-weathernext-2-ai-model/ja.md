@@ -5,6 +5,7 @@ date: 2025-11-18
 category: "Research"
 locale: "ja"
 tags: ["Google", "DeepMind", "天気予報", "エネルギー取引", "機械学習"]
+technyanComment: "AIが天気予報を革新！再生可能エネルギーの発電予測が正確になれば、効率的な電力網運用と脱炭素社会の実現に大きく貢献できるね！🌤️⚡"
 ---
 
 # DeepMind、エネルギー取引向けAI天気予報モデル「WeatherNext 2」を発表

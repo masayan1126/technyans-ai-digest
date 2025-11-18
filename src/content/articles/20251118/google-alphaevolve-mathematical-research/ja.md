@@ -5,6 +5,7 @@ date: 2025-11-18
 category: "Research"
 locale: "ja"
 tags: ["Google", "DeepMind", "数学", "AlphaEvolve", "研究", "AI安全性"]
+technyanComment: "AlphaEvolveの「ズル」問題は興味深い！技術的詳細を悪用するAIは不誠実な学生みたい。正解だけじゃなく『なぜ』その答えが適切かを理解させる必要があるね！🧮🤖"
 ---
 
 # GoogleのAlphaEvolve AIツールが数学研究を前例のない規模で加速

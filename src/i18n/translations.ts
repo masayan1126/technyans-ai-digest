@@ -82,6 +82,14 @@ export const translations = {
     claude: 'Claude',
     research: 'Research',
     other: 'Other',
+
+    // Bookmarks
+    bookmark: 'Bookmark',
+    bookmarked: 'Bookmarked',
+    removeBookmark: 'Remove bookmark',
+    addToBookmarks: 'Add to bookmarks',
+    bookmarkSavedComment: 'Great choice! 🐱✨',
+    bookmarkHoverComment: 'Save this for later! 📖',
   },
   ja: {
     // Header
@@ -164,6 +172,14 @@ export const translations = {
     claude: 'Claude',
     research: '研究',
     other: 'その他',
+
+    // Bookmarks
+    bookmark: 'ブックマーク',
+    bookmarked: 'ブックマーク済み',
+    removeBookmark: 'ブックマークを削除',
+    addToBookmarks: 'ブックマークに追加',
+    bookmarkSavedComment: 'いいね！保存したよ！🐱✨',
+    bookmarkHoverComment: 'あとで読もう！📖',
   },
 } as const;
 

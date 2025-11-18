@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import NewsCard from './NewsCard';
+import { I18nProvider, useI18n } from './I18nProvider';
 
 interface Article {
   slug: string;
@@ -8,34 +9,16 @@ interface Article {
   date: string;
   category: string;
   locale: string;
+  technyanComment?: string;
 }
 
 interface LatestArticlesProps {
   articles: Article[];
 }
 
-const LatestArticles: React.FC<LatestArticlesProps> = ({ articles }) => {
-  const [locale, setLocale] = useState<'en' | 'ja'>('en');
+const LatestArticlesInner: React.FC<LatestArticlesProps> = ({ articles }) => {
+  const { locale } = useI18n();
   const [filteredArticles, setFilteredArticles] = useState<Article[]>([]);
-
-  useEffect(() => {
-    // Load locale from localStorage
-    const savedLocale = localStorage.getItem('locale') as 'en' | 'ja' | null;
-    if (savedLocale) {
-      setLocale(savedLocale);
-    }
-
-    // Listen for locale changes
-    const handleLocaleChange = (event: CustomEvent<string>) => {
-      setLocale(event.detail as 'en' | 'ja');
-    };
-
-    window.addEventListener('localeChange', handleLocaleChange as EventListener);
-
-    return () => {
-      window.removeEventListener('localeChange', handleLocaleChange as EventListener);
-    };
-  }, []);
 
   useEffect(() => {
     // Filter articles by locale
@@ -55,6 +38,7 @@ const LatestArticles: React.FC<LatestArticlesProps> = ({ articles }) => {
             category={article.category}
             slug={article.slug}
             locale={article.locale}
+            technyanComment={article.technyanComment}
           />
         ))
       ) : (
@@ -65,6 +49,14 @@ const LatestArticles: React.FC<LatestArticlesProps> = ({ articles }) => {
         </div>
       )}
     </div>
+  );
+};
+
+const LatestArticles: React.FC<LatestArticlesProps> = (props) => {
+  return (
+    <I18nProvider>
+      <LatestArticlesInner {...props} />
+    </I18nProvider>
   );
 };
 

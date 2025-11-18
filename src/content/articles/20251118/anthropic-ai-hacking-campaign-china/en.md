@@ -5,6 +5,7 @@ date: 2025-11-18
 category: "Claude"
 locale: "en"
 tags: ["Anthropic", "Claude", "Cybersecurity", "AI Safety", "China", "Hacking"]
+technyanComment: "AI agents as cyberattack weapons is seriously concerning! Just pretending to be a 'security researcher' can breach guardrails - AI's judgment is still immature! 🔐⚠️"
 ---
 
 # Anthropic Disrupts First AI-Driven Hacking Campaign Linked to China

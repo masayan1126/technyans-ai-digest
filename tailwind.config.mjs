@@ -30,6 +30,25 @@ export default {
       borderWidth: {
         '1.5': '1.5px',
       },
+      animation: {
+        'bounce-in': 'bounceIn 0.3s ease-out',
+      },
+      keyframes: {
+        bounceIn: {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(10px) scale(0.9)',
+          },
+          '50%': {
+            opacity: '1',
+            transform: 'translateY(-5px) scale(1.05)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateY(0) scale(1)',
+          },
+        },
+      },
     },
   },
   plugins: [
