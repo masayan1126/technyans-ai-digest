@@ -4,10 +4,21 @@ const LanguageSwitcher: React.FC = () => {
   const [locale, setLocale] = useState<'en' | 'ja'>('en');
 
   useEffect(() => {
-    // Load locale from localStorage
-    const savedLocale = localStorage.getItem('locale') as 'en' | 'ja' | null;
-    if (savedLocale) {
-      setLocale(savedLocale);
+    // 記事詳細ページの場合、URLから言語を取得
+    const currentPath = window.location.pathname;
+    const articleMatch = currentPath.match(/^\/articles\/(en|ja)\/(.+)$/);
+
+    if (articleMatch) {
+      const [, urlLang] = articleMatch;
+      setLocale(urlLang as 'en' | 'ja');
+      // localStorageにも保存
+      localStorage.setItem('locale', urlLang);
+    } else {
+      // 他のページの場合、localStorageから読み込む
+      const savedLocale = localStorage.getItem('locale') as 'en' | 'ja' | null;
+      if (savedLocale) {
+        setLocale(savedLocale);
+      }
     }
   }, []);
 
@@ -16,8 +27,19 @@ const LanguageSwitcher: React.FC = () => {
     setLocale(newLocale);
     localStorage.setItem('locale', newLocale);
 
-    // Trigger custom event for other components to listen
-    window.dispatchEvent(new CustomEvent('localeChange', { detail: newLocale }));
+    // 記事詳細ページの場合、URLを変更してリダイレクト
+    const currentPath = window.location.pathname;
+    const articleMatch = currentPath.match(/^\/articles\/(en|ja)\/(.+)$/);
+
+    if (articleMatch) {
+      // 記事詳細ページ: /articles/en/20251118/slug -> /articles/ja/20251118/slug
+      const [, currentLang, articleSlug] = articleMatch;
+      const newPath = `/articles/${newLocale}/${articleSlug}`;
+      window.location.href = newPath;
+    } else {
+      // 他のページ: カスタムイベントを発行して、コンポーネントが反応できるようにする
+      window.dispatchEvent(new CustomEvent('localeChange', { detail: newLocale }));
+    }
   };
 
   return (
