@@ -91,6 +91,7 @@ const ArticleListInner: React.FC<ArticleListProps> = ({ articles }) => {
               date={article.date}
               category={article.category}
               slug={article.slug}
+              locale={article.locale}
             />
           ))}
         </div>

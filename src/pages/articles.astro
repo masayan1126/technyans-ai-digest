@@ -5,6 +5,7 @@ import ArticlesPageHeader from '../components/ArticlesPageHeader';
 import { getCollection } from 'astro:content';
 
 const allArticles = await getCollection('articles');
+
 const sortedArticles = allArticles
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .map((article) => ({

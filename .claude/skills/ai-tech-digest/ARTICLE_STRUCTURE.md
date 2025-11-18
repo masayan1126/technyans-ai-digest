@@ -137,6 +137,8 @@ locale: "en"
 
 「{技術的な洞察や実用的なアドバイスをキャラクターの口調で}」
 
+> **注意:** この見出しを使用すると、自動的にテクにゃんの画像が表示されます。見出しのテキストは必ず「テクにゃんのコメント」にしてください。
+
 ## 情報源
 
 - [元記事タイトル](URL)
@@ -170,6 +172,8 @@ locale: "en"
 ## Tech-nyan's Comment
 
 "{Technical insights or practical advice in the character's voice}"
+
+> **Note:** Using this heading will automatically display Tech-nyan's image. The heading text must be exactly "Tech-nyan's Comment".
 
 ## Sources
 

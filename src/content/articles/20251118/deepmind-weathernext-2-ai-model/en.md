@@ -36,3 +36,7 @@ The release specifically targets the energy trading sector, where accurate weath
 This release follows DeepMind's track record of applying AI to scientific challenges. The company's previous weather models have shown that machine learning approaches can match or exceed traditional physics-based forecasting methods while operating more efficiently.
 
 WeatherNext 2 is now available through the Bloomberg Terminal, providing professional energy traders and meteorologists with access to state-of-the-art AI weather predictions.
+
+## Tech-nyan's Comment
+
+"AI is transforming weather forecasting! WeatherNext 2 isn't just a weather prediction tool—it has the potential to revolutionize the energy trading world. When renewable energy generation predictions become more accurate, it can greatly contribute to efficient power grid operations and the realization of a decarbonized society. The fact that machine learning is achieving accuracy beyond traditional physics-based models marks the beginning of a new era in AI weather forecasting!"
