@@ -1,7 +1,7 @@
 ---
 title: "OpenAI、ChatGPT 5.1をリリース：より賢く、会話的なAIアシスタントへ"
 description: "OpenAIが2025年11月12日にChatGPT 5.1をリリース。InstantとThinkingの2つのモードを備え、より自然な会話と適応的推論能力を実現。パーソナライゼーション機能も大幅に強化。"
-date: 2025-11-18
+date: 2025-11-12
 category: "ChatGPT"
 tags: ["OpenAI", "ChatGPT", "GPT-5.1", "自然言語処理", "大規模言語モデル"]
 locale: "ja"
