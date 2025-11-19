@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import HistoryPage from '../components/HistoryPage';
+
+const allArticles = await getCollection('articles');
+
+// Convert articles to serializable format
+const articles = allArticles.map((article) => ({
+  slug: article.slug,
+  data: {
+    title: article.data.title,
+    description: article.data.description,
+    date: article.data.date.toISOString(),
+    category: article.data.category,
+    tags: article.data.tags || [],
+    locale: article.data.locale,
+    technyanComment: article.data.technyanComment,
+  },
+}));
+---
+
+<BaseLayout
+  title="Impact History - Technyan's AI Digests"
+  description="Explore the timeline of AI developments that shaped the world. View major milestones and breakthroughs in different formats."
+>
+  <div class="container-custom py-12 md:py-20">
+    <HistoryPage client:load articles={articles} />
+  </div>
+</BaseLayout>
