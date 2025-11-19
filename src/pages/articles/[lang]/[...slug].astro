@@ -87,7 +87,7 @@ const otherLangUrl = `/articles/${otherLang}/${articleSlug}`;
         {article.data.description}
       </p>
 
-      <div class="flex items-center gap-6 text-sm opacity-60 border-t-1.5 border-navy pt-6">
+      <div class="flex flex-wrap items-center gap-4 text-sm opacity-60 border-t-1.5 border-navy pt-6">
         <time datetime={article.data.date.toISOString()}>
           {article.data.date.toLocaleDateString(locale === 'ja' ? 'ja-JP' : 'en-US', {
             year: 'numeric',
@@ -96,9 +96,9 @@ const otherLangUrl = `/articles/${otherLang}/${articleSlug}`;
           })}
         </time>
         {article.data.tags && (
-          <div class="flex gap-2">
+          <div class="flex flex-wrap gap-2">
             {article.data.tags.map((tag: string) => (
-              <span class="px-2 py-1 bg-cream border-1.5 border-navy text-xs">
+              <span class="px-2 py-1 bg-cream border-1.5 border-navy text-xs whitespace-nowrap">
                 {tag}
               </span>
             ))}
