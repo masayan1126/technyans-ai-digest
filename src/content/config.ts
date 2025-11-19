@@ -6,7 +6,7 @@ const articles = defineCollection({
     title: z.string(),
     description: z.string(),
     date: z.date(),
-    category: z.enum(['ChatGPT', 'Claude', 'Gemini', 'Image Generation', 'Research', 'Other']),
+    category: z.enum(['ChatGPT', 'Claude', 'Gemini', 'Grok', 'Image Generation', 'Research', 'Other']),
     tags: z.array(z.string()).optional(),
     locale: z.enum(['en', 'ja']),
     technyanComment: z.string().optional(), // テクにゃんのコメント
