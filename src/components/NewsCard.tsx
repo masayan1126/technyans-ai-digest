@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import BookmarkButton from './BookmarkButton';
 import { useBookmark } from '../hooks/useBookmark';
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
+import { useIsTouchDevice } from '../hooks/useIsTouchDevice';
 
 interface NewsCardProps {
   title: string;
@@ -21,8 +23,21 @@ const NewsCard: React.FC<NewsCardProps> = ({ title, description, date, category,
   useBookmark(articleSlug); // ブックマーク機能を有効化
   const [isHovered, setIsHovered] = useState(false);
 
+  // Ref for the card element
+  const cardRef = useRef<HTMLElement>(null);
+
+  // Detect if device is touch-based (smartphone/tablet)
+  const isTouchDevice = useIsTouchDevice();
+
+  // Detect if card is visible in viewport (for touch devices)
+  const isVisible = useIntersectionObserver(cardRef, { threshold: 0.5 });
+
+  // Show comment based on device type
+  const shouldShowComment = technyanComment && (isTouchDevice ? isVisible : isHovered);
+
   return (
     <article
+      ref={cardRef}
       className="card group cursor-pointer relative"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -32,30 +47,6 @@ const NewsCard: React.FC<NewsCardProps> = ({ title, description, date, category,
         <BookmarkButton articleSlug={articleSlug} size="small" />
       </div>
 
-      {/* Technyan Hover Comment - show if technyanComment exists */}
-      {technyanComment && isHovered && (
-        <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 z-20 pointer-events-none max-w-xs">
-          <div className="relative bg-cream border-2 border-navy px-4 py-2 rounded-lg shadow-[4px_4px_0px_0px_rgba(12,35,64,1)] animate-bounce-in">
-            {/* Technyan Icon */}
-            <div className="absolute -left-10 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-cream border-2 border-navy rounded-full overflow-hidden flex-shrink-0">
-              <img
-                src="/technyan.webp"
-                alt="Technyan"
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-            {/* Comment Text */}
-            <p className="text-xs md:text-sm font-medium text-navy leading-snug">
-              {technyanComment}
-            </p>
-
-            {/* Arrow pointing down */}
-            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-cream border-r-2 border-b-2 border-navy rotate-45"></div>
-          </div>
-        </div>
-      )}
-
       <a href={articleUrl} className="block">
         <div className="flex flex-col h-full">
           {/* Category Tag */}
@@ -64,6 +55,27 @@ const NewsCard: React.FC<NewsCardProps> = ({ title, description, date, category,
               {category}
             </span>
           </div>
+
+          {/* Technyan Comment - show on hover (PC) or scroll into view (touch devices) */}
+          {shouldShowComment && (
+            <div className="mb-4 animate-bounce-in">
+              <div className="relative bg-cream border-2 border-navy px-3 py-2 rounded-lg shadow-[4px_4px_0px_0px_rgba(12,35,64,1)] flex items-center gap-3">
+                {/* Technyan Icon */}
+                <div className="flex-shrink-0 w-8 h-8 bg-cream border-2 border-navy rounded-full overflow-hidden">
+                  <img
+                    src="/technyan.webp"
+                    alt="Technyan"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                {/* Comment Text */}
+                <p className="text-xs md:text-sm font-medium text-navy leading-snug flex-1">
+                  {technyanComment}
+                </p>
+              </div>
+            </div>
+          )}
 
           {/* Title */}
           <h3 className="text-xl md:text-2xl font-semibold mb-3 group-hover:underline">
