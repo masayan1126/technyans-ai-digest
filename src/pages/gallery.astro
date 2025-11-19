@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TechnyanGallery from '../components/TechnyanGallery';
+
+const title = 'Technyan Gallery | Technyans AI Digest';
+const description = 'Discover all the Technyan characters - our team of coding cats! From basic cats to themed characters like astronauts, chefs, and wizards.';
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="container-custom py-12 md:py-20">
+    <TechnyanGallery client:load />
+  </div>
+</BaseLayout>
