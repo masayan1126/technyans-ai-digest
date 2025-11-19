@@ -6,12 +6,13 @@ export const translations = {
     home: 'Home',
     articles: 'Articles',
     history: 'History',
+    gallery: 'Technyans',
     about: 'About',
 
     // Footer
     quickLinks: 'Quick Links',
     categories: 'Categories',
-    footerDescription: 'Latest AI news and insights from around the world. Stay updated with cutting-edge developments in artificial intelligence.',
+    footerDescription: 'Supporting busy people in their AI learning journey with Technyan. Making AI news easy and enjoyable.',
     allRightsReserved: 'All rights reserved',
 
     // Home Page
@@ -23,11 +24,11 @@ export const translations = {
 
     // Features Section
     featuresTitle: 'Key Features',
-    featureLatestNewsTitle: 'Latest AI News',
+    featureLatestNewsTitle: 'Catch Up on AI News Daily',
     featureLatestNewsDesc: 'Stay up-to-date with the latest AI developments and breakthroughs as they happen.',
-    featureMultiViewTitle: 'Multiple View Formats',
-    featureMultiViewDesc: 'Explore news through timeline, milestone, impact map, and more - choose your preferred way to track and overview AI developments.',
-    featureTechnyanTitle: 'With Tech-nyan',
+    featureMultiViewTitle: 'Look Back at AI History',
+    featureMultiViewDesc: 'Explore AI evolution history through timeline, milestone, impact map, and more - trace back and overview the journey in your preferred format.',
+    featureTechnyanTitle: 'Grow with Tech-nyan',
     featureTechnyanDesc: 'Our adorable mascot Tech-nyan brings comfort and joy to your daily AI news catch-up.',
 
     latestArticles: 'Latest Articles',
@@ -62,6 +63,49 @@ export const translations = {
     publishedOn: 'Published on',
     articlesByMonth: 'articles',
     noArticlesInPeriod: 'No articles in this period',
+
+    // Gallery Page
+    galleryTitle: 'Technyan Gallery',
+    galleryDescription: 'Meet our team of coding cats! Each Technyan brings their unique style to the world of tech.',
+    filterAll: 'All',
+    filterBasic: 'Basic',
+    filterAccessorized: 'Accessorized',
+    filterThemed: 'Themed',
+    categoryBasic: 'Basic',
+    categoryAccessorized: 'Accessorized',
+    categoryThemed: 'Themed',
+    galleryNoResults: 'No Technyans found in this category.',
+    galleryShowing: 'Showing',
+    galleryOf: 'of',
+    galleryTechnyans: 'Technyans',
+    galleryCopyright: 'All Technyan images are copyrighted. Unauthorized use is prohibited.',
+
+    // Technyan Character Names - Basic
+    technyanBlackCat: 'Black Cat',
+    technyanBrownTabby: 'Brown Tabby',
+    technyanCalicoCat: 'Calico Cat',
+    technyanGreyCat: 'Grey Cat',
+    technyanOrangeTabby: 'Orange Tabby',
+    technyanSiameseCat: 'Siamese Cat',
+    technyanTortoiseshellCat: 'Tortoiseshell Cat',
+    technyanTuxedoCat: 'Tuxedo Cat',
+    technyanWhiteCat: 'White Cat',
+
+    // Technyan Character Names - Accessorized
+    technyanCapCat: 'Cap Cat',
+    technyanFluffyBowtie: 'Fluffy Cat with Bowtie',
+    technyanHeadphones: 'Headphones Cat',
+    technyanScottishFold: 'Scottish Fold with Glasses',
+    technyanSunglasses: 'Sunglasses Cat',
+
+    // Technyan Character Names - Themed
+    technyanAstronaut: 'Astronaut Cat',
+    technyanChef: 'Chef Cat',
+    technyanDetective: 'Detective Cat',
+    technyanGamer: 'Gamer Cat',
+    technyanPirate: 'Pirate Cat',
+    technyanRobot: 'Robot Cat',
+    technyanWizard: 'Wizard Cat',
 
     // About Page
     aboutTitle: 'About Technyan\'s AI Digests',
@@ -121,12 +165,13 @@ export const translations = {
     home: 'ホーム',
     articles: '記事一覧',
     history: '歴史',
+    gallery: 'テクにゃんたち',
     about: 'このサイトについて',
 
     // Footer
     quickLinks: 'クイックリンク',
     categories: 'カテゴリ',
-    footerDescription: '世界中からの最新AIニュースと洞察をお届けします。最先端の人工知能の発展をフォローしましょう。',
+    footerDescription: '忙しい毎日の中でAI情報のキャッチアップを頑張るあなたを、テクにゃんと一緒に応援します。',
     allRightsReserved: '全著作権所有',
 
     // Home Page
@@ -138,11 +183,11 @@ export const translations = {
 
     // Features Section
     featuresTitle: '主な機能',
-    featureLatestNewsTitle: '最新のAIニュース',
+    featureLatestNewsTitle: '毎日最新のAIニュースをキャッチアップ',
     featureLatestNewsDesc: 'AIの最新情報や躍進をいち早くキャッチアップできます。',
-    featureMultiViewTitle: '多様な表示形式',
-    featureMultiViewDesc: 'タイムライン、マイルストーン、インパクトマップなど、好みの形式でAIニュースを追跡・俯瞰できます。',
-    featureTechnyanTitle: 'テクにゃんと一緒に',
+    featureMultiViewTitle: 'AIの歴史を振り返る',
+    featureMultiViewDesc: 'タイムライン、マイルストーン、インパクトマップなど、好みの形式でAI進化の歴史をさかのぼって俯瞰できます。',
+    featureTechnyanTitle: 'テクにゃんと一緒に成長する',
     featureTechnyanDesc: '可愛いマスコット・テクにゃんが、毎日のAIニュースチェックに癒しと楽しさをプラスします。',
 
     latestArticles: '最新記事',
@@ -177,6 +222,49 @@ export const translations = {
     publishedOn: '公開日',
     articlesByMonth: '件の記事',
     noArticlesInPeriod: 'この期間に記事はありません',
+
+    // Gallery Page
+    galleryTitle: 'テクにゃんギャラリー',
+    galleryDescription: 'コーディングする猫のチームに会おう！それぞれのテクにゃんが、テクノロジーの世界に独自のスタイルをもたらします。',
+    filterAll: 'すべて',
+    filterBasic: 'ベーシック',
+    filterAccessorized: 'アクセサリー付き',
+    filterThemed: 'テーマ別',
+    categoryBasic: 'ベーシック',
+    categoryAccessorized: 'アクセサリー付き',
+    categoryThemed: 'テーマ別',
+    galleryNoResults: 'このカテゴリにテクにゃんは見つかりませんでした。',
+    galleryShowing: '表示中',
+    galleryOf: '/',
+    galleryTechnyans: '件のテクにゃん',
+    galleryCopyright: 'すべてのテクにゃん画像は著作権で保護されています。無断使用を禁止します。',
+
+    // Technyan Character Names - Basic
+    technyanBlackCat: '黒猫',
+    technyanBrownTabby: '茶トラ',
+    technyanCalicoCat: '三毛猫',
+    technyanGreyCat: '灰色猫',
+    technyanOrangeTabby: '茶トラ',
+    technyanSiameseCat: 'シャム猫',
+    technyanTortoiseshellCat: 'サビ猫',
+    technyanTuxedoCat: 'ハチワレ猫',
+    technyanWhiteCat: '白猫',
+
+    // Technyan Character Names - Accessorized
+    technyanCapCat: '帽子猫',
+    technyanFluffyBowtie: '蝶ネクタイのふわふわ猫',
+    technyanHeadphones: 'ヘッドホン猫',
+    technyanScottishFold: 'メガネのスコティッシュフォールド',
+    technyanSunglasses: 'サングラス猫',
+
+    // Technyan Character Names - Themed
+    technyanAstronaut: '宇宙飛行士猫',
+    technyanChef: 'シェフ猫',
+    technyanDetective: '探偵猫',
+    technyanGamer: 'ゲーマー猫',
+    technyanPirate: '海賊猫',
+    technyanRobot: 'ロボット猫',
+    technyanWizard: '魔法使い猫',
 
     // About Page
     aboutTitle: 'Technyan\'s AI Digestsについて',
