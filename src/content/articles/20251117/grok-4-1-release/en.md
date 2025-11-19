@@ -1,7 +1,7 @@
 ---
 title: "Grok 4.1: xAI's Breakthrough in Emotional Intelligence and Creative AI"
 description: "xAI released Grok 4.1 on November 17-18, 2025, featuring top rankings in emotional intelligence and creative writing benchmarks, with hallucination rates reduced by 66% and two distinct modes for different use cases."
-date: 2025-11-19
+date: 2025-11-17
 category: "Grok"
 tags: ["xAI", "Grok", "Emotional Intelligence", "Creative AI", "Large Language Models"]
 locale: "en"
