@@ -5,6 +5,7 @@ export const translations = {
     // Header
     home: 'Home',
     articles: 'Articles',
+    history: 'History',
     about: 'About',
 
     // Footer
@@ -19,10 +20,16 @@ export const translations = {
     heroDescription: 'Keeping up with AI is tough, but you\'re doing great! We\'re here to make your daily AI catch-up easier and more enjoyable. Let\'s stay informed together!',
     browseAllArticles: 'Browse All Articles',
     aboutUs: 'About Us',
-    articlesPublished: 'Articles Published',
-    categoriesCovered: 'Categories Covered',
-    updates: 'Updates',
-    daily: 'Daily',
+
+    // Features Section
+    featuresTitle: 'Key Features',
+    featureLatestNewsTitle: 'Latest AI News',
+    featureLatestNewsDesc: 'Stay up-to-date with the latest AI developments and breakthroughs as they happen.',
+    featureMultiViewTitle: 'Multiple View Formats',
+    featureMultiViewDesc: 'Explore news through timeline, milestone, impact map, and more - choose your preferred way to track and overview AI developments.',
+    featureTechnyanTitle: 'With Tech-nyan',
+    featureTechnyanDesc: 'Our adorable mascot Tech-nyan brings comfort and joy to your daily AI news catch-up.',
+
     latestArticles: 'Latest Articles',
     viewAll: 'View All',
     browseByCategory: 'Browse by Category',
@@ -37,6 +44,24 @@ export const translations = {
     article: 'article',
     articlesCount: 'articles',
     noArticlesFound: 'No articles found matching your criteria.',
+
+    // History Page
+    historyPageTitle: 'Impact History',
+    historyPageDescription: 'Explore the timeline of AI developments that shaped the world. View major milestones and breakthroughs in different formats.',
+    viewMode: 'View Mode',
+    timelineView: 'Timeline',
+    milestoneView: 'Milestone',
+    impactMapView: 'Impact Map',
+    archiveGridView: 'Archive',
+    storyFlowView: 'Story',
+    timelineViewDesc: 'Vertical timeline with chronological flow',
+    milestoneViewDesc: 'Grouped by year and month',
+    impactMapViewDesc: 'Visualized by impact size',
+    archiveGridViewDesc: 'Compact calendar-style grid',
+    storyFlowViewDesc: 'Immersive storytelling experience',
+    publishedOn: 'Published on',
+    articlesByMonth: 'articles',
+    noArticlesInPeriod: 'No articles in this period',
 
     // About Page
     aboutTitle: 'About Technyan\'s AI Digests',
@@ -95,6 +120,7 @@ export const translations = {
     // Header
     home: 'ホーム',
     articles: '記事一覧',
+    history: '歴史',
     about: 'このサイトについて',
 
     // Footer
@@ -109,10 +135,16 @@ export const translations = {
     heroDescription: 'AIのキャッチアップは大変だけど、あなたは頑張ってる！毎日のAI情報収集を、もっと楽しく、もっと簡単に。一緒に最新情報を追いかけよう！',
     browseAllArticles: 'すべての記事を見る',
     aboutUs: 'このサイトについて',
-    articlesPublished: '公開記事数',
-    categoriesCovered: 'カバーするカテゴリ',
-    updates: '更新',
-    daily: '毎日',
+
+    // Features Section
+    featuresTitle: '主な機能',
+    featureLatestNewsTitle: '最新のAIニュース',
+    featureLatestNewsDesc: 'AIの最新情報や躍進をいち早くキャッチアップできます。',
+    featureMultiViewTitle: '多様な表示形式',
+    featureMultiViewDesc: 'タイムライン、マイルストーン、インパクトマップなど、好みの形式でAIニュースを追跡・俯瞰できます。',
+    featureTechnyanTitle: 'テクにゃんと一緒に',
+    featureTechnyanDesc: '可愛いマスコット・テクにゃんが、毎日のAIニュースチェックに癒しと楽しさをプラスします。',
+
     latestArticles: '最新記事',
     viewAll: 'すべて見る',
     browseByCategory: 'カテゴリから探す',
@@ -127,6 +159,24 @@ export const translations = {
     article: '件の記事',
     articlesCount: '件の記事',
     noArticlesFound: '条件に一致する記事が見つかりませんでした。',
+
+    // History Page
+    historyPageTitle: 'インパクトヒストリー',
+    historyPageDescription: '世界を変えたAI開発のタイムラインを探索しましょう。主要なマイルストーンと躍進を、さまざまな形式でご覧ください。',
+    viewMode: '表示モード',
+    timelineView: 'タイムライン',
+    milestoneView: 'マイルストーン',
+    impactMapView: 'インパクトマップ',
+    archiveGridView: 'アーカイブ',
+    storyFlowView: 'ストーリー',
+    timelineViewDesc: '時系列の流れを可視化',
+    milestoneViewDesc: '年月でグループ化',
+    impactMapViewDesc: 'インパクトの大きさで可視化',
+    archiveGridViewDesc: 'カレンダー風コンパクト表示',
+    storyFlowViewDesc: '没入型ストーリー体験',
+    publishedOn: '公開日',
+    articlesByMonth: '件の記事',
+    noArticlesInPeriod: 'この期間に記事はありません',
 
     // About Page
     aboutTitle: 'Technyan\'s AI Digestsについて',

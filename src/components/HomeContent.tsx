@@ -39,20 +39,23 @@ const HomeContentInner: React.FC<HomeContentProps> = ({ articlesCount }) => {
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Features Section */}
       <section className="mb-16 md:mb-24">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="card text-center">
-            <div className="text-4xl md:text-5xl font-bold mb-2">{articlesCount}</div>
-            <div className="text-sm opacity-60">{t('articlesPublished')}</div>
+          <div className="card hover:retro-shadow transition-all duration-200">
+            <div className="text-4xl mb-4">⚡</div>
+            <h3 className="text-xl font-semibold mb-3">{t('featureLatestNewsTitle')}</h3>
+            <p className="leading-relaxed opacity-80">{t('featureLatestNewsDesc')}</p>
           </div>
-          <div className="card text-center">
-            <div className="text-4xl md:text-5xl font-bold mb-2">5</div>
-            <div className="text-sm opacity-60">{t('categoriesCovered')}</div>
+          <div className="card hover:retro-shadow transition-all duration-200">
+            <div className="text-4xl mb-4">📊</div>
+            <h3 className="text-xl font-semibold mb-3">{t('featureMultiViewTitle')}</h3>
+            <p className="leading-relaxed opacity-80">{t('featureMultiViewDesc')}</p>
           </div>
-          <div className="card text-center">
-            <div className="text-4xl md:text-5xl font-bold mb-2">{t('daily')}</div>
-            <div className="text-sm opacity-60">{t('updates')}</div>
+          <div className="card hover:retro-shadow transition-all duration-200">
+            <div className="text-4xl mb-4">🐱</div>
+            <h3 className="text-xl font-semibold mb-3">{t('featureTechnyanTitle')}</h3>
+            <p className="leading-relaxed opacity-80">{t('featureTechnyanDesc')}</p>
           </div>
         </div>
       </section>
