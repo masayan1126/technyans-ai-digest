@@ -7,7 +7,7 @@ const FooterContent: React.FC = () => {
   return (
     <footer className="bg-navy text-cream border-t-1.5 border-navy mt-20">
       <div className="container-custom py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About Section */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Technyan's AI Digests</h3>
@@ -28,6 +28,11 @@ const FooterContent: React.FC = () => {
               <li>
                 <a href="/articles" className="hover:underline opacity-90 hover:opacity-100">
                   {t('articles')}
+                </a>
+              </li>
+              <li>
+                <a href="/benchmarks" className="hover:underline opacity-90 hover:opacity-100">
+                  {t('benchmarks')}
                 </a>
               </li>
               <li>
@@ -60,6 +65,23 @@ const FooterContent: React.FC = () => {
               <li>
                 <a href="/articles?category=research" className="hover:underline opacity-90 hover:opacity-100">
                   {t('research')}
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4">{t('legal')}</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <a href="/privacy" className="hover:underline opacity-90 hover:opacity-100">
+                  {t('privacy')}
+                </a>
+              </li>
+              <li>
+                <a href="/terms" className="hover:underline opacity-90 hover:opacity-100">
+                  {t('terms')}
                 </a>
               </li>
             </ul>

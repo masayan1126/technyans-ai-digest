@@ -25,6 +25,9 @@ const HeaderContent: React.FC = () => {
             <a href="/articles" className="hover:underline">
               {t('articles')}
             </a>
+            <a href="/benchmarks" className="hover:underline">
+              {t('benchmarks')}
+            </a>
             <a href="/history" className="hover:underline">
               {t('history')}
             </a>
@@ -61,6 +64,9 @@ const HeaderContent: React.FC = () => {
               </a>
               <a href="/articles" className="hover:underline">
                 {t('articles')}
+              </a>
+              <a href="/benchmarks" className="hover:underline">
+                {t('benchmarks')}
               </a>
               <a href="/history" className="hover:underline">
                 {t('history')}
