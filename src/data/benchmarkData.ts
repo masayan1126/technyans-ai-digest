@@ -159,6 +159,17 @@ export const benchmarks: Benchmark[] = [
     higherIsBetter: true,
   },
   {
+    id: 'gpqa-diamond',
+    name: 'GPQA Diamond',
+    category: 'reasoning',
+    description: {
+      en: 'Tests graduate-level scientific knowledge across multiple domains',
+      ja: '複数ドメインにわたる大学院レベルの科学知識をテスト',
+    },
+    unit: '%',
+    higherIsBetter: true,
+  },
+  {
     id: 'mmmu-pro',
     name: 'MMMU-Pro',
     category: 'multimodal',
@@ -350,6 +361,11 @@ export const modelScores: ModelScore[] = [
   },
   {
     modelId: 'gemini-3-pro',
+    benchmarkId: 'gpqa-diamond',
+    score: { value: '91.9', verified: false, note: 'Verification pending' },
+  },
+  {
+    modelId: 'gemini-3-pro',
     benchmarkId: 'mmmu-pro',
     score: { value: '81.0', verified: true },
   },
@@ -439,6 +455,11 @@ export const modelScores: ModelScore[] = [
     modelId: 'gemini-2.5-pro',
     benchmarkId: 'arc-agi-2',
     score: { value: '4.9', verified: true },
+  },
+  {
+    modelId: 'gemini-2.5-pro',
+    benchmarkId: 'gpqa-diamond',
+    score: { value: '86.4', verified: false, note: 'Verification pending' },
   },
   {
     modelId: 'gemini-2.5-pro',
@@ -534,6 +555,11 @@ export const modelScores: ModelScore[] = [
   },
   {
     modelId: 'claude-sonnet-4.5',
+    benchmarkId: 'gpqa-diamond',
+    score: { value: '83.4', verified: false, note: 'Verification pending' },
+  },
+  {
+    modelId: 'claude-sonnet-4.5',
     benchmarkId: 'mmmu-pro',
     score: { value: '68.0', verified: true },
   },
@@ -626,8 +652,13 @@ export const modelScores: ModelScore[] = [
   },
   {
     modelId: 'gpt-5.1',
+    benchmarkId: 'gpqa-diamond',
+    score: { value: '88.1', verified: false, note: 'Verification pending' },
+  },
+  {
+    modelId: 'gpt-5.1',
     benchmarkId: 'mmmu-pro',
-    score: { value: '80.8', verified: false, note: 'Verification pending' },
+    score: { value: '76.0', verified: false, note: 'Verification pending' },
   },
   {
     modelId: 'gpt-5.1',
