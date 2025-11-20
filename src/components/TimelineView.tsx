@@ -1,16 +1,16 @@
 import { useRef, useState } from 'react';
-import type { ArticleWithLocale } from '../utils/historyUtils';
+import type { SerializedArticle } from '../utils/historyUtils';
 import { formatDate } from '../utils/historyUtils';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { useI18n } from './I18nProvider';
 import BookmarkButton from './BookmarkButton';
 
 interface TimelineViewProps {
-  articles: ArticleWithLocale[];
+  articles: SerializedArticle[];
 }
 
 interface TimelineItemProps {
-  article: ArticleWithLocale;
+  article: SerializedArticle;
   position: 'left' | 'right';
   index: number;
 }

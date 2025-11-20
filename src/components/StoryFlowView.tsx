@@ -1,16 +1,16 @@
 import { useRef, useState } from 'react';
-import type { ArticleWithLocale } from '../utils/historyUtils';
+import type { SerializedArticle } from '../utils/historyUtils';
 import { formatDate } from '../utils/historyUtils';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { useI18n } from './I18nProvider';
 import BookmarkButton from './BookmarkButton';
 
 interface StoryFlowViewProps {
-  articles: ArticleWithLocale[];
+  articles: SerializedArticle[];
 }
 
 interface StoryArticleSectionProps {
-  article: ArticleWithLocale;
+  article: SerializedArticle;
   index: number;
 }
 

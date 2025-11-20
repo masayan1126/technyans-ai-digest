@@ -1,30 +1,42 @@
 import type { CollectionEntry } from 'astro:content';
 
-export interface ArticleWithLocale extends CollectionEntry<'articles'> {
-  data: CollectionEntry<'articles'>['data'];
+export type ArticleWithLocale = CollectionEntry<'articles'>;
+
+// Serialized version of ArticleWithLocale for client-side components
+export interface SerializedArticle {
+  slug: string;
+  data: {
+    title: string;
+    description: string;
+    date: Date;
+    category: string;
+    tags: string[];
+    locale: 'en' | 'ja';
+    technyanComment?: string;
+  };
 }
 
-export interface GroupedByYear {
+export interface GroupedByYear<T = ArticleWithLocale | SerializedArticle> {
   year: number;
-  months: GroupedByMonth[];
+  months: GroupedByMonth<T>[];
 }
 
-export interface GroupedByMonth {
+export interface GroupedByMonth<T = ArticleWithLocale | SerializedArticle> {
   year: number;
   month: number;
   monthName: string;
-  articles: ArticleWithLocale[];
+  articles: T[];
 }
 
-export interface ArticleWithImpact extends ArticleWithLocale {
+export type ArticleWithImpact = ArticleWithLocale & {
   impactScore: number;
-}
+};
 
 /**
  * Calculate impact score for an article
  * Based on: tags count, technyan comment presence, category weight
  */
-export function calculateImpactScore(article: ArticleWithLocale): number {
+export function calculateImpactScore(article: ArticleWithLocale | SerializedArticle): number {
   let score = 50; // Base score
 
   // Tags contribute to impact
@@ -54,7 +66,7 @@ export function calculateImpactScore(article: ArticleWithLocale): number {
 /**
  * Sort articles by date (newest first)
  */
-export function sortArticlesByDate(articles: ArticleWithLocale[]): ArticleWithLocale[] {
+export function sortArticlesByDate<T extends ArticleWithLocale | SerializedArticle>(articles: T[]): T[] {
   return [...articles].sort((a, b) => {
     return b.data.date.getTime() - a.data.date.getTime();
   });
@@ -63,9 +75,9 @@ export function sortArticlesByDate(articles: ArticleWithLocale[]): ArticleWithLo
 /**
  * Group articles by year
  */
-export function groupArticlesByYear(articles: ArticleWithLocale[]): GroupedByYear[] {
+export function groupArticlesByYear<T extends ArticleWithLocale | SerializedArticle>(articles: T[]): GroupedByYear<T>[] {
   const sorted = sortArticlesByDate(articles);
-  const yearMap = new Map<number, ArticleWithLocale[]>();
+  const yearMap = new Map<number, T[]>();
 
   sorted.forEach(article => {
     const year = article.data.date.getFullYear();
@@ -75,7 +87,7 @@ export function groupArticlesByYear(articles: ArticleWithLocale[]): GroupedByYea
     yearMap.get(year)!.push(article);
   });
 
-  const result: GroupedByYear[] = [];
+  const result: GroupedByYear<T>[] = [];
   const years = Array.from(yearMap.keys()).sort((a, b) => b - a);
 
   years.forEach(year => {
@@ -90,9 +102,9 @@ export function groupArticlesByYear(articles: ArticleWithLocale[]): GroupedByYea
 /**
  * Group articles by month
  */
-export function groupArticlesByMonth(articles: ArticleWithLocale[]): GroupedByMonth[] {
+export function groupArticlesByMonth<T extends ArticleWithLocale | SerializedArticle>(articles: T[]): GroupedByMonth<T>[] {
   const sorted = sortArticlesByDate(articles);
-  const monthMap = new Map<string, ArticleWithLocale[]>();
+  const monthMap = new Map<string, T[]>();
 
   sorted.forEach(article => {
     const year = article.data.date.getFullYear();
@@ -105,7 +117,7 @@ export function groupArticlesByMonth(articles: ArticleWithLocale[]): GroupedByMo
     monthMap.get(key)!.push(article);
   });
 
-  const result: GroupedByMonth[] = [];
+  const result: GroupedByMonth<T>[] = [];
   const sortedKeys = Array.from(monthMap.keys()).sort((a, b) => {
     const [yearA, monthA] = a.split('-').map(Number);
     const [yearB, monthB] = b.split('-').map(Number);
@@ -134,7 +146,7 @@ export function getMonthName(month: number, locale: 'en' | 'ja' = 'en'): string 
 /**
  * Add impact scores to articles
  */
-export function addImpactScores(articles: ArticleWithLocale[]): ArticleWithImpact[] {
+export function addImpactScores<T extends ArticleWithLocale | SerializedArticle>(articles: T[]): (T & { impactScore: number })[] {
   return articles.map(article => ({
     ...article,
     impactScore: calculateImpactScore(article),
