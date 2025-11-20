@@ -18,7 +18,7 @@ const HeaderContent: React.FC = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden nav:flex items-center space-x-6">
             <a href="/" className="hover:underline">
               {t('home')}
             </a>
@@ -41,7 +41,7 @@ const HeaderContent: React.FC = () => {
           </div>
 
           {/* Mobile: Language Switcher and Menu Button */}
-          <div className="md:hidden flex items-center space-x-3">
+          <div className="nav:hidden flex items-center space-x-3">
             <LanguageSwitcher />
             <button
               className="w-10 h-10 flex flex-col items-center justify-center space-y-1.5"
@@ -57,7 +57,7 @@ const HeaderContent: React.FC = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden border-t-1.5 border-navy py-4">
+          <div className="nav:hidden border-t-1.5 border-navy py-4">
             <div className="flex flex-col space-y-4">
               <a href="/" className="hover:underline">
                 {t('home')}
