@@ -13,6 +13,7 @@
     "test:report": "playwright show-report"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.5",
     "@astrojs/react": "^3.6.2",
     "@astrojs/sitemap": "^3.6.0",
     "@astrojs/tailwind": "^5.1.2",
@@ -27,6 +28,6 @@
   "devDependencies": {
     "@playwright/test": "^1.56.1",
     "@tailwindcss/typography": "^0.5.15",
-    "typescript": "^5.7.2"
+    "typescript": "^5.9.3"
   }
 }
