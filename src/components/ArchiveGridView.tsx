@@ -1,15 +1,15 @@
 import { useState } from 'react';
-import type { ArticleWithLocale } from '../utils/historyUtils';
+import type { SerializedArticle } from '../utils/historyUtils';
 import { groupArticlesByMonth } from '../utils/historyUtils';
 import { useI18n } from './I18nProvider';
 import BookmarkButton from './BookmarkButton';
 
 interface ArchiveGridViewProps {
-  articles: ArticleWithLocale[];
+  articles: SerializedArticle[];
 }
 
 interface CompactArticleCardProps {
-  article: ArticleWithLocale;
+  article: SerializedArticle;
 }
 
 function CompactArticleCard({ article }: CompactArticleCardProps) {

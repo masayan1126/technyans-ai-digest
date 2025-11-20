@@ -6,7 +6,7 @@ import MilestoneView from './MilestoneView';
 import ImpactMapView from './ImpactMapView';
 import ArchiveGridView from './ArchiveGridView';
 import StoryFlowView from './StoryFlowView';
-import type { ArticleWithLocale } from '../utils/historyUtils';
+import type { SerializedArticle } from '../utils/historyUtils';
 import { sortArticlesByDate } from '../utils/historyUtils';
 
 interface HistoryPageProps {
@@ -44,8 +44,8 @@ function HistoryPageInner({ articles }: HistoryPageProps) {
     localStorage.setItem(STORAGE_KEY, view);
   };
 
-  // Convert articles to ArticleWithLocale format and filter by locale
-  const convertedArticles: ArticleWithLocale[] = articles
+  // Convert articles to SerializedArticle format and filter by locale
+  const convertedArticles: SerializedArticle[] = articles
     .filter((article) => article.data.locale === locale)
     .map((article) => ({
       slug: article.slug,

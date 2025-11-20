@@ -33,7 +33,7 @@ const NotFoundPageContentInner: React.FC = () => {
           {t('goToHomepage')}
         </a>
         <a href="/articles" className="btn-secondary text-center">
-          {t('browseArticles')}
+          {t('allArticles')}
         </a>
       </div>
 

@@ -1,15 +1,15 @@
 import { useState } from 'react';
-import type { ArticleWithLocale } from '../utils/historyUtils';
+import type { SerializedArticle } from '../utils/historyUtils';
 import { addImpactScores, getImpactSizeClass, formatDate } from '../utils/historyUtils';
 import { useI18n } from './I18nProvider';
 import BookmarkButton from './BookmarkButton';
 
 interface ImpactMapViewProps {
-  articles: ArticleWithLocale[];
+  articles: SerializedArticle[];
 }
 
 interface ImpactArticleCardProps {
-  article: ArticleWithLocale;
+  article: SerializedArticle;
   impactScore: number;
 }
 
