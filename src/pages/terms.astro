@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TermsPageContent from '../components/TermsPageContent';
+---
+
+<BaseLayout
+  title="Terms of Service - Technyan's AI Digests"
+  description="Terms of Service for Technyan's AI Digests. Learn about the rules and guidelines for using our website."
+>
+  <div class="container-custom py-12 md:py-20">
+    <TermsPageContent client:load />
+  </div>
+</BaseLayout>

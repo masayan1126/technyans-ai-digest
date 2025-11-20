@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BenchmarkPageWrapper from '../components/benchmark/BenchmarkPageWrapper';
+---
+
+<BaseLayout
+  title="AI Model Benchmark Comparison - Technyan's AI Digests"
+  description="Technyan's friendly guide to understanding AI model benchmarks! Compare Gemini 3 Pro, Claude Sonnet 4.5, and GPT-5.1."
+>
+  <BenchmarkPageWrapper client:only="react" />
+</BaseLayout>
+
+<style>
+  .border-1\.5 {
+    border-width: 1.5px;
+  }
+</style>
