@@ -2,7 +2,7 @@
 title: "Microsoft Azure：ClaudeとGPT両方を提供する唯一のクラウド"
 description: "Microsoft Azureが、AnthropicのClaudeとOpenAIのGPTモデルの両方にアクセスできる唯一のクラウドプラットフォームに。Microsoft、NVIDIA、Anthropicによる450億ドル規模のパートナーシップとともに発表され、エンタープライズAIにおけるAzureの独自の地位を確立。"
 date: 2025-11-18
-category: "クラウドプラットフォーム"
+category: "Investment"
 impactLevel: "high"
 tags: ["Microsoft Azure", "Anthropic", "Claude", "GPT", "OpenAI", "クラウドコンピューティング", "エンタープライズAI"]
 relatedCompanies: ["Microsoft", "Anthropic", "NVIDIA", "OpenAI"]
