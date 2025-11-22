@@ -3,7 +3,7 @@ title: "What is TOON? New AI-Optimized Format Achieves 30-60% Token Reduction Ov
 description: "TOON (Token-Oriented Object Notation), a new data format optimized for AI/LLMs, achieves up to 60% token reduction compared to JSON with improved accuracy, earning 18.1k+ GitHub stars."
 date: 2025-11-21
 category: "Other"
-tags: ["TOON", "Data Format", "JSON", "YAML", "Token Optimization", "LLM", "AI Technology"]
+tags: ["AI", "LLM", "Developer Tools", "開発者ツール", "Open Source", "オープンソース", "Generative AI"]
 locale: "en"
 technyanComment: "TOON cuts AI conversation costs by up to 60%! By eliminating JSON's redundant brackets and using CSV-style tables, it's a win-win with improved LLM comprehension!"
 ---

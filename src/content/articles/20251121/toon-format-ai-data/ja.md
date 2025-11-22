@@ -3,7 +3,7 @@ title: "AIのために設計された新フォーマット「TOON」とは？JSO
 description: "AI/LLM向けに最適化された新しいデータフォーマット「TOON（Token-Oriented Object Notation）」が登場。JSONより最大60%のトークン削減と精度向上を実現し、GitHub18.1k+のスターを獲得。"
 date: 2025-11-21
 category: "Other"
-tags: ["TOON", "データフォーマット", "JSON", "YAML", "トークン最適化", "LLM", "AI技術"]
+tags: ["AI", "LLM", "Developer Tools", "開発者ツール", "Open Source", "オープンソース", "Generative AI", "生成AI"]
 locale: "ja"
 technyanComment: "AIとの会話コストが最大60%削減できるTOON！JSONの冗長な括弧を省いて、テーブルデータはCSV風に。LLMの理解精度も上がるなんて一石二鳥だにゃ！"
 ---
