@@ -3,7 +3,7 @@ title: "Cursor 2.1 Adds Improved Plan Mode and AI Code Review Features"
 description: "On November 21, 2025, Cursor released version 2.1, introducing an improved Plan Mode with interactive question UI, in-editor AI code reviews, and Instant Grep feature for enhanced developer productivity."
 date: 2025-11-22
 category: "Other"
-tags: ["Cursor", "AI", "Code Editor", "Developer Tools", "Plan Mode", "Code Review", "Grep", "Coding Assistant"]
+tags: ["Cursor", "AI", "Code Editor", "Developer Tools", "Coding Assistant", "IDE"]
 locale: "en"
 technyanComment: "Cursor 2.1's improved Plan Mode is fantastic! The interactive question UI helps clarify ambiguous requirements, leading to more accurate plans. The in-editor AI code review dramatically improves the development flow—you can catch issues in real-time while coding without going to GitHub. Instant Grep might seem minor, but it's crucial for speeding up agent responses, making the entire development experience more fluid!"
 ---
