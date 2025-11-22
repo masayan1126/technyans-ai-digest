@@ -250,6 +250,41 @@ const otherLangUrl = `/articles/${otherLang}/${articleSlug}`;
     border-radius: 4px;
     font-style: italic;
   }
+
+  /* テーブルのレスポンシブ対応 */
+  .article-content :global(.table-wrapper) {
+    width: 100%;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    border: 1.5px solid #0c2340;
+  }
+
+  .article-content :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 500px; /* 最小幅を設定してスクロールを促す */
+  }
+
+  .article-content :global(th),
+  .article-content :global(td) {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border: 1px solid #0c2340;
+  }
+
+  .article-content :global(th) {
+    background-color: #0c2340;
+    color: #fff6d0;
+    font-weight: 600;
+  }
+
+  .article-content :global(tbody tr:nth-child(even)) {
+    background-color: rgba(255, 246, 208, 0.3);
+  }
+
+  .article-content :global(tbody tr:hover) {
+    background-color: rgba(255, 246, 208, 0.5);
+  }
 </style>
 
 <script>
@@ -257,6 +292,17 @@ const otherLangUrl = `/articles/${otherLang}/${articleSlug}`;
   document.addEventListener('DOMContentLoaded', () => {
     const article = document.querySelector('.article-content');
     if (!article) return;
+
+    // テーブルをラッパーで囲む（横スクロール対応）
+    const tables = article.querySelectorAll('table');
+    tables.forEach((table) => {
+      if (!table.parentElement?.classList.contains('table-wrapper')) {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'table-wrapper';
+        table.parentNode?.insertBefore(wrapper, table);
+        wrapper.appendChild(table);
+      }
+    });
 
     // 日本語版と英語版の両方に対応
     const headers = article.querySelectorAll('h2');
