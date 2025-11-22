@@ -10,7 +10,9 @@
     "astro": "astro",
     "test": "npm run build && playwright test",
     "test:ui": "npm run build && playwright test --ui",
-    "test:report": "playwright show-report"
+    "test:report": "playwright show-report",
+    "validate-tags": "tsx scripts/validate-tags.ts",
+    "prebuild": "npm run validate-tags"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.5",
@@ -28,6 +30,8 @@
   "devDependencies": {
     "@playwright/test": "^1.56.1",
     "@tailwindcss/typography": "^0.5.15",
-    "typescript": "^5.9.3"
+    "tsx": "^4.19.2",
+    "typescript": "^5.9.3",
+    "yaml": "^2.6.1"
   }
 }
