@@ -3,7 +3,7 @@ title: "Microsoft & NvidiaがAnthropicに投資、300億ドルのAzureコミッ�
 description: "2025年11月18日、MicrosoftとNvidiaがClaude開発元のAnthropicに投資し、AnthropicはMicrosoft Azureに300億ドルを投じることを発表。OpenAIのライバルとAI業界の主要プレーヤーを結びつける大型提携。"
 date: 2025-11-18
 category: "Claude"
-tags: ["Anthropic", "Claude", "Microsoft", "Azure", "Nvidia", "AI Infrastructure", "AIインフラ", "Cloud Computing", "クラウドコンピューティング", "Investment", "投資"]
+tags: ["Anthropic", "Claude", "Microsoft", "Microsoft Azure", "Nvidia", "AI", "Infrastructure", "インフラ", "Cloud Computing", "クラウドコンピューティング", "AI Investment", "Investment"]
 locale: "ja"
 technyanComment: "これは本当に業界を揺るがす大きなニュースだよ！MicrosoftはOpenAIに深く投資しているのに、そのライバルであるAnthropicにも投資するんだ。これは戦略的な多様化だね。300億ドルのAzureコミットメントは、OpenAIの380億ドルのAmazon Web Services契約に匹敵する規模。そして、AIチップのリーダーNvidiaも参加することで、この提携はAIインフラの全スタックをカバーする。Anthropicにとっては、スケールアップに必要な計算資源と資金を確保し、Microsoftにとっては、OpenAIへの依存度を下げながらAI市場でのリーダーシップを維持できる。まさにWin-Winの関係だね！"
 ---
