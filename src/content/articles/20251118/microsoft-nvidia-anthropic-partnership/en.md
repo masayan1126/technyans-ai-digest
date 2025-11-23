@@ -3,7 +3,7 @@ title: "Microsoft & Nvidia Invest in Anthropic with $30B Azure Commitment"
 description: "On November 18, 2025, Microsoft and Nvidia announced investments in Anthropic, the creator of Claude AI, with a $30 billion commitment to Microsoft Azure. A major partnership connecting OpenAI's rival with key AI industry players."
 date: 2025-11-18
 category: "Claude"
-tags: ["Anthropic", "Claude", "Microsoft", "Azure", "Nvidia", "AI Infrastructure", "Cloud Computing", "Investment"]
+tags: ["Anthropic", "Claude", "Microsoft", "Microsoft Azure", "Nvidia", "AI", "Infrastructure", "Cloud Computing", "AI Investment", "Investment"]
 locale: "en"
 technyanComment: "This is truly industry-shaking news! Microsoft is deeply invested in OpenAI, yet they're also investing in its rival, Anthropic. This is strategic diversification at its finest. The $30 billion Azure commitment rivals OpenAI's $38 billion Amazon Web Services deal. And with Nvidia, the AI chip leader, joining in, this partnership covers the full stack of AI infrastructure. For Anthropic, it's securing the compute resources and funding needed to scale up. For Microsoft, it's reducing dependence on OpenAI while maintaining AI market leadership. It's a true win-win relationship!"
 ---

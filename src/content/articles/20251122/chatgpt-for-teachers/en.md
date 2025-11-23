@@ -3,7 +3,7 @@ title: "OpenAI Launches ChatGPT for Teachers, Free Through June 2027"
 description: "On November 19, 2025, OpenAI announced ChatGPT for Teachers, a specialized platform for U.S. K-12 educators. Features include FERPA-compliant secure workspace, educator collaboration tools, and administrative controls, available free through June 2027."
 date: 2025-11-22
 category: "ChatGPT"
-tags: ["OpenAI", "ChatGPT", "Education", "K-12", "Teachers", "FERPA", "EdTech", "AI in Education"]
+tags: ["OpenAI", "ChatGPT", "AI", "Enterprise AI", "Cloud Computing"]
 locale: "en"
 technyanComment: "This is a crucial step forward in bringing AI to education! What's excellent is that OpenAI didn't just provide access to ChatGPT, but built a dedicated platform tailored to educators' needs. FERPA-compliant secure workspace, school and district-wide collaboration features, and administrative controls—these are essential elements for actually deploying AI in educational settings. The free access through June 2027 provides ample time for educators to experiment with AI tools and learn how to integrate them into education. However, we need to carefully monitor how AI affects student learning. The balance between reducing teacher workload and AI dependency is crucial!"
 ---
