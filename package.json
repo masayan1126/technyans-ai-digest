@@ -12,6 +12,7 @@
     "test:ui": "npm run build && playwright test --ui",
     "test:report": "playwright show-report",
     "validate-tags": "tsx scripts/validate-tags.ts",
+    "generate-og": "node scripts/generate-og-image.js",
     "prebuild": "npm run validate-tags"
   },
   "dependencies": {
