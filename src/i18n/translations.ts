@@ -21,6 +21,8 @@ export const translations = {
     majorPlayers: 'Daimyo Lords',
     investments: 'Alliances',
     partnerships: 'Strategic Pacts',
+    aiImpactTimelineTitle: 'Major AI Industry Events',
+    aiImpactTimelineDescription: 'Key milestones and strategic moves that shaped the AI battlefield in recent months.',
 
     // Footer
     legal: 'Legal',
@@ -318,6 +320,8 @@ export const translations = {
     majorPlayers: '戦国大名',
     investments: '同盟関係',
     partnerships: '盟約',
+    aiImpactTimelineTitle: 'AI業界の主要な動き',
+    aiImpactTimelineDescription: 'AI戦国の覇権を左右した、近ヶ月の重要なマイルストーンと戦略的な動き。',
 
     // Footer
     legal: '法的情報',
