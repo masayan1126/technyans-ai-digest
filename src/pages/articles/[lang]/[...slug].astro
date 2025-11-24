@@ -2,8 +2,6 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
-export const prerender = true;
-
 export async function getStaticPaths() {
   const articles = await getCollection('articles');
 
@@ -61,8 +59,6 @@ const otherLangUrl = `/articles/${otherLang}/${articleSlug}`;
   ogTitle={article.data.title}
   ogDescription={article.data.description}
   ogType="article"
-  category={article.data.category}
-  pageType="article"
 >
   <article class="container-custom py-12 md:py-20">
     <!-- Language Switcher -->
