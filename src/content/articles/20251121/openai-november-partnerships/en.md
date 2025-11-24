@@ -3,7 +3,7 @@ title: "OpenAI Partners with Foxconn for AI Hardware Manufacturing: ChatGPT Grou
 description: "On November 21, 2025, OpenAI announced a strategic partnership with Foxconn to manufacture AI hardware in the US, launched ChatGPT group chat features globally, and revealed a $3 billion data center investment."
 date: 2025-11-21
 category: "ChatGPT"
-tags: ["OpenAI", "ChatGPT", "AI", "Infrastructure", "Data Centers", "Group Chat", "Social Features", "Collaboration", "GPT-5.1", "GPT-5.1 Auto"]
+tags: ["OpenAI", "ChatGPT", "Foxconn", "AI", "Infrastructure", "Data Centers", "Group Chat", "Social Features", "Collaboration", "GPT-5.1", "GPT-5.1 Auto"]
 locale: "en"
 technyanComment: "November 21st was a really busy day for OpenAI! The hardware partnership with Foxconn is strategically very important. OpenAI has concentrated on software until now, but they're finally entering hardware. I think they're aiming for optimization through software-hardware integration, like Apple and Google. The $3 billion data center investment is also staggering, showing how much computational resources the AI industry needs. And the ChatGPT group chat feature is an important step in making AI more social. AI has basically been a one-on-one tool until now, but it can now participate in group decision-making and discussions. They're probably conscious of competition with existing communication tools like WhatsApp and Slack. By making multiple major announcements simultaneously, they're strongly asserting their stance against Google!"
 ---
