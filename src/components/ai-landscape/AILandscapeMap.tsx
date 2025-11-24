@@ -12,6 +12,8 @@ interface AICompany {
   flagshipJa: string;
   position: { x: number; y: number };
   color: string;
+  icon: string; // busho warrior icon image path
+  size: number; // icon size in pixels
 }
 
 interface Investment {
@@ -28,110 +30,128 @@ const companies: AICompany[] = [
     id: 'microsoft',
     name: 'Microsoft',
     nameJa: 'Microsoft',
-    description: 'Major investor in OpenAI and other AI companies',
-    descriptionJa: 'OpenAIなど多数のAI企業への主要投資家',
+    description: 'Mighty daimyo backing OpenAI and other rising clans',
+    descriptionJa: 'OpenAIなど新興勢力を支援する強大な大名',
     category: 'bigtech',
     flagship: 'Azure AI, Copilot',
     flagshipJa: 'Azure AI、Copilot',
-    position: { x: 20, y: 30 },
+    position: { x: 12, y: 25 },
     color: '#00A4EF',
+    icon: '/technyans/png/busyo/tecnyan-busho4.png',
+    size: 200,
   },
   {
     id: 'google',
     name: 'Google (Alphabet)',
     nameJa: 'Google (Alphabet)',
-    description: 'Owner of DeepMind, major investor in Anthropic',
-    descriptionJa: 'DeepMindの親会社、Anthropicへの主要投資家',
+    description: 'DeepMind\'s lord, supporting Anthropic clan',
+    descriptionJa: 'DeepMind配下の大名、Anthropic勢力を支援',
     category: 'bigtech',
     flagship: 'Gemini, DeepMind',
     flagshipJa: 'Gemini、DeepMind',
-    position: { x: 70, y: 25 },
+    position: { x: 85, y: 28 },
     color: '#4285F4',
+    icon: '/technyans/png/busyo/tecnyan-busho8.png',
+    size: 300,
   },
   {
     id: 'amazon',
     name: 'Amazon',
     nameJa: 'Amazon',
-    description: 'Major investor in Anthropic',
-    descriptionJa: 'Anthropicへの主要投資家',
+    description: 'Powerful daimyo allied with Anthropic',
+    descriptionJa: 'Anthropicと同盟を結ぶ強力な大名',
     category: 'bigtech',
     flagship: 'AWS AI, Bedrock',
     flagshipJa: 'AWS AI、Bedrock',
-    position: { x: 75, y: 65 },
+    position: { x: 85, y: 80 },
     color: '#FF9900',
+    icon: '/technyans/png/busyo/tecnyan-busho9.png',
+    size: 190,
   },
   {
     id: 'meta',
     name: 'Meta',
     nameJa: 'Meta',
-    description: 'Open source AI leader',
-    descriptionJa: 'オープンソースAIのリーダー',
+    description: 'Daimyo championing open-source AI path',
+    descriptionJa: 'オープンソースAIを掲げる大名',
     category: 'bigtech',
     flagship: 'Llama',
     flagshipJa: 'Llama',
-    position: { x: 15, y: 70 },
+    position: { x: 38, y: 87 },
     color: '#0866FF',
+    icon: '/technyans/png/busyo/tecnyan-busho2.png',
+    size: 110,
   },
   {
     id: 'nvidia',
     name: 'NVIDIA',
     nameJa: 'NVIDIA',
-    description: 'AI chip leader, investor in multiple AI startups',
-    descriptionJa: 'AIチップのリーダー、多数のAI企業への投資家',
+    description: 'AI weapon forge master, arming multiple clans',
+    descriptionJa: 'AI武器鍛冶の棟梁、多数の勢力に武器供給',
     category: 'bigtech',
     flagship: 'CUDA, H100',
     flagshipJa: 'CUDA、H100',
-    position: { x: 45, y: 10 },
+    position: { x: 35, y: 15 },
     color: '#76B900',
+    icon: '/technyans/png/busyo/tecnyan-busho6.png',
+    size: 110,
   },
   // Startups
   {
     id: 'openai',
     name: 'OpenAI',
     nameJa: 'OpenAI',
-    description: 'Creator of ChatGPT, backed by Microsoft',
-    descriptionJa: 'ChatGPTの開発元、Microsoft支援',
+    description: 'Rising clan wielding ChatGPT, allied with Microsoft',
+    descriptionJa: 'ChatGPTを操る新興勢力、Microsoft同盟',
     category: 'startup',
     flagship: 'ChatGPT, GPT-4',
     flagshipJa: 'ChatGPT、GPT-4',
-    position: { x: 30, y: 45 },
+    position: { x: 28, y: 55 },
     color: '#10A37F',
+    icon: '/technyans/png/busyo/tecnyan-busho3.png',
+    size: 280,
   },
   {
     id: 'anthropic',
     name: 'Anthropic',
     nameJa: 'Anthropic',
-    description: 'Creator of Claude, backed by Google & Amazon',
-    descriptionJa: 'Claudeの開発元、Google・Amazon支援',
+    description: 'Claude clan, supported by Google & Amazon lords',
+    descriptionJa: 'Claude勢力、Google・Amazon両大名の支援を受ける',
     category: 'startup',
     flagship: 'Claude',
     flagshipJa: 'Claude',
-    position: { x: 65, y: 50 },
+    position: { x: 57, y: 48 },
     color: '#D4A373',
+    icon: '/technyans/png/busyo/tecnyan-busho5.png',
+    size: 300,
   },
   {
     id: 'xai',
     name: 'xAI',
     nameJa: 'xAI',
-    description: 'Elon Musk\'s AI company',
-    descriptionJa: 'Elon Muskのプロジェクト',
+    description: 'Elon Musk\'s independent warrior clan',
+    descriptionJa: 'Elon Muskが率いる独立勢力',
     category: 'startup',
     flagship: 'Grok',
     flagshipJa: 'Grok',
-    position: { x: 40, y: 75 },
+    position: { x: 60, y: 87 },
     color: '#000000',
+    icon: '/technyans/png/busyo/tecnyan-busho7.png',
+    size: 110,
   },
   {
     id: 'mistral',
     name: 'Mistral AI',
     nameJa: 'Mistral AI',
-    description: 'European AI leader, backed by Microsoft',
-    descriptionJa: 'ヨーロッパのAIリーダー、Microsoft支援',
+    description: 'European rising force, allied with Microsoft',
+    descriptionJa: 'ヨーロッパの新興勢力、Microsoft同盟',
     category: 'startup',
     flagship: 'Mistral',
     flagshipJa: 'Mistral',
-    position: { x: 25, y: 55 },
+    position: { x: 8, y: 68 },
     color: '#F2A900',
+    icon: '/technyans/png/busyo/tecnyan-busho1.png',
+    size: 110,
   },
 ];
 
@@ -186,16 +206,20 @@ const AILandscapeMap: React.FC = () => {
   return (
     <div className="w-full">
       {/* Map Container */}
-      <div className="relative w-full bg-cream border-2 border-navy rounded-lg overflow-hidden" style={{ height: '600px' }}>
-        {/* Grid Background */}
-        <div className="absolute inset-0 opacity-10">
+      <div className="relative w-full bg-cream border-4 border-navy rounded-lg overflow-hidden shadow-2xl" style={{ height: '700px', backgroundImage: 'radial-gradient(circle, rgba(255,246,208,1) 0%, rgba(240,230,190,1) 100%)' }}>
+        {/* Japanese Paper Texture Background */}
+        <div className="absolute inset-0 opacity-5">
           <svg width="100%" height="100%">
             <defs>
-              <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="1" />
+              <pattern id="washi-pattern" width="60" height="60" patternUnits="userSpaceOnUse">
+                <circle cx="10" cy="10" r="1" fill="currentColor" opacity="0.3" />
+                <circle cx="30" cy="25" r="1.5" fill="currentColor" opacity="0.2" />
+                <circle cx="50" cy="15" r="1" fill="currentColor" opacity="0.25" />
+                <circle cx="20" cy="40" r="0.8" fill="currentColor" opacity="0.3" />
+                <circle cx="45" cy="50" r="1.2" fill="currentColor" opacity="0.2" />
               </pattern>
             </defs>
-            <rect width="100%" height="100%" fill="url(#grid)" />
+            <rect width="100%" height="100%" fill="url(#washi-pattern)" />
           </svg>
         </div>
 
@@ -256,31 +280,87 @@ const AILandscapeMap: React.FC = () => {
             >
               <div
                 className={`
-                  px-4 py-3 rounded-lg border-2 shadow-lg
+                  flex flex-col items-center gap-2
                   transition-all duration-200
-                  ${shouldHighlight ? 'opacity-100 scale-100' : 'opacity-50 scale-90'}
-                  ${isSelected || isHovered ? 'scale-110 shadow-2xl' : ''}
+                  ${shouldHighlight ? 'opacity-100 scale-100' : 'opacity-60 scale-90'}
+                  ${isSelected || isHovered ? 'scale-110' : ''}
                 `}
-                style={{
-                  backgroundColor: company.color,
-                  borderColor: '#1a1a2e',
-                }}
               >
-                <div className="text-white font-bold text-sm whitespace-nowrap">
-                  {locale === 'ja' ? company.nameJa : company.name}
+                {/* Warrior Icon */}
+                <div className={`
+                  rounded-full overflow-hidden shadow-lg border-4
+                  transition-all duration-200
+                  ${isSelected || isHovered ? 'border-yellow-600 shadow-2xl' : 'border-navy'}
+                `}
+                style={{ width: `${company.size}px`, height: `${company.size}px` }}>
+                  <img
+                    src={company.icon}
+                    alt={locale === 'ja' ? company.nameJa : company.name}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <div className="text-white text-xs opacity-90 whitespace-nowrap">
-                  {locale === 'ja' ? company.flagshipJa : company.flagship}
-                </div>
-                {company.category === 'bigtech' && (
-                  <div className="text-white text-xs mt-1 opacity-75">
-                    💰 {locale === 'ja' ? '投資家' : 'Investor'}
+
+                {/* Name Banner */}
+                <div
+                  className={`
+                    px-3 py-1.5 rounded border-2 shadow-md
+                    ${isSelected || isHovered ? 'border-yellow-600' : 'border-navy'}
+                  `}
+                  style={{
+                    backgroundColor: '#FFF6D0',
+                    fontSize: company.size > 120 ? '0.875rem' : '0.75rem',
+                  }}
+                >
+                  <div className="text-navy font-bold whitespace-nowrap text-center">
+                    {locale === 'ja' ? company.nameJa : company.name}
                   </div>
-                )}
+                </div>
               </div>
             </div>
           );
         })}
+
+        {/* Technyan's Hover Comment - Floating near warrior */}
+        {hoveredCompany && !selectedCompany && (() => {
+          const company = companies.find((c) => c.id === hoveredCompany);
+          if (!company) return null;
+
+          // Determine position: if x < 50, show on right; otherwise show on left
+          const showOnRight = company.position.x < 50;
+
+          // Calculate offset distance (half of icon size + some spacing)
+          const offsetDistance = (company.size / 2) + 20; // 20px spacing from icon edge
+
+          return (
+            <div
+              className="absolute z-30 pointer-events-none animate-bounce-in"
+              style={{
+                left: `calc(${company.position.x}% ${showOnRight ? '+' : '-'} ${offsetDistance}px)`,
+                top: `${company.position.y}%`,
+                transform: `translateY(-50%)`,
+                maxWidth: '280px',
+              }}
+            >
+              <div className="bg-cream border-2 border-navy px-3 py-2 rounded-lg shadow-[4px_4px_0px_0px_rgba(12,35,64,1)] flex items-center gap-3">
+                {/* Technyan Icon */}
+                <div className="flex-shrink-0 w-8 h-8 bg-cream border-2 border-navy rounded-full overflow-hidden">
+                  <img
+                    src="/technyan.webp"
+                    alt="Technyan"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                {/* Comment Text */}
+                <p className="text-xs md:text-sm font-medium text-navy leading-snug flex-1">
+                  {locale === 'ja'
+                    ? `${company.nameJa}は${company.flagshipJa}を開発・提供しているにゃん！`
+                    : `${company.name} develops ${company.flagship}, nya!`}
+                </p>
+              </div>
+            </div>
+          );
+        })()}
       </div>
 
       {/* Company Details Panel */}
@@ -320,7 +400,7 @@ const AILandscapeMap: React.FC = () => {
                 {investing.length > 0 && (
                   <div className="mt-4">
                     <h4 className="font-semibold text-navy mb-2">
-                      {locale === 'ja' ? '投資先:' : 'Investments:'}
+                      {locale === 'ja' ? '⚔️ 支援同盟先:' : '⚔️ Allied Clans:'}
                     </h4>
                     <ul className="space-y-2">
                       {investing.map((inv, idx) => {
@@ -344,7 +424,7 @@ const AILandscapeMap: React.FC = () => {
                 {receiving.length > 0 && (
                   <div className="mt-4">
                     <h4 className="font-semibold text-navy mb-2">
-                      {locale === 'ja' ? '投資元:' : 'Backed by:'}
+                      {locale === 'ja' ? '🏯 支援大名:' : '🏯 Backed by Lords:'}
                     </h4>
                     <ul className="space-y-2">
                       {receiving.map((inv, idx) => {
@@ -370,47 +450,44 @@ const AILandscapeMap: React.FC = () => {
         </div>
       )}
 
-      {/* Legend */}
-      <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="p-4 bg-white border-2 border-navy rounded-lg">
-          <h4 className="font-bold text-navy mb-2">
-            {locale === 'ja' ? 'ビッグテック' : 'Big Tech'}
-          </h4>
-          <p className="text-sm text-gray-600">
-            {locale === 'ja'
-              ? '主要な投資家として活動する大手テクノロジー企業'
-              : 'Major technology companies acting as primary investors'}
-          </p>
+      {/* Technyan's Hover Tooltip */}
+      {hoveredCompany && !selectedCompany && (
+        <div className="mt-6 bg-gradient-to-r from-amber-50 to-yellow-50 border-3 border-navy rounded-lg p-5 shadow-lg animate-fade-in">
+          <div className="flex items-start space-x-3">
+            <div className="text-3xl">🐱💭</div>
+            <div className="flex-1">
+              {(() => {
+                const company = companies.find((c) => c.id === hoveredCompany);
+                if (!company) return null;
+
+                return (
+                  <div>
+                    <h4 className="font-bold text-navy mb-1 text-base">
+                      {locale === 'ja'
+                        ? `${company.nameJa}の主力AI`
+                        : `${company.name}'s Flagship AI`}
+                    </h4>
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                      <span className="font-semibold text-navy">
+                        {locale === 'ja' ? company.flagshipJa : company.flagship}
+                      </span>
+                      {locale === 'ja'
+                        ? 'を開発・提供しているにゃん！'
+                        : ' - powered by this clan, nya!'}
+                    </p>
+                  </div>
+                );
+              })()}
+            </div>
+          </div>
         </div>
-        <div className="p-4 bg-white border-2 border-navy rounded-lg">
-          <h4 className="font-bold text-navy mb-2">
-            {locale === 'ja' ? 'AIスタートアップ' : 'AI Startups'}
-          </h4>
-          <p className="text-sm text-gray-600">
-            {locale === 'ja'
-              ? '最先端のAIモデルを開発する革新的な企業'
-              : 'Innovative companies developing cutting-edge AI models'}
-          </p>
-        </div>
-        <div className="p-4 bg-white border-2 border-navy rounded-lg">
-          <h4 className="font-bold text-navy mb-2">
-            {locale === 'ja' ? '投資関係' : 'Investment Relations'}
-          </h4>
-          <p className="text-sm text-gray-600">
-            <span className="inline-block w-8 h-0.5 bg-navy mr-2"></span>
-            {locale === 'ja' ? '実線: 投資' : 'Solid: Investment'}
-            <br />
-            <span className="inline-block w-8 h-0.5 bg-navy mr-2" style={{ backgroundImage: 'repeating-linear-gradient(to right, #1a1a2e 0, #1a1a2e 5px, transparent 5px, transparent 10px)' }}></span>
-            {locale === 'ja' ? '破線: パートナーシップ' : 'Dashed: Partnership'}
-          </p>
-        </div>
-      </div>
+      )}
 
       {/* Instruction */}
       <div className="mt-4 text-center text-sm text-gray-600">
         {locale === 'ja'
-          ? '💡 各企業をクリックして詳細情報を表示'
-          : '💡 Click on any company to see details'}
+          ? '💡 武将にカーソルを合わせてテクにゃんの解説を見る・クリックして詳細情報を表示'
+          : '💡 Hover over warriors for Technyan\'s insights・Click for details'}
       </div>
     </div>
   );
