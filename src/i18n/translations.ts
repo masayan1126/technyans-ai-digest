@@ -46,6 +46,10 @@ export const translations = {
     featureMultiViewDesc: 'Explore AI evolution history through timeline, milestone, impact map, and more - trace back and overview the journey in your preferred format.',
     featureTechnyanTitle: 'Grow with Tech-nyan',
     featureTechnyanDesc: 'Our adorable mascot Tech-nyan brings comfort and joy to your daily AI news catch-up.',
+    featureBenchmarksTitle: 'Compare AI Model Performance',
+    featureBenchmarksDesc: 'Track and compare performance metrics across different AI models and benchmarks.',
+    featureAISengokuTitle: 'Explore the AI Warring States',
+    featureAISengokuDesc: 'Visualize the AI industry landscape as a strategic battlefield of tech powers and alliances.',
 
     latestArticles: 'Latest Articles',
     viewAll: 'View All',
@@ -332,7 +336,7 @@ export const translations = {
 
     // Home Page
     latestAiNews: '最新AIニュース',
-    stayUpdatedWithAI: 'あなたのAI学習を、全力で応援',
+    stayUpdatedWithAI: 'あなたのAI学習を全力で応援',
     heroDescription: 'AIのキャッチアップは大変だけど、あなたは頑張ってる！毎日のAI情報収集を、もっと楽しく、もっと簡単に。一緒に最新情報を追いかけよう！',
     browseAllArticles: 'すべての記事を見る',
     aboutUs: 'このサイトについて',
@@ -345,6 +349,10 @@ export const translations = {
     featureMultiViewDesc: 'タイムライン、マイルストーン、インパクトマップなど、好みの形式でAI進化の歴史をさかのぼって俯瞰できます。',
     featureTechnyanTitle: 'テクにゃんと一緒に成長する',
     featureTechnyanDesc: '可愛いマスコット・テクにゃんが、毎日のAIニュースチェックに癒しと楽しさをプラスします。',
+    featureBenchmarksTitle: 'AIモデルのベンチマークを比較',
+    featureBenchmarksDesc: 'さまざまなAIモデルのベンチマークを確認し、性能を比較できます。',
+    featureAISengokuTitle: 'AI戦国時代を探索',
+    featureAISengokuDesc: 'AI業界を戦国時代の勢力図として可視化。テック大名と同盟関係を理解できます。',
 
     latestArticles: '最新記事',
     viewAll: 'すべて見る',
