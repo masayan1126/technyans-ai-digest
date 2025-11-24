@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://technyans-ai-digest.vercel.app',
+  site: 'https://technyanai.com',
   integrations: [
     react(),
     tailwind({
