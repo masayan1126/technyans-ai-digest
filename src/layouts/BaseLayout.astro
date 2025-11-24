@@ -25,8 +25,8 @@ const {
   pageType = 'website'
 } = Astro.props;
 
-// サイトのベースURL
-const siteUrl = Astro.site || 'https://technyanai.com';
+// サイトのベースURL（末尾のスラッシュを削除）
+const siteUrl = (Astro.site?.toString() || 'https://technyanai.com').replace(/\/$/, '');
 const currentUrl = new URL(Astro.url.pathname, siteUrl).toString();
 
 // OGP画像URLの生成
