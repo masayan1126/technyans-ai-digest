@@ -33,6 +33,7 @@
   "devDependencies": {
     "@playwright/test": "^1.56.1",
     "@tailwindcss/typography": "^0.5.15",
+    "sharp": "^0.34.5",
     "tsx": "^4.19.2",
     "typescript": "^5.9.3",
     "yaml": "^2.6.1"

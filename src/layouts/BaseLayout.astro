@@ -26,7 +26,7 @@ const siteUrl = (Astro.site?.toString() || 'https://technyanai.com').replace(/\/
 const currentUrl = new URL(Astro.url.pathname, siteUrl).toString();
 
 // OGP画像URLの生成（静的画像を使用）
-const ogImageUrl = ogImage || `${siteUrl}/og-with-technyan.png`;
+const ogImageUrl = ogImage || `${siteUrl}/og-with-technyan.webp`;
 
 const ogTitleText = ogTitle || title;
 const ogDescriptionText = ogDescription || description;
@@ -54,7 +54,8 @@ const ogDescriptionText = ogDescription || description;
     <meta property="og:image:secure_url" content={ogImageUrl} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:alt" content="Technyan's AI Digests - Your daily AI learning partner" />
     <meta property="og:site_name" content="Technyan's AI Digests" />
 
     <!-- Twitter -->
