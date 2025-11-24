@@ -51,13 +51,13 @@ const ogDescriptionText = ogDescription || description;
     <meta property="og:title" content={ogTitleText} />
     <meta property="og:description" content={ogDescriptionText} />
     <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:site_name" content="Technyan's AI Digests" />
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={currentUrl} />
-    <meta property="twitter:title" content={ogTitleText} />
-    <meta property="twitter:description" content={ogDescriptionText} />
-    <meta property="twitter:image" content={ogImageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={ogTitleText} />
+    <meta name="twitter:description" content={ogDescriptionText} />
+    <meta name="twitter:image" content={ogImageUrl} />
   </head>
   <body>
     <Header client:load />
