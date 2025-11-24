@@ -6,9 +6,47 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
+  ogType?: 'website' | 'article';
+  category?: string;
+  pageType?: string;
 }
 
-const { title, description = 'Technyan\'s AI Digests - Your daily dose of AI news and insights' } = Astro.props;
+const {
+  title,
+  description = 'Technyan\'s AI Digests - Your daily dose of AI news and insights',
+  ogTitle,
+  ogDescription,
+  ogImage,
+  ogType = 'website',
+  category,
+  pageType = 'website'
+} = Astro.props;
+
+// サイトのベースURL
+const siteUrl = Astro.site || 'https://technyanai.com';
+const currentUrl = new URL(Astro.url.pathname, siteUrl).toString();
+
+// OGP画像URLの生成
+const ogImageUrl = ogImage || (() => {
+  const params = new URLSearchParams();
+  params.set('title', ogTitle || title);
+  if (ogDescription || description) {
+    params.set('description', ogDescription || description);
+  }
+  if (category) {
+    params.set('category', category);
+  }
+  if (pageType) {
+    params.set('type', pageType);
+  }
+  return `${siteUrl}/api/og?${params.toString()}`;
+})();
+
+const ogTitleText = ogTitle || title;
+const ogDescriptionText = ogDescription || description;
 ---
 
 <!doctype html>
@@ -23,6 +61,21 @@ const { title, description = 'Technyan\'s AI Digests - Your daily dose of AI new
     <meta name="generator" content={Astro.generator} />
     <meta name="google-site-verification" content="PPzJV6WRRviz3g5uqCPJCeOQA1ZaogaeIXakNL5qcnQ" />
     <title>{title}</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={currentUrl} />
+    <meta property="og:title" content={ogTitleText} />
+    <meta property="og:description" content={ogDescriptionText} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:site_name" content="Technyan's AI Digests" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={currentUrl} />
+    <meta name="twitter:title" content={ogTitleText} />
+    <meta name="twitter:description" content={ogDescriptionText} />
+    <meta name="twitter:image" content={ogImageUrl} />
   </head>
   <body>
     <Header client:load />

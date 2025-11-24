@@ -3,7 +3,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import AboutPageContent from '../components/AboutPageContent';
 ---
 
-<BaseLayout title="About - Technyan's AI Digests" description="Learn about Technyan's AI Digests, your trusted source for AI news and insights">
+<BaseLayout
+  title="About - Technyan's AI Digests"
+  description="Learn about Technyan's AI Digests, your trusted source for AI news and insights"
+  pageType="about"
+>
   <div class="container-custom py-12 md:py-20">
     <AboutPageContent client:load />
   </div>

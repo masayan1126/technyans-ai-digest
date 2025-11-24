@@ -53,7 +53,15 @@ const articleSlug = slugParts.length >= 2 ? slugParts.slice(0, -1).join('/') : a
 const otherLangUrl = `/articles/${otherLang}/${articleSlug}`;
 ---
 
-<BaseLayout title={`${article.data.title} - Technyan's AI Digests`} description={article.data.description}>
+<BaseLayout
+  title={`${article.data.title} - Technyan's AI Digests`}
+  description={article.data.description}
+  ogTitle={article.data.title}
+  ogDescription={article.data.description}
+  ogType="article"
+  category={article.data.category}
+  pageType="article"
+>
   <article class="container-custom py-12 md:py-20">
     <!-- Language Switcher -->
     <div class="mb-4 text-right">
