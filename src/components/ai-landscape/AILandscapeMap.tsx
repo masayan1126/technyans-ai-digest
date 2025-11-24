@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useI18n } from '../I18nProvider';
 
 interface AICompany {
@@ -204,6 +204,27 @@ const AILandscapeMap: React.FC = () => {
   const { locale } = useI18n();
   const [selectedCompany, setSelectedCompany] = useState<string | null>(null);
   const [hoveredCompany, setHoveredCompany] = useState<string | null>(null);
+  const [scaleFactor, setScaleFactor] = useState(1);
+
+  // Responsive scaling based on window size
+  useEffect(() => {
+    const updateScaleFactor = () => {
+      const width = window.innerWidth;
+      if (width < 480) {
+        setScaleFactor(0.35); // Small phones: 35%
+      } else if (width < 640) {
+        setScaleFactor(0.45); // Large phones: 45%
+      } else if (width < 1024) {
+        setScaleFactor(0.7); // Tablets: 70%
+      } else {
+        setScaleFactor(1); // Desktop: 100%
+      }
+    };
+
+    updateScaleFactor();
+    window.addEventListener('resize', updateScaleFactor);
+    return () => window.removeEventListener('resize', updateScaleFactor);
+  }, []);
 
   const getRelatedInvestments = (companyId: string) => {
     return investments.filter(
@@ -220,57 +241,60 @@ const AILandscapeMap: React.FC = () => {
   return (
     <div className="w-full">
       {/* Map Container */}
-      <div className="relative w-full bg-cream border-4 border-navy rounded-lg overflow-hidden shadow-2xl" style={{ height: '700px', backgroundImage: 'radial-gradient(circle, rgba(255,246,208,1) 0%, rgba(240,230,190,1) 100%)' }}>
-        {/* Japanese Paper Texture Background */}
-        <div className="absolute inset-0 opacity-5">
-          <svg width="100%" height="100%">
-            <defs>
-              <pattern id="washi-pattern" width="60" height="60" patternUnits="userSpaceOnUse">
-                <circle cx="10" cy="10" r="1" fill="currentColor" opacity="0.3" />
-                <circle cx="30" cy="25" r="1.5" fill="currentColor" opacity="0.2" />
-                <circle cx="50" cy="15" r="1" fill="currentColor" opacity="0.25" />
-                <circle cx="20" cy="40" r="0.8" fill="currentColor" opacity="0.3" />
-                <circle cx="45" cy="50" r="1.2" fill="currentColor" opacity="0.2" />
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#washi-pattern)" />
+      <div className="relative w-full bg-cream border-4 border-navy rounded-lg overflow-visible shadow-2xl h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px]" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,246,208,1) 0%, rgba(240,230,190,1) 100%)' }}>
+        {/* Background layer with clipping */}
+        <div className="absolute inset-0 overflow-hidden rounded-lg pointer-events-none">
+          {/* Japanese Paper Texture Background */}
+          <div className="absolute inset-0 opacity-5">
+            <svg width="100%" height="100%">
+              <defs>
+                <pattern id="washi-pattern" width="60" height="60" patternUnits="userSpaceOnUse">
+                  <circle cx="10" cy="10" r="1" fill="currentColor" opacity="0.3" />
+                  <circle cx="30" cy="25" r="1.5" fill="currentColor" opacity="0.2" />
+                  <circle cx="50" cy="15" r="1" fill="currentColor" opacity="0.25" />
+                  <circle cx="20" cy="40" r="0.8" fill="currentColor" opacity="0.3" />
+                  <circle cx="45" cy="50" r="1.2" fill="currentColor" opacity="0.2" />
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#washi-pattern)" />
+            </svg>
+          </div>
+
+          {/* Investment Lines */}
+          <svg className={`absolute inset-0 transition-opacity ${scaleFactor < 0.7 ? 'opacity-30' : ''}`} width="100%" height="100%">
+            {investments.map((investment, idx) => {
+              const fromCompany = companies.find((c) => c.id === investment.from);
+              const toCompany = companies.find((c) => c.id === investment.to);
+              if (!fromCompany || !toCompany) return null;
+
+              const active = isInvestmentActive(investment);
+              const strokeWidth = active ? 3 : 1.5;
+              const opacity = active ? 0.8 : 0.3;
+
+              return (
+                <g key={idx}>
+                  <line
+                    x1={`${fromCompany.position.x}%`}
+                    y1={`${fromCompany.position.y}%`}
+                    x2={`${toCompany.position.x}%`}
+                    y2={`${toCompany.position.y}%`}
+                    stroke={fromCompany.color}
+                    strokeWidth={strokeWidth}
+                    opacity={opacity}
+                    strokeDasharray={investment.type === 'partnership' ? '5,5' : 'none'}
+                  />
+                  <circle
+                    cx={`${toCompany.position.x}%`}
+                    cy={`${toCompany.position.y}%`}
+                    r="4"
+                    fill={fromCompany.color}
+                    opacity={opacity}
+                  />
+                </g>
+              );
+            })}
           </svg>
         </div>
-
-        {/* Investment Lines */}
-        <svg className="absolute inset-0 pointer-events-none" width="100%" height="100%">
-          {investments.map((investment, idx) => {
-            const fromCompany = companies.find((c) => c.id === investment.from);
-            const toCompany = companies.find((c) => c.id === investment.to);
-            if (!fromCompany || !toCompany) return null;
-
-            const active = isInvestmentActive(investment);
-            const strokeWidth = active ? 3 : 1.5;
-            const opacity = active ? 0.8 : 0.3;
-
-            return (
-              <g key={idx}>
-                <line
-                  x1={`${fromCompany.position.x}%`}
-                  y1={`${fromCompany.position.y}%`}
-                  x2={`${toCompany.position.x}%`}
-                  y2={`${toCompany.position.y}%`}
-                  stroke={fromCompany.color}
-                  strokeWidth={strokeWidth}
-                  opacity={opacity}
-                  strokeDasharray={investment.type === 'partnership' ? '5,5' : 'none'}
-                />
-                <circle
-                  cx={`${toCompany.position.x}%`}
-                  cy={`${toCompany.position.y}%`}
-                  r="4"
-                  fill={fromCompany.color}
-                  opacity={opacity}
-                />
-              </g>
-            );
-          })}
-        </svg>
 
         {/* Company Nodes */}
         {companies.map((company) => {
@@ -294,7 +318,8 @@ const AILandscapeMap: React.FC = () => {
             >
               <div
                 className={`
-                  flex flex-col items-center gap-2
+                  flex flex-col items-center
+                  ${scaleFactor < 0.5 ? 'gap-0.5' : 'gap-2'}
                   transition-all duration-200
                   ${shouldHighlight ? 'opacity-100 scale-100' : 'opacity-60 scale-90'}
                   ${isSelected || isHovered ? 'scale-110' : ''}
@@ -306,7 +331,7 @@ const AILandscapeMap: React.FC = () => {
                   transition-all duration-200
                   ${isSelected || isHovered ? 'border-yellow-600 shadow-2xl' : 'border-navy'}
                 `}
-                style={{ width: `${company.size}px`, height: `${company.size}px` }}>
+                style={{ width: `${company.size * scaleFactor}px`, height: `${company.size * scaleFactor}px` }}>
                   <img
                     src={company.icon}
                     alt={locale === 'ja' ? company.nameJa : company.name}
@@ -317,15 +342,20 @@ const AILandscapeMap: React.FC = () => {
                 {/* Name Banner */}
                 <div
                   className={`
-                    px-3 py-1.5 rounded border-2 shadow-md
+                    ${scaleFactor < 0.5 ? 'px-1 py-0.5' : 'px-2 sm:px-3 py-1 sm:py-1.5'}
+                    rounded border-2 shadow-md
                     ${isSelected || isHovered ? 'border-yellow-600' : 'border-navy'}
                   `}
                   style={{
                     backgroundColor: '#FFF6D0',
-                    fontSize: company.size > 120 ? '0.875rem' : '0.75rem',
+                    fontSize: scaleFactor < 0.5
+                      ? '0.5rem'  // 8px for ultra-small
+                      : scaleFactor < 0.7
+                        ? '0.625rem' // 10px for small
+                        : (company.size > 120 ? '0.875rem' : '0.75rem'),
                   }}
                 >
-                  <div className="text-navy font-bold whitespace-nowrap text-center">
+                  <div className={`text-navy font-bold text-center ${scaleFactor >= 0.7 ? 'whitespace-nowrap' : ''}`}>
                     {locale === 'ja' ? company.nameJa : company.name}
                   </div>
                 </div>
@@ -343,7 +373,10 @@ const AILandscapeMap: React.FC = () => {
           const showOnRight = company.position.x < 50;
 
           // Calculate offset distance (half of icon size + some spacing)
-          const offsetDistance = (company.size / 2) + 20; // 20px spacing from icon edge
+          const offsetDistance = (company.size * scaleFactor / 2) + (scaleFactor < 0.7 ? 10 : 20);
+
+          // Responsive max width
+          const maxWidth = scaleFactor < 0.7 ? '90vw' : '280px';
 
           return (
             <div
@@ -352,10 +385,10 @@ const AILandscapeMap: React.FC = () => {
                 left: `calc(${company.position.x}% ${showOnRight ? '+' : '-'} ${offsetDistance}px)`,
                 top: `${company.position.y}%`,
                 transform: `translateY(-50%)`,
-                maxWidth: '280px',
+                maxWidth,
               }}
             >
-              <div className="bg-cream border-2 border-navy px-3 py-2 rounded-lg shadow-[4px_4px_0px_0px_rgba(12,35,64,1)] flex items-center gap-3">
+              <div className="bg-cream border-2 border-navy px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg shadow-[4px_4px_0px_0px_rgba(12,35,64,1)] flex items-center gap-2 sm:gap-3">
                 {/* Technyan Icon */}
                 <div className="flex-shrink-0 w-8 h-8 bg-cream border-2 border-navy rounded-full overflow-hidden">
                   <img
@@ -425,7 +458,7 @@ const AILandscapeMap: React.FC = () => {
 
       {/* Company Details Panel */}
       {selectedCompany && (
-        <div className="mt-6 p-6 bg-white border-2 border-navy rounded-lg shadow-lg">
+        <div className="mt-4 sm:mt-6 p-4 sm:p-6 bg-white border-2 border-navy rounded-lg shadow-lg">
           {(() => {
             const company = companies.find((c) => c.id === selectedCompany);
             if (!company) return null;
@@ -436,21 +469,21 @@ const AILandscapeMap: React.FC = () => {
 
             return (
               <div>
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-2xl font-bold text-navy">
+                <div className="flex items-center justify-between mb-3 sm:mb-4">
+                  <h3 className="text-xl sm:text-2xl font-bold text-navy">
                     {locale === 'ja' ? company.nameJa : company.name}
                   </h3>
                   <button
                     onClick={() => setSelectedCompany(null)}
-                    className="text-navy hover:text-gray-600 text-2xl"
+                    className="text-navy hover:text-gray-600 text-xl sm:text-2xl"
                   >
                     ×
                   </button>
                 </div>
-                <p className="text-gray-700 mb-4">
+                <p className="text-sm sm:text-base text-gray-700 mb-3 sm:mb-4">
                   {locale === 'ja' ? company.descriptionJa : company.description}
                 </p>
-                <div className="mb-2">
+                <div className="mb-2 text-sm sm:text-base">
                   <span className="font-semibold text-navy">
                     {locale === 'ja' ? '主力製品:' : 'Flagship:'}
                   </span>{' '}
@@ -458,11 +491,11 @@ const AILandscapeMap: React.FC = () => {
                 </div>
 
                 {/* Key Stats Section */}
-                <div className="mb-4 p-3 bg-cream border-2 border-navy rounded-lg">
-                  <h4 className="font-semibold text-navy mb-2 text-sm">
+                <div className="mb-3 sm:mb-4 p-2 sm:p-3 bg-cream border-2 border-navy rounded-lg">
+                  <h4 className="font-semibold text-navy mb-1.5 sm:mb-2 text-xs sm:text-sm">
                     {locale === 'ja' ? '📊 戦力データ' : '📊 Battle Stats'}
                   </h4>
-                  <div className="text-sm space-y-1">
+                  <div className="text-xs sm:text-sm space-y-0.5 sm:space-y-1">
                     {(() => {
                       switch (company.id) {
                         case 'microsoft':
@@ -685,10 +718,14 @@ const AILandscapeMap: React.FC = () => {
       )}
 
       {/* Instruction */}
-      <div className="mt-4 text-center text-sm text-gray-600">
-        {locale === 'ja'
-          ? '💡 武将にカーソルを合わせてテクにゃんの解説を見る・クリックして詳細情報を表示'
-          : '💡 Hover over warriors for Technyan\'s insights・Click for details'}
+      <div className="mt-3 sm:mt-4 text-center text-xs sm:text-sm text-gray-600">
+        {scaleFactor < 0.7 ? (
+          locale === 'ja' ? '💡 タップで詳細表示' : '💡 Tap for details'
+        ) : (
+          locale === 'ja'
+            ? '💡 武将にカーソルを合わせてテクにゃんの解説を見る・クリックして詳細情報を表示'
+            : '💡 Hover over warriors for Technyan\'s insights・Click for details'
+        )}
       </div>
     </div>
   );
