@@ -18,7 +18,11 @@ const latestArticles = sortedArticles.slice(0, 12).map((article) => ({
 }));
 ---
 
-<BaseLayout title="Technyan's AI Digests - Latest AI News and Insights">
+<BaseLayout
+  title="Technyan's AI Digests - Latest AI News and Insights"
+  description="Your daily AI learning partner. Get the latest AI news, benchmarks, and insights with Technyan's AI Digests."
+  pageType="home"
+>
   <div class="container-custom py-12 md:py-20">
     <HomeContent client:load articlesCount={allArticles.length} />
 
