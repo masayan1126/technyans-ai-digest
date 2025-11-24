@@ -1,6 +1,8 @@
 import { ImageResponse } from '@vercel/og';
 import type { APIRoute } from 'astro';
 
+export const prerender = false;
+
 export const GET: APIRoute = async ({ request }) => {
   try {
     const { searchParams } = new URL(request.url);
@@ -40,7 +42,7 @@ export const GET: APIRoute = async ({ request }) => {
       console.error('Failed to fetch Technyan image:', error);
     }
 
-    return new ImageResponse(
+    const imageResponse = new ImageResponse(
       (
         <div
           style={{
@@ -184,6 +186,16 @@ export const GET: APIRoute = async ({ request }) => {
         height: 630,
       }
     );
+
+    // Add cache headers for better performance
+    const headers = new Headers(imageResponse.headers);
+    headers.set('Cache-Control', 'public, max-age=31536000, immutable');
+
+    return new Response(imageResponse.body, {
+      status: imageResponse.status,
+      statusText: imageResponse.statusText,
+      headers,
+    });
   } catch (error) {
     console.error('OG Image generation error:', error);
 
