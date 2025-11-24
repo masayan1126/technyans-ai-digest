@@ -30,11 +30,11 @@ const companies: AICompany[] = [
     id: 'microsoft',
     name: 'Microsoft',
     nameJa: 'Microsoft',
-    description: 'Mighty daimyo backing OpenAI and other rising clans',
-    descriptionJa: 'OpenAIなど新興勢力を支援する強大な大名',
+    description: 'Mighty daimyo with dual-blade strategy: $13B+ to OpenAI, $5B to Anthropic',
+    descriptionJa: 'OpenAIに130億ドル以上、Anthropicに50億ドルを投じる二刀流戦略の強大な大名',
     category: 'bigtech',
-    flagship: 'Azure AI, Copilot',
-    flagshipJa: 'Azure AI、Copilot',
+    flagship: 'Azure AI, Copilot (800億ドルAI投資)',
+    flagshipJa: 'Azure AI、Copilot（800億ドルAI投資）',
     position: { x: 12, y: 25 },
     color: '#00A4EF',
     icon: '/technyans/png/busyo/tecnyan-busho4.png',
@@ -44,11 +44,11 @@ const companies: AICompany[] = [
     id: 'google',
     name: 'Google (Alphabet)',
     nameJa: 'Google (Alphabet)',
-    description: 'DeepMind\'s lord, supporting Anthropic clan',
-    descriptionJa: 'DeepMind配下の大名、Anthropic勢力を支援',
+    description: 'DeepMind lord with 1B users, investing $3B+ in Anthropic clan',
+    descriptionJa: 'DeepMind配下、10億ユーザーを擁し、Anthropic勢力に30億ドル以上投資する大名',
     category: 'bigtech',
-    flagship: 'Gemini, DeepMind',
-    flagshipJa: 'Gemini、DeepMind',
+    flagship: 'Gemini 2.5 Pro (10億ユーザー)',
+    flagshipJa: 'Gemini 2.5 Pro（10億ユーザー）',
     position: { x: 85, y: 28 },
     color: '#4285F4',
     icon: '/technyans/png/busyo/tecnyan-busho8.png',
@@ -58,11 +58,11 @@ const companies: AICompany[] = [
     id: 'amazon',
     name: 'Amazon',
     nameJa: 'Amazon',
-    description: 'Powerful daimyo allied with Anthropic',
-    descriptionJa: 'Anthropicと同盟を結ぶ強力な大名',
+    description: 'Powerful daimyo with largest single investment: $8B to Anthropic',
+    descriptionJa: 'Anthropic勢力に80億ドルという最大の軍資金を投じる強力な大名',
     category: 'bigtech',
-    flagship: 'AWS AI, Bedrock',
-    flagshipJa: 'AWS AI、Bedrock',
+    flagship: 'AWS Bedrock (数万社が利用)',
+    flagshipJa: 'AWS Bedrock（数万社が利用）',
     position: { x: 85, y: 80 },
     color: '#FF9900',
     icon: '/technyans/png/busyo/tecnyan-busho9.png',
@@ -72,11 +72,11 @@ const companies: AICompany[] = [
     id: 'meta',
     name: 'Meta',
     nameJa: 'Meta',
-    description: 'Daimyo championing open-source AI path',
-    descriptionJa: 'オープンソースAIを掲げる大名',
+    description: 'Open-source champion with 650M+ Llama downloads',
+    descriptionJa: '6.5億回ダウンロードのオープンソース戦略で独自の天下統一を目指す大名',
     category: 'bigtech',
-    flagship: 'Llama',
-    flagshipJa: 'Llama',
+    flagship: 'Llama 4 (6.5億DL)',
+    flagshipJa: 'Llama 4（6.5億DL）',
     position: { x: 38, y: 87 },
     color: '#0866FF',
     icon: '/technyans/png/busyo/tecnyan-busho2.png',
@@ -86,11 +86,11 @@ const companies: AICompany[] = [
     id: 'nvidia',
     name: 'NVIDIA',
     nameJa: 'NVIDIA',
-    description: 'AI weapon forge master, arming multiple clans',
-    descriptionJa: 'AI武器鍛冶の棟梁、多数の勢力に武器供給',
+    description: 'GPU weapon forge master, investing $10B in Anthropic',
+    descriptionJa: 'GPU武器鍛冶の棟梁、Anthropic勢力に100億ドル投資し全勢力に影響力',
     category: 'bigtech',
-    flagship: 'CUDA, H100',
-    flagshipJa: 'CUDA、H100',
+    flagship: 'H100, Trainium (AI加速器)',
+    flagshipJa: 'H100、Trainium（AI加速器）',
     position: { x: 35, y: 15 },
     color: '#76B900',
     icon: '/technyans/png/busyo/tecnyan-busho6.png',
@@ -101,11 +101,11 @@ const companies: AICompany[] = [
     id: 'openai',
     name: 'OpenAI',
     nameJa: 'OpenAI',
-    description: 'Rising clan wielding ChatGPT, allied with Microsoft',
-    descriptionJa: 'ChatGPTを操る新興勢力、Microsoft同盟',
+    description: 'Dominant clan with 700M weekly users, valued at $500B',
+    descriptionJa: 'ChatGPTで週間7億ユーザー、評価額5,000億ドルの圧倒的勢力',
     category: 'startup',
-    flagship: 'ChatGPT, GPT-4',
-    flagshipJa: 'ChatGPT、GPT-4',
+    flagship: 'ChatGPT, GPT-5 (週間7億ユーザー)',
+    flagshipJa: 'ChatGPT、GPT-5（週間7億ユーザー）',
     position: { x: 28, y: 55 },
     color: '#10A37F',
     icon: '/technyans/png/busyo/tecnyan-busho3.png',
@@ -115,11 +115,11 @@ const companies: AICompany[] = [
     id: 'anthropic',
     name: 'Anthropic',
     nameJa: 'Anthropic',
-    description: 'Claude clan, supported by Google & Amazon lords',
-    descriptionJa: 'Claude勢力、Google・Amazon両大名の支援を受ける',
+    description: 'Enterprise champion with 32% market share, backed by 4 tech lords',
+    descriptionJa: '企業市場32%シェア、Google・Amazon・Microsoft・Nvidia 4大名の支援を受ける稀有な勢力',
     category: 'startup',
-    flagship: 'Claude',
-    flagshipJa: 'Claude',
+    flagship: 'Claude Sonnet 4.5 (企業市場32%)',
+    flagshipJa: 'Claude Sonnet 4.5（企業市場32%）',
     position: { x: 57, y: 48 },
     color: '#D4A373',
     icon: '/technyans/png/busyo/tecnyan-busho5.png',
@@ -129,11 +129,11 @@ const companies: AICompany[] = [
     id: 'xai',
     name: 'xAI',
     nameJa: 'xAI',
-    description: 'Elon Musk\'s independent warrior clan',
-    descriptionJa: 'Elon Muskが率いる独立勢力',
+    description: 'Elon Musk\'s independent clan, valued at $50B',
+    descriptionJa: 'Elon Musk率いる独立勢力、評価額500億ドルでGrokを展開',
     category: 'startup',
-    flagship: 'Grok',
-    flagshipJa: 'Grok',
+    flagship: 'Grok (評価額500億ドル)',
+    flagshipJa: 'Grok（評価額500億ドル）',
     position: { x: 60, y: 87 },
     color: '#000000',
     icon: '/technyans/png/busyo/tecnyan-busho7.png',
@@ -143,11 +143,11 @@ const companies: AICompany[] = [
     id: 'mistral',
     name: 'Mistral AI',
     nameJa: 'Mistral AI',
-    description: 'European rising force, allied with Microsoft',
-    descriptionJa: 'ヨーロッパの新興勢力、Microsoft同盟',
+    description: 'Europe\'s strongest AI force, valued at $13.7B',
+    descriptionJa: '欧州最強のAI勢力、評価額137億ドルでオープンソース戦略を展開',
     category: 'startup',
-    flagship: 'Mistral',
-    flagshipJa: 'Mistral',
+    flagship: 'Mistral (評価額137億ドル)',
+    flagshipJa: 'Mistral（評価額137億ドル）',
     position: { x: 8, y: 68 },
     color: '#F2A900',
     icon: '/technyans/png/busyo/tecnyan-busho1.png',
@@ -164,17 +164,31 @@ const investments: Investment[] = [
     type: 'investment',
   },
   {
+    from: 'microsoft',
+    to: 'anthropic',
+    amount: '$5B',
+    amountJa: '50億ドル',
+    type: 'investment',
+  },
+  {
     from: 'google',
     to: 'anthropic',
-    amount: '$2.3B',
-    amountJa: '23億ドル',
+    amount: '$3B+',
+    amountJa: '30億ドル+',
     type: 'investment',
   },
   {
     from: 'amazon',
     to: 'anthropic',
-    amount: '$4B',
-    amountJa: '40億ドル',
+    amount: '$8B',
+    amountJa: '80億ドル',
+    type: 'investment',
+  },
+  {
+    from: 'nvidia',
+    to: 'anthropic',
+    amount: '$10B',
+    amountJa: '100億ドル',
     type: 'investment',
   },
   {
@@ -353,9 +367,55 @@ const AILandscapeMap: React.FC = () => {
 
                 {/* Comment Text */}
                 <p className="text-xs md:text-sm font-medium text-navy leading-snug flex-1">
-                  {locale === 'ja'
-                    ? `${company.nameJa}は${company.flagshipJa}を開発・提供しているにゃん！`
-                    : `${company.name} develops ${company.flagship}, nya!`}
+                  {(() => {
+                    if (locale === 'ja') {
+                      switch (company.id) {
+                        case 'microsoft':
+                          return 'OpenAIに130億ドル以上、Anthropicに50億ドルを投資する二刀流戦略の大名だにゃん！';
+                        case 'google':
+                          return 'Gemini 2.5 Proで10億ユーザー！Anthropicにも30億ドル以上投資しているにゃん！';
+                        case 'amazon':
+                          return 'Anthropicに80億ドルという最大の軍資金を投じる強力な大名だにゃん！';
+                        case 'meta':
+                          return 'Llama 4が6.5億回ダウンロード！オープンソース戦略で独自の道を行く大名だにゃん！';
+                        case 'nvidia':
+                          return 'GPU武器鍛冶の棟梁！Anthropicに100億ドル投資して全勢力に影響力を持つにゃん！';
+                        case 'openai':
+                          return 'ChatGPTで週間7億ユーザー！評価額5,000億ドルのAI天下の覇者候補だにゃん！';
+                        case 'anthropic':
+                          return '企業市場32%シェア！Google・Amazon・Microsoft・Nvidia 4大名の支援を受ける稀有な勢力だにゃん！';
+                        case 'xai':
+                          return 'Elon Musk率いる独立勢力！評価額500億ドルでGrokを展開しているにゃん！';
+                        case 'mistral':
+                          return '欧州最強のAI勢力！評価額137億ドルでオープンソース戦略を展開だにゃん！';
+                        default:
+                          return `${company.nameJa}は${company.flagshipJa}を開発・提供しているにゃん！`;
+                      }
+                    } else {
+                      switch (company.id) {
+                        case 'microsoft':
+                          return 'Dual-blade strategy: $13B+ to OpenAI, $5B to Anthropic, nya!';
+                        case 'google':
+                          return 'Gemini 2.5 Pro with 1B users! Also investing $3B+ in Anthropic, nya!';
+                        case 'amazon':
+                          return 'Largest single investment: $8B to Anthropic, nya!';
+                        case 'meta':
+                          return 'Llama 4 with 650M+ downloads! Open-source champion, nya!';
+                        case 'nvidia':
+                          return 'GPU forge master! $10B investment in Anthropic, nya!';
+                        case 'openai':
+                          return 'ChatGPT with 700M weekly users! Valued at $500B, nya!';
+                        case 'anthropic':
+                          return '32% enterprise market share! Backed by 4 tech lords, nya!';
+                        case 'xai':
+                          return 'Elon Musk\'s independent force! Valued at $50B, nya!';
+                        case 'mistral':
+                          return 'Europe\'s strongest AI! Valued at $13.7B, nya!';
+                        default:
+                          return `${company.name} develops ${company.flagship}, nya!`;
+                      }
+                    }
+                  })()}
                 </p>
               </div>
             </div>
@@ -395,6 +455,147 @@ const AILandscapeMap: React.FC = () => {
                     {locale === 'ja' ? '主力製品:' : 'Flagship:'}
                   </span>{' '}
                   {locale === 'ja' ? company.flagshipJa : company.flagship}
+                </div>
+
+                {/* Key Stats Section */}
+                <div className="mb-4 p-3 bg-cream border-2 border-navy rounded-lg">
+                  <h4 className="font-semibold text-navy mb-2 text-sm">
+                    {locale === 'ja' ? '📊 戦力データ' : '📊 Battle Stats'}
+                  </h4>
+                  <div className="text-sm space-y-1">
+                    {(() => {
+                      switch (company.id) {
+                        case 'microsoft':
+                          return locale === 'ja' ? (
+                            <>
+                              <div>• AI投資: 800億ドル（2026会計年度）</div>
+                              <div>• OpenAI株式: 27%保有（評価額1,350億ドル相当）</div>
+                              <div>• 戦略: 二刀流（OpenAI + Anthropic）</div>
+                            </>
+                          ) : (
+                            <>
+                              <div>• AI Investment: $80B (FY2026)</div>
+                              <div>• OpenAI Stake: 27% (valued at $135B)</div>
+                              <div>• Strategy: Dual-blade (OpenAI + Anthropic)</div>
+                            </>
+                          );
+                        case 'google':
+                          return locale === 'ja' ? (
+                            <>
+                              <div>• ユーザー数: 10億人（Gemini）</div>
+                              <div>• AI投資: 910-930億ドル（2025年）</div>
+                              <div>• Anthropic株式: 約10%保有</div>
+                            </>
+                          ) : (
+                            <>
+                              <div>• Users: 1B (Gemini)</div>
+                              <div>• AI Investment: $91-93B (2025)</div>
+                              <div>• Anthropic Stake: ~10%</div>
+                            </>
+                          );
+                        case 'amazon':
+                          return locale === 'ja' ? (
+                            <>
+                              <div>• Anthropic投資: 80億ドル（最大規模）</div>
+                              <div>• AI投資: 1,250億ドル（2025年）</div>
+                              <div>• Bedrock顧客: 数万社</div>
+                            </>
+                          ) : (
+                            <>
+                              <div>• Anthropic Investment: $8B (largest)</div>
+                              <div>• AI Investment: $125B (2025)</div>
+                              <div>• Bedrock Customers: Tens of thousands</div>
+                            </>
+                          );
+                        case 'meta':
+                          return locale === 'ja' ? (
+                            <>
+                              <div>• Llamaダウンロード: 6.5億回以上</div>
+                              <div>• AI投資: 600-650億ドル（2025年）</div>
+                              <div>• Meta AIユーザー: 月間6億人近く</div>
+                            </>
+                          ) : (
+                            <>
+                              <div>• Llama Downloads: 650M+</div>
+                              <div>• AI Investment: $60-65B (2025)</div>
+                              <div>• Meta AI Users: ~600M monthly</div>
+                            </>
+                          );
+                        case 'nvidia':
+                          return locale === 'ja' ? (
+                            <>
+                              <div>• GPU市場: 圧倒的シェア</div>
+                              <div>• Anthropic投資: 最大100億ドル</div>
+                              <div>• 戦略投資: 多数のAIスタートアップ</div>
+                            </>
+                          ) : (
+                            <>
+                              <div>• GPU Market: Dominant share</div>
+                              <div>• Anthropic Investment: Up to $10B</div>
+                              <div>• Strategic Investments: Many AI startups</div>
+                            </>
+                          );
+                        case 'openai':
+                          return locale === 'ja' ? (
+                            <>
+                              <div>• ユーザー数: 週間7億人</div>
+                              <div>• 評価額: 5,000億ドル（2025年10月）</div>
+                              <div>• 総資金調達: 579億ドル（11ラウンド）</div>
+                            </>
+                          ) : (
+                            <>
+                              <div>• Users: 700M weekly</div>
+                              <div>• Valuation: $500B (Oct 2025)</div>
+                              <div>• Total Raised: $57.9B (11 rounds)</div>
+                            </>
+                          );
+                        case 'anthropic':
+                          return locale === 'ja' ? (
+                            <>
+                              <div>• 企業市場シェア: 32%（2024年）</div>
+                              <div>• 評価額: 約3,500億ドル（2025年11月）</div>
+                              <div>• 総資金調達: 143億ドル以上</div>
+                            </>
+                          ) : (
+                            <>
+                              <div>• Enterprise Market Share: 32% (2024)</div>
+                              <div>• Valuation: ~$350B (Nov 2025)</div>
+                              <div>• Total Raised: $14.3B+</div>
+                            </>
+                          );
+                        case 'xai':
+                          return locale === 'ja' ? (
+                            <>
+                              <div>• 評価額: 500億ドル（2024年11月）</div>
+                              <div>• 総資金調達: 120億ドル（2024年）</div>
+                              <div>• 特徴: X（旧Twitter）データで訓練</div>
+                            </>
+                          ) : (
+                            <>
+                              <div>• Valuation: $50B (Nov 2024)</div>
+                              <div>• Total Raised: $12B (2024)</div>
+                              <div>• Feature: Trained on X (Twitter) data</div>
+                            </>
+                          );
+                        case 'mistral':
+                          return locale === 'ja' ? (
+                            <>
+                              <div>• 評価額: 約137億ドル（2025年9月）</div>
+                              <div>• 総資金調達: 30.5-31.9億ドル</div>
+                              <div>• 地位: 欧州で最も価値の高いAIスタートアップ</div>
+                            </>
+                          ) : (
+                            <>
+                              <div>• Valuation: ~$13.7B (Sep 2025)</div>
+                              <div>• Total Raised: $3.05-3.19B</div>
+                              <div>• Status: Europe's most valuable AI startup</div>
+                            </>
+                          );
+                        default:
+                          return null;
+                      }
+                    })()}
+                  </div>
                 </div>
 
                 {investing.length > 0 && (
