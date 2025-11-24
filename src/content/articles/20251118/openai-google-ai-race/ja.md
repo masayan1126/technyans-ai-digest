@@ -3,7 +3,7 @@ title: "OpenAI、Googleの躍進に危機感：Altman CEOの内部メモとShall
 description: "GoogleのGemini 3がベンチマークでトップに立つ中、OpenAI CEO Sam Altmanは内部メモで「経済的逆風」を警告。OpenAIは新プロジェクトShallotpeatで巻き返しを図り、事前学習の重要性を再認識。"
 date: 2025-11-18
 category: "ChatGPT"
-tags: ["OpenAI", "Google", "ChatGPT", "Gemini", "Gemini 3", "AI Competition", "AI競争", "Sam Altman", "AI", "LLM", "Large Language Models", "Deep Learning", "ディープラーニング", "GPT-5", "GPT"]
+tags: ["OpenAI", "Google", "ChatGPT", "Gemini", "Gemini 3", "AI Competition", "AI競争", "Sam Altman", "AI", "LLM", "Large Language Models", "Pre-training", "Deep Learning", "ディープラーニング", "GPT-5", "GPT"]
 locale: "ja"
 technyanComment: "これはAI業界の力関係が変化している重要な瞬間だね！OpenAIはこれまでAI競争のリーダーだったけど、Googleの猛追を受けている。Sam Altmanが社内で「経済的逆風」について警告するのは異例だよ。これは本当に危機感を持っているということだ。特に興味深いのは、OpenAIが事前学習（pre-training）で苦戦していたという報道。GPT-5の開発で、スケールアップ時に最適化が機能しなくなったというのは大きな問題だ。だからこそ、OpenAIは推論モデル（reasoning models）に注力せざるを得なかったんだね。Shallotpeatプロジェクトは、OpenAIの巻き返し策として非常に重要だ。事前学習が死んでいないと証明し、再びリーダーシップを取り戻そうとしている。この競争は、最終的にはユーザーにとって良いことだと思う。OpenAIとGoogleが互いに競い合うことで、より良いAIモデルがより速く開発されるからね！"
 ---
