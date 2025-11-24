@@ -6,7 +6,7 @@ export const translations = {
     home: 'Home',
     articles: 'Articles',
     benchmarks: 'AI Benchmarks',
-    aiLandscape: 'AI Landscape',
+    aiLandscape: 'AI Sengoku',
     history: 'AI History',
     gallery: 'Technyans',
     about: 'About',
@@ -14,13 +14,13 @@ export const translations = {
     terms: 'Terms of Service',
 
     // AI Landscape Page
-    aiLandscapeTitle: 'AI Landscape',
-    aiLandscapeDescription: 'Explore the AI industry landscape - major players, their investments, and strategic relationships. Understand who\'s backing whom in the AI revolution.',
+    aiLandscapeTitle: 'AI Sengoku Map',
+    aiLandscapeDescription: 'Explore the AI industry as a warring states period - powerful daimyo lords, rising clans, and strategic alliances. Understand which powers are allied in the AI revolution.',
     aiLandscapeSubtitle: 'The AI Warring States Period',
-    aiLandscapeIntro: 'The AI industry is like a modern warring states period, with major tech giants, innovative startups, and complex investment relationships shaping the future of AI.',
-    majorPlayers: 'Major Players',
-    investments: 'Investments',
-    partnerships: 'Partnerships',
+    aiLandscapeIntro: 'The AI industry mirrors Japan\'s Sengoku period, where mighty tech daimyo and ambitious startup clans forge alliances and compete for dominance in shaping AI\'s future.',
+    majorPlayers: 'Daimyo Lords',
+    investments: 'Alliances',
+    partnerships: 'Strategic Pacts',
 
     // Footer
     legal: 'Legal',
@@ -303,7 +303,7 @@ export const translations = {
     home: 'ホーム',
     articles: '記事一覧',
     benchmarks: 'AIベンチマーク',
-    aiLandscape: 'AI勢力図',
+    aiLandscape: 'AI戦国絵巻',
     history: 'AIの歴史',
     gallery: 'テクにゃんたち',
     about: 'このサイトについて',
@@ -311,13 +311,13 @@ export const translations = {
     terms: '利用規約',
 
     // AI Landscape Page
-    aiLandscapeTitle: 'AI勢力図',
-    aiLandscapeDescription: 'AI業界の勢力図を探索 - 主要プレイヤー、投資関係、戦略的パートナーシップを理解しましょう。AI革命において誰が誰を支援しているかを把握できます。',
+    aiLandscapeTitle: 'AI戦国絵巻',
+    aiLandscapeDescription: 'AI業界を戦国時代として探索 - 強大な大名、新興勢力、戦略的同盟関係を理解しましょう。AI革命においてどの勢力が手を組んでいるかを把握できます。',
     aiLandscapeSubtitle: 'AI戦国時代',
-    aiLandscapeIntro: 'AI業界は現代の戦国時代のようです。大手テック企業、革新的なスタートアップ、複雑な投資関係がAIの未来を形作っています。',
-    majorPlayers: '主要プレイヤー',
-    investments: '投資関係',
-    partnerships: 'パートナーシップ',
+    aiLandscapeIntro: 'AI業界は日本の戦国時代を彷彿とさせます。強大なテック大名と野心的なスタートアップ勢力が同盟を結び、AIの未来をめぐって覇権を争っています。',
+    majorPlayers: '戦国大名',
+    investments: '同盟関係',
+    partnerships: '盟約',
 
     // Footer
     legal: '法的情報',
