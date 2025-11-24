@@ -41,22 +41,32 @@ const HomeContentInner: React.FC<HomeContentProps> = ({ articlesCount }) => {
 
       {/* Features Section */}
       <section className="mb-16 md:mb-24">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="card hover:retro-shadow transition-all duration-200">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+          <a href="/articles" className="card hover:retro-shadow transition-all duration-200 block">
             <div className="text-4xl mb-4">⚡</div>
             <h3 className="text-xl font-semibold mb-3">{t('featureLatestNewsTitle')}</h3>
             <p className="leading-relaxed opacity-80">{t('featureLatestNewsDesc')}</p>
-          </div>
-          <div className="card hover:retro-shadow transition-all duration-200">
+          </a>
+          <a href="/benchmarks" className="card hover:retro-shadow transition-all duration-200 block">
+            <div className="text-4xl mb-4">📈</div>
+            <h3 className="text-xl font-semibold mb-3">{t('featureBenchmarksTitle')}</h3>
+            <p className="leading-relaxed opacity-80">{t('featureBenchmarksDesc')}</p>
+          </a>
+          <a href="/history" className="card hover:retro-shadow transition-all duration-200 block">
             <div className="text-4xl mb-4">📊</div>
             <h3 className="text-xl font-semibold mb-3">{t('featureMultiViewTitle')}</h3>
             <p className="leading-relaxed opacity-80">{t('featureMultiViewDesc')}</p>
-          </div>
-          <div className="card hover:retro-shadow transition-all duration-200">
+          </a>
+          <a href="/ai-landscape" className="card hover:retro-shadow transition-all duration-200 block">
+            <div className="text-4xl mb-4">⚔️</div>
+            <h3 className="text-xl font-semibold mb-3">{t('featureAISengokuTitle')}</h3>
+            <p className="leading-relaxed opacity-80">{t('featureAISengokuDesc')}</p>
+          </a>
+          <a href="/gallery" className="card hover:retro-shadow transition-all duration-200 block">
             <div className="text-4xl mb-4">🐱</div>
             <h3 className="text-xl font-semibold mb-3">{t('featureTechnyanTitle')}</h3>
             <p className="leading-relaxed opacity-80">{t('featureTechnyanDesc')}</p>
-          </div>
+          </a>
         </div>
       </section>
 
