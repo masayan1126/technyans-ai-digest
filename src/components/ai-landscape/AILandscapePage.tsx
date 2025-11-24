@@ -1,8 +1,8 @@
 import React from 'react';
-import { useI18n } from '../I18nProvider';
+import { I18nProvider, useI18n } from '../I18nProvider';
 import AILandscapeMap from './AILandscapeMap';
 
-const AILandscapePage: React.FC = () => {
+const AILandscapePageContent: React.FC = () => {
   const { t, locale } = useI18n();
 
   return (
@@ -40,6 +40,14 @@ const AILandscapePage: React.FC = () => {
         </div>
       </div>
     </div>
+  );
+};
+
+const AILandscapePage: React.FC = () => {
+  return (
+    <I18nProvider>
+      <AILandscapePageContent />
+    </I18nProvider>
   );
 };
 
