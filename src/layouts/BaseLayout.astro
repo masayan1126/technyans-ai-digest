@@ -10,8 +10,6 @@ interface Props {
   ogDescription?: string;
   ogImage?: string;
   ogType?: 'website' | 'article';
-  category?: string;
-  pageType?: string;
 }
 
 const {
@@ -20,42 +18,15 @@ const {
   ogTitle,
   ogDescription,
   ogImage,
-  ogType = 'website',
-  category,
-  pageType = 'website'
+  ogType = 'website'
 } = Astro.props;
 
 // サイトのベースURL（末尾のスラッシュを削除）
 const siteUrl = (Astro.site?.toString() || 'https://technyanai.com').replace(/\/$/, '');
 const currentUrl = new URL(Astro.url.pathname, siteUrl).toString();
 
-// OGP画像URLの生成
-// フォールバック用の静的OGP画像（Technyan付き推奨）
-const fallbackOgImage = `${siteUrl}/og-with-technyan.png`;
-
-const ogImageUrl = ogImage || (() => {
-  // 動的OGP画像を試みる
-  const params = new URLSearchParams();
-  params.set('title', ogTitle || title);
-  if (ogDescription || description) {
-    params.set('description', ogDescription || description);
-  }
-  if (category) {
-    params.set('category', category);
-  }
-  if (pageType) {
-    params.set('type', pageType);
-  }
-
-  // 開発環境または動的画像が利用できない場合は静的画像を使用
-  // 本番環境では動的画像を優先
-  const isDevelopment = import.meta.env.DEV;
-  if (isDevelopment) {
-    return fallbackOgImage;
-  }
-
-  return `${siteUrl}/api/og?${params.toString()}`;
-})();
+// OGP画像URLの生成（静的画像を使用）
+const ogImageUrl = ogImage || `${siteUrl}/og-with-technyan.png`;
 
 const ogTitleText = ogTitle || title;
 const ogDescriptionText = ogDescription || description;
