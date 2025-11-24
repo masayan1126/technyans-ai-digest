@@ -36,6 +36,11 @@ const FooterContent: React.FC = () => {
                 </a>
               </li>
               <li>
+                <a href="/ai-landscape" className="hover:underline opacity-90 hover:opacity-100">
+                  {t('aiLandscape')}
+                </a>
+              </li>
+              <li>
                 <a href="/about" className="hover:underline opacity-90 hover:opacity-100">
                   {t('about')}
                 </a>

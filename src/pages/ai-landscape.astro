@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AILandscapePage from '../components/ai-landscape/AILandscapePage';
+import { I18nProvider } from '../components/I18nProvider';
+---
+
+<BaseLayout
+  title="AI Landscape - The AI Warring States Period | Technyan's AI Digests"
+  description="Explore the AI industry landscape - major players, their investments, and strategic relationships. Understand who's backing whom in the AI revolution."
+>
+  <I18nProvider client:only="react">
+    <AILandscapePage client:only="react" />
+  </I18nProvider>
+</BaseLayout>

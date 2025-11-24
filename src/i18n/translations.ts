@@ -6,11 +6,21 @@ export const translations = {
     home: 'Home',
     articles: 'Articles',
     benchmarks: 'AI Benchmarks',
+    aiLandscape: 'AI Landscape',
     history: 'AI History',
     gallery: 'Technyans',
     about: 'About',
     privacy: 'Privacy Policy',
     terms: 'Terms of Service',
+
+    // AI Landscape Page
+    aiLandscapeTitle: 'AI Landscape',
+    aiLandscapeDescription: 'Explore the AI industry landscape - major players, their investments, and strategic relationships. Understand who\'s backing whom in the AI revolution.',
+    aiLandscapeSubtitle: 'The AI Warring States Period',
+    aiLandscapeIntro: 'The AI industry is like a modern warring states period, with major tech giants, innovative startups, and complex investment relationships shaping the future of AI.',
+    majorPlayers: 'Major Players',
+    investments: 'Investments',
+    partnerships: 'Partnerships',
 
     // Footer
     legal: 'Legal',
@@ -293,11 +303,21 @@ export const translations = {
     home: 'ホーム',
     articles: '記事一覧',
     benchmarks: 'AIベンチマーク',
+    aiLandscape: 'AI勢力図',
     history: 'AIの歴史',
     gallery: 'テクにゃんたち',
     about: 'このサイトについて',
     privacy: 'プライバシーポリシー',
     terms: '利用規約',
+
+    // AI Landscape Page
+    aiLandscapeTitle: 'AI勢力図',
+    aiLandscapeDescription: 'AI業界の勢力図を探索 - 主要プレイヤー、投資関係、戦略的パートナーシップを理解しましょう。AI革命において誰が誰を支援しているかを把握できます。',
+    aiLandscapeSubtitle: 'AI戦国時代',
+    aiLandscapeIntro: 'AI業界は現代の戦国時代のようです。大手テック企業、革新的なスタートアップ、複雑な投資関係がAIの未来を形作っています。',
+    majorPlayers: '主要プレイヤー',
+    investments: '投資関係',
+    partnerships: 'パートナーシップ',
 
     // Footer
     legal: '法的情報',
