@@ -37,7 +37,7 @@ const companies: AICompany[] = [
     flagshipJa: 'Azure AI、Copilot（800億ドルAI投資）',
     position: { x: 12, y: 25 },
     color: '#00A4EF',
-    icon: '/technyans/png/busyo/tecnyan-busho4.png',
+    icon: '/technyans/webp/busyo/tecnyan-busho4.webp',
     size: 200,
   },
   {
@@ -51,7 +51,7 @@ const companies: AICompany[] = [
     flagshipJa: 'Gemini 2.5 Pro（10億ユーザー）',
     position: { x: 85, y: 28 },
     color: '#4285F4',
-    icon: '/technyans/png/busyo/tecnyan-busho8.png',
+    icon: '/technyans/webp/busyo/tecnyan-busho8.webp',
     size: 300,
   },
   {
@@ -65,7 +65,7 @@ const companies: AICompany[] = [
     flagshipJa: 'AWS Bedrock（数万社が利用）',
     position: { x: 85, y: 80 },
     color: '#FF9900',
-    icon: '/technyans/png/busyo/tecnyan-busho9.png',
+    icon: '/technyans/webp/busyo/tecnyan-busho9.webp',
     size: 190,
   },
   {
@@ -79,7 +79,7 @@ const companies: AICompany[] = [
     flagshipJa: 'Llama 4（6.5億DL）',
     position: { x: 38, y: 87 },
     color: '#0866FF',
-    icon: '/technyans/png/busyo/tecnyan-busho2.png',
+    icon: '/technyans/webp/busyo/tecnyan-busho2.webp',
     size: 110,
   },
   {
@@ -93,7 +93,7 @@ const companies: AICompany[] = [
     flagshipJa: 'H100、Trainium（AI加速器）',
     position: { x: 35, y: 15 },
     color: '#76B900',
-    icon: '/technyans/png/busyo/tecnyan-busho6.png',
+    icon: '/technyans/webp/busyo/tecnyan-busho6.webp',
     size: 110,
   },
   // Startups
@@ -108,7 +108,7 @@ const companies: AICompany[] = [
     flagshipJa: 'ChatGPT、GPT-5（週間7億ユーザー）',
     position: { x: 28, y: 55 },
     color: '#10A37F',
-    icon: '/technyans/png/busyo/tecnyan-busho3.png',
+    icon: '/technyans/webp/busyo/tecnyan-busho3.webp',
     size: 280,
   },
   {
@@ -122,7 +122,7 @@ const companies: AICompany[] = [
     flagshipJa: 'Claude Sonnet 4.5（企業市場32%）',
     position: { x: 57, y: 48 },
     color: '#D4A373',
-    icon: '/technyans/png/busyo/tecnyan-busho5.png',
+    icon: '/technyans/webp/busyo/tecnyan-busho5.webp',
     size: 300,
   },
   {
@@ -136,7 +136,7 @@ const companies: AICompany[] = [
     flagshipJa: 'Grok（評価額500億ドル）',
     position: { x: 60, y: 87 },
     color: '#000000',
-    icon: '/technyans/png/busyo/tecnyan-busho7.png',
+    icon: '/technyans/webp/busyo/tecnyan-busho7.webp',
     size: 110,
   },
   {
@@ -150,7 +150,7 @@ const companies: AICompany[] = [
     flagshipJa: 'Mistral（評価額137億ドル）',
     position: { x: 8, y: 68 },
     color: '#F2A900',
-    icon: '/technyans/png/busyo/tecnyan-busho1.png',
+    icon: '/technyans/webp/busyo/tecnyan-busho1.webp',
     size: 110,
   },
 ];
