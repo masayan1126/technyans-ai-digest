@@ -26,7 +26,7 @@ const siteUrl = (Astro.site?.toString() || 'https://technyanai.com').replace(/\/
 const currentUrl = new URL(Astro.url.pathname, siteUrl).toString();
 
 // OGP画像URLの生成（静的画像を使用）
-const ogImageUrl = ogImage || `${siteUrl}/og-with-technyan.webp`;
+const ogImageUrl = ogImage || `${siteUrl}/og-with-technyan.png`;
 
 const ogTitleText = ogTitle || title;
 const ogDescriptionText = ogDescription || description;
