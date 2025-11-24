@@ -1,6 +1,7 @@
 import React from 'react';
 import { I18nProvider, useI18n } from '../I18nProvider';
 import AILandscapeMap from './AILandscapeMap';
+import AIImpactTimeline from './AIImpactTimeline';
 
 const AILandscapePageContent: React.FC = () => {
   const { t } = useI18n();
@@ -22,6 +23,19 @@ const AILandscapePageContent: React.FC = () => {
 
       {/* Map Component */}
       <AILandscapeMap />
+
+      {/* Timeline Section */}
+      <div className="mt-16 md:mt-24">
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
+            {t('aiImpactTimelineTitle')}
+          </h2>
+          <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
+            {t('aiImpactTimelineDescription')}
+          </p>
+        </div>
+        <AIImpactTimeline />
+      </div>
     </div>
   );
 };
