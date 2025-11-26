@@ -193,15 +193,15 @@ const otherLangUrl = `/articles/${otherLang}/${articleSlug}`;
     opacity: 0.8;
   }
 
-  /* テクにゃんのコメント専用スタイル */
+  /* テクにゃん.のコメント専用スタイル */
   .article-content :global(h2:has(+ blockquote):not(:has(+ :not(blockquote)))),
-  .article-content :global(h2):has-text('テクにゃんのコメント'),
+  .article-content :global(h2):has-text('テクにゃん.のコメント'),
   .article-content :global(h2):has-text("Tech-nyan's Comment") {
     position: relative;
     padding-left: 4rem;
   }
 
-  .article-content :global(h2):has-text('テクにゃんのコメント')::before,
+  .article-content :global(h2):has-text('テクにゃん.のコメント')::before,
   .article-content :global(h2):has-text("Tech-nyan's Comment")::before {
     content: '';
     position: absolute;
@@ -216,7 +216,7 @@ const otherLangUrl = `/articles/${otherLang}/${articleSlug}`;
     background-position: center;
   }
 
-  /* テクにゃんのコメントセクション全体のスタイル */
+  /* テクにゃん.のコメントセクション全体のスタイル */
   .article-content :global(.technyan-comment) {
     background-color: rgba(255, 246, 208, 0.3);
     border: 2px solid #0c2340;
@@ -259,7 +259,7 @@ const otherLangUrl = `/articles/${otherLang}/${articleSlug}`;
 </style>
 
 <script>
-  // テクにゃんのコメントセクションを特別なスタイルでラップ
+  // テクにゃん.のコメントセクションを特別なスタイルでラップ
   document.addEventListener('DOMContentLoaded', () => {
     const article = document.querySelector('.article-content');
     if (!article) return;
@@ -268,11 +268,11 @@ const otherLangUrl = `/articles/${otherLang}/${articleSlug}`;
     const headers = article.querySelectorAll('h2');
     headers.forEach((header) => {
       const text = header.textContent?.trim() || '';
-      if (text.includes('テクにゃんのコメント') || text.includes("Tech-nyan's Comment")) {
+      if (text.includes('テクにゃん.のコメント') || text.includes("Tech-nyan's Comment")) {
         // h2の直後の要素（通常はblockquote）を探す
         let nextElement = header.nextElementSibling;
 
-        // テクにゃんのコメントセクションをラップ
+        // テクにゃん.のコメントセクションをラップ
         const wrapper = document.createElement('div');
         wrapper.className = 'technyan-comment';
 

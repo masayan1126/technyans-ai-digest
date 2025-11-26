@@ -723,7 +723,7 @@ const AILandscapeMap: React.FC = () => {
           locale === 'ja' ? '💡 タップで詳細表示' : '💡 Tap for details'
         ) : (
           locale === 'ja'
-            ? '💡 武将にカーソルを合わせてテクにゃんの解説を見る・クリックして詳細情報を表示'
+            ? '💡 武将にカーソルを合わせてテクにゃん.の解説を見る・クリックして詳細情報を表示'
             : '💡 Hover over warriors for Technyan\'s insights・Click for details'
         )}
       </div>
