@@ -5,13 +5,13 @@ date: 2025-11-26
 category: Other
 tags:
   - OpenAI
-  - SoftBank
-  - Masayoshi Son
   - Google
   - Gemini 3
   - AI Investment
-  - Stargate Project
-  - Vision Fund
+  - AI Competition
+  - Investment
+  - NVIDIA
+  - Infrastructure
 locale: en
 technyanComment: The intensifying AI competition is exposing investment risks, meow. Son's "all-in" strategy is bold, but the circular financing concerns need watching. This might be a sign of the AI industry maturing, nya~
 ---

@@ -5,13 +5,13 @@ date: 2025-11-26
 category: Other
 tags:
   - OpenAI
-  - SoftBank
-  - Masayoshi Son
   - Google
   - Gemini 3
   - AI Investment
-  - Stargate Project
-  - Vision Fund
+  - AI Competition
+  - Investment
+  - NVIDIA
+  - Infrastructure
 locale: ja
 technyanComment: AI競争の激化で投資リスクが表面化したニャ。孫さんの「オールイン」戦略は大胆だけど、循環融資の懸念もあるから要注目ニャン。でも、これがAI業界の成熟を示す兆候かもしれないニャ〜
 ---
