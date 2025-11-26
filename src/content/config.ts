@@ -70,7 +70,7 @@ const articles = defineCollection({
     category: z.enum(['ChatGPT', 'Claude', 'Gemini', 'Grok', 'Image Generation', 'Research', 'Other']),
     tags: z.array(commonTags).optional(),
     locale: z.enum(['en', 'ja']),
-    technyanComment: z.string().optional(), // テクにゃんのコメント
+    technyanComment: z.string().optional(), // テクにゃん.のコメント
   }),
 });
 
@@ -85,7 +85,7 @@ const aiTimeline = defineCollection({
     tags: z.array(commonTags).optional(),
     relatedCompanies: z.array(z.string()).optional(), // 関連企業（OpenAI, Google, Anthropic等）
     locale: z.enum(['en', 'ja']),
-    technyanComment: z.string().optional(), // テクにゃんのコメント
+    technyanComment: z.string().optional(), // テクにゃん.のコメント
   }),
 });
 

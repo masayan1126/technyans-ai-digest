@@ -5,9 +5,9 @@ import BenchmarkCard from './BenchmarkCard';
 const content = {
   ja: {
     title: 'AIモデルベンチマーク比較',
-    description: 'テクにゃんが最新AIモデルのベンチマークをわかりやすく解説するにゃん！',
+    description: 'テクにゃん.が最新AIモデルのベンチマークをわかりやすく解説するにゃん！',
     hero: {
-      greeting: 'やあ！テクにゃんだよ！',
+      greeting: 'やあ！テクにゃん.だよ！',
       intro:
         'AI業界では、各社が「うちのモデルが最強だにゃ！」って主張してるけど、実際どうなの？って思うよね。ここでは、Gemini 3 Pro、Claude Sonnet 4.5、GPT-5.1といった最新モデルのベンチマーク結果を比較してみるにゃん！',
     },
@@ -46,7 +46,7 @@ const content = {
       note: '※一部のベンチマークは現在検証中です。データは各社の公式発表を元にしています。',
     },
     technyanComment: {
-      title: 'テクにゃんのコメント',
+      title: 'テクにゃん.のコメント',
       gemini:
         '**Gemini 3 Pro** は本当に凄いにゃ！18項目中14項目で最高スコアを記録してるんだから。特に、ScreenSpot-Pro（画面理解）で72.7%、Vending-Bench（エージェントタスク）で$5,478、長文コンテキスト理解で77.0%という圧倒的なスコアは目を見張るものがあるにゃん。Googleの本気度が伝わってくるね。',
       claude:
