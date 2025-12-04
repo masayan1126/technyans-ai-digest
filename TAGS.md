@@ -154,6 +154,16 @@
 - Antigravity
 - Project Prometheus
 
+## 💻 プログラミング言語・ランタイム
+
+- JavaScript
+- TypeScript
+- Bun
+
+## 💼 ビジネスイベント
+
+- Acquisition / 買収
+
 ## 📌 その他
 
 - テキスト生成
