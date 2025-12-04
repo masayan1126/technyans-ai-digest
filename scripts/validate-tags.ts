@@ -73,6 +73,10 @@ const ALLOWED_TAGS = [
   'Emotional Intelligence', '感情的知性',
   // Hardware/Products
   'Nano Banana Pro', 'Antigravity', 'Project Prometheus',
+  // Programming Languages & Runtimes
+  'JavaScript', 'TypeScript', 'Bun',
+  // Business Events
+  'Acquisition', '買収',
   // General
   'テキスト生成'
 ];
