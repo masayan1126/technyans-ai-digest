@@ -1,7 +1,7 @@
 ---
 title: "Anthropic Acquires JavaScript Runtime Bun - Claude Code Hits $1B Revenue in 6 Months"
 description: "Anthropic acquires Bun, the JavaScript runtime, to strengthen infrastructure for Claude Code. This strategic move signals a new era in AI-powered developer tools."
-date: 2024-12-04
+date: 2025-12-04
 category: "Claude"
 tags: ["Anthropic", "Claude Code", "Bun", "JavaScript", "TypeScript", "Acquisition", "Developer Tools", "AI Coding", "Open Source", "Infrastructure"]
 locale: en
@@ -10,9 +10,9 @@ technyanComment: "Bun is the heart of Claude Code, nya! In the age of AI writing
 
 ## Claude Code Reaches $1 Billion Run-Rate Revenue in Just 6 Months
 
-Anthropic announced on December 2, 2024, that it has acquired Bun, the breakthrough JavaScript runtime. This acquisition comes as the company's AI coding tool, Claude Code, continues its extraordinary growth trajectory.
+Anthropic announced on December 2, 2025, that it has acquired Bun, the breakthrough JavaScript runtime. This acquisition comes as the company's AI coding tool, Claude Code, continues its extraordinary growth trajectory.
 
-Claude Code, which became generally available in May 2024, has reached **$1 billion in annual run-rate revenue in just six months**. Major enterprises including Netflix, Spotify, KPMG, L'Oréal, and Salesforce have already adopted Claude Code as a critical tool for their development workflows.
+Claude Code, which became generally available in May 2025, has reached **$1 billion in annual run-rate revenue in just six months**. Major enterprises including Netflix, Spotify, KPMG, L'Oréal, and Salesforce have already adopted Claude Code as a critical tool for their development workflows.
 
 ## What is Bun?
 

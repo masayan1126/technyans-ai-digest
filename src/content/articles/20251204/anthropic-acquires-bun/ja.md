@@ -1,7 +1,7 @@
 ---
 title: "AnthropicがJavaScriptランタイム「Bun」を買収 - Claude Codeが半年で年間収益10億ドル達成"
 description: "AnthropicがJavaScriptランタイムBunを買収。Claude Codeの急成長を支えるインフラ強化の一環で、AIコーディングツールの未来に大きな影響を与える動き。"
-date: 2024-12-04
+date: 2025-12-04
 category: "Claude"
 tags: ["Anthropic", "Claude Code", "Bun", "JavaScript", "TypeScript", "Acquisition", "Developer Tools", "AI Coding", "Open Source", "Infrastructure"]
 locale: ja
@@ -10,9 +10,9 @@ technyanComment: "BunはClaude Codeの心臓部にゃ！AIがコードを書く�
 
 ## Claude Code、公開からわずか6ヶ月で年間収益10億ドルを達成
 
-Anthropicは2024年12月2日、JavaScriptランタイム「Bun」の開発チームを買収したことを発表しました。この買収は、同社のAIコーディングツール「Claude Code」が驚異的な成長を遂げる中での戦略的な動きとなっています。
+Anthropicは2025年12月2日、JavaScriptランタイム「Bun」の開発チームを買収したことを発表しました。この買収は、同社のAIコーディングツール「Claude Code」が驚異的な成長を遂げる中での戦略的な動きとなっています。
 
-Claude Codeは2024年5月の一般公開から**わずか6ヶ月で年間収益10億ドル（ランレート）を達成**。Netflix、Spotify、KPMG、ロレアル、Salesforceなど、世界的な企業がすでにClaude Codeを採用しています。
+Claude Codeは2025年5月の一般公開から**わずか6ヶ月で年間収益10億ドル（ランレート）を達成**。Netflix、Spotify、KPMG、ロレアル、Salesforceなど、世界的な企業がすでにClaude Codeを採用しています。
 
 ## Bunとは何か？
 
