@@ -1,6 +1,8 @@
 ---
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import BottomNavigation from '../components/BottomNavigation';
+import PullToRefresh from '../components/PullToRefresh';
 import '../styles/global.css';
 
 interface Props {
@@ -37,10 +39,17 @@ const ogDescriptionText = ogDescription || description;
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <link rel="icon" type="image/x-icon" href="/technyan.ico" />
     <link rel="icon" type="image/svg+xml" href="/technyan.svg" />
-    <link rel="apple-touch-icon" href="/technyan.webp" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Mobile Meta Tags -->
+    <meta name="theme-color" content="#0C2340" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Technyan AI" />
+
     <meta name="generator" content={Astro.generator} />
     <meta name="google-site-verification" content="PPzJV6WRRviz3g5uqCPJCeOQA1ZaogaeIXakNL5qcnQ" />
     <title>{title}</title>
@@ -59,11 +68,15 @@ const ogDescriptionText = ogDescription || description;
     <meta name="twitter:description" content={ogDescriptionText} />
     <meta name="twitter:image" content={ogImageUrl} />
   </head>
-  <body>
+  <body class="pb-16 md:pb-0">
     <Header client:load />
     <main class="min-h-screen">
       <slot />
     </main>
     <Footer client:load />
+
+    <!-- App-like UI Components -->
+    <BottomNavigation client:load />
+    <PullToRefresh client:idle />
   </body>
 </html>
