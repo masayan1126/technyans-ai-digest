@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 
 const PULL_THRESHOLD = 200;
 const MAX_PULL = 700;
@@ -86,67 +87,90 @@ const PullToRefresh: React.FC = () => {
     };
   }, [isStandalone, handleTouchStart, handleTouchMove, handleTouchEnd]);
 
-  if (!isStandalone || pullDistance === 0) {
-    return null;
-  }
-
   const progress = Math.min(pullDistance / PULL_THRESHOLD, 1);
   const rotation = progress * 360;
 
   return (
-    <div
-      className="fixed top-0 left-0 right-0 flex items-center justify-center z-50 pointer-events-none"
-      style={{
-        height: `${pullDistance}px`,
-        transition: isPulling.current ? 'none' : 'height 0.2s ease-out',
-      }}
-    >
-      <div
-        className="bg-cream border-2 border-navy p-3 rounded-full shadow-lg"
-        style={{
-          transform: `rotate(${rotation}deg)`,
-          opacity: progress,
-          transition: isPulling.current ? 'none' : 'all 0.2s ease-out',
-        }}
-      >
-        {isRefreshing ? (
-          <svg
-            className="w-10 h-10 text-navy animate-spin"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-          >
-            <circle
-              className="opacity-25"
-              cx="12"
-              cy="12"
-              r="10"
-              stroke="currentColor"
-              strokeWidth="4"
-            ></circle>
-            <path
-              className="opacity-75"
-              fill="currentColor"
-              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-            ></path>
-          </svg>
-        ) : (
-          <img
-            src="/technyan.webp"
-            alt="Technyan"
-            className="w-10 h-10 object-contain"
-            style={{
-              transform: `scale(${0.8 + progress * 0.2})`,
+    <AnimatePresence>
+      {isStandalone && pullDistance > 0 && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0, height: 0 }}
+          className="fixed top-0 left-0 right-0 flex items-center justify-center z-50 pointer-events-none"
+          style={{
+            height: pullDistance,
+          }}
+        >
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{
+              scale: 1,
+              rotate: rotation,
             }}
-          />
-        )}
-      </div>
-      {progress >= 1 && !isRefreshing && (
-        <span className="absolute top-full mt-1 text-xs text-navy font-medium">
-          Release to refresh
-        </span>
+            exit={{ scale: 0 }}
+            transition={{
+              scale: { type: 'spring', stiffness: 300, damping: 20 },
+              rotate: { duration: 0 },
+            }}
+            className="bg-cream border-2 border-navy p-3 rounded-full shadow-lg"
+            style={{ opacity: progress }}
+          >
+            {isRefreshing ? (
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ repeat: Infinity, duration: 1, ease: 'linear' }}
+              >
+                <svg
+                  className="w-10 h-10 text-navy"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  ></circle>
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                  ></path>
+                </svg>
+              </motion.div>
+            ) : (
+              <motion.img
+                src="/technyan.webp"
+                alt="Technyan"
+                className="w-10 h-10 object-contain"
+                animate={{
+                  scale: 0.8 + progress * 0.2,
+                }}
+                transition={{ type: 'spring', stiffness: 400, damping: 15 }}
+              />
+            )}
+          </motion.div>
+
+          <AnimatePresence>
+            {progress >= 1 && !isRefreshing && (
+              <motion.span
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 25 }}
+                className="absolute top-full mt-2 text-sm text-navy font-medium bg-cream/90 px-3 py-1 rounded-full border border-navy/20"
+              >
+                Release to refresh
+              </motion.span>
+            )}
+          </AnimatePresence>
+        </motion.div>
       )}
-    </div>
+    </AnimatePresence>
   );
 };
 

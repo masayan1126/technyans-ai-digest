@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { I18nProvider, useI18n } from './I18nProvider';
 
 interface NavItem {
@@ -113,36 +114,54 @@ const BottomNavigationInner: React.FC = () => {
   return (
     <>
       {/* Overlay */}
-      {isMenuOpen && (
-        <div
-          className="fixed inset-0 bg-black/30 z-30 md:hidden"
-          onClick={() => setIsMenuOpen(false)}
-        />
-      )}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 bg-black/30 z-30 md:hidden"
+            onClick={() => setIsMenuOpen(false)}
+          />
+        )}
+      </AnimatePresence>
 
       {/* Submenu popup */}
-      {isMenuOpen && (
-        <div className="fixed bottom-16 left-0 right-0 bg-cream border-t-1.5 border-navy z-40 md:hidden animate-slide-up">
-          <div className="py-2">
-            {subMenuItems.map((item) => {
-              const label = locale === 'ja' ? item.labelJa : item.labelEn;
-              const active = currentPath.startsWith(item.href);
-              return (
-                <a
-                  key={item.key}
-                  href={item.href}
-                  className={`flex items-center px-6 py-3 transition-colors ${
-                    active ? 'bg-navy/10 text-navy font-medium' : 'text-navy/70 hover:bg-navy/5'
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {label}
-                </a>
-              );
-            })}
-          </div>
-        </div>
-      )}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ y: '100%', opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: '100%', opacity: 0 }}
+            transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+            className="fixed bottom-16 left-0 right-0 bg-cream border-t-1.5 border-navy z-40 md:hidden"
+          >
+            <div className="py-2">
+              {subMenuItems.map((item, index) => {
+                const label = locale === 'ja' ? item.labelJa : item.labelEn;
+                const active = currentPath.startsWith(item.href);
+                return (
+                  <motion.a
+                    key={item.key}
+                    href={item.href}
+                    initial={{ x: -20, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ delay: index * 0.05 }}
+                    whileTap={{ scale: 0.98, backgroundColor: 'rgba(12, 35, 64, 0.1)' }}
+                    className={`flex items-center px-6 py-3 transition-colors ${
+                      active ? 'bg-navy/10 text-navy font-medium' : 'text-navy/70'
+                    }`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {label}
+                  </motion.a>
+                );
+              })}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Bottom navigation bar */}
       <nav className="fixed bottom-0 left-0 right-0 bg-cream border-t-1.5 border-navy md:hidden z-40 safe-area-bottom">
@@ -152,30 +171,49 @@ const BottomNavigationInner: React.FC = () => {
             const label = locale === 'ja' ? item.labelJa : item.labelEn;
 
             return (
-              <a
+              <motion.a
                 key={item.key}
                 href={item.href}
-                className={`flex flex-col items-center justify-center flex-1 h-full py-1 transition-colors ${
+                whileTap={{ scale: 0.9 }}
+                className={`relative flex flex-col items-center justify-center flex-1 h-full py-1 transition-colors ${
                   active ? 'text-navy' : 'text-navy/50'
                 }`}
               >
-                <span className={active ? 'scale-110 transition-transform' : ''}>{item.icon}</span>
+                <motion.span
+                  animate={{ scale: active ? 1.1 : 1 }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                >
+                  {item.icon}
+                </motion.span>
                 <span className={`text-[10px] mt-0.5 font-medium ${active ? '' : 'opacity-60'}`}>
                   {label}
                 </span>
-                {active && <span className="absolute bottom-0 w-8 h-0.5 bg-navy"></span>}
-              </a>
+                {active && (
+                  <motion.span
+                    layoutId="activeIndicator"
+                    className="absolute bottom-0 w-8 h-0.5 bg-navy"
+                    transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                  />
+                )}
+              </motion.a>
             );
           })}
 
           {/* Other menu button */}
-          <button
+          <motion.button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className={`flex flex-col items-center justify-center flex-1 h-full py-1 transition-colors ${
+            whileTap={{ scale: 0.9 }}
+            className={`relative flex flex-col items-center justify-center flex-1 h-full py-1 transition-colors ${
               isOtherActive || isMenuOpen ? 'text-navy' : 'text-navy/50'
             }`}
           >
-            <span className={isOtherActive || isMenuOpen ? 'scale-110 transition-transform' : ''}>
+            <motion.span
+              animate={{
+                scale: isOtherActive || isMenuOpen ? 1.1 : 1,
+                rotate: isMenuOpen ? 90 : 0,
+              }}
+              transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -190,14 +228,20 @@ const BottomNavigationInner: React.FC = () => {
                   d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
                 />
               </svg>
-            </span>
+            </motion.span>
             <span
               className={`text-[10px] mt-0.5 font-medium ${isOtherActive || isMenuOpen ? '' : 'opacity-60'}`}
             >
               {locale === 'ja' ? 'その他' : 'More'}
             </span>
-            {isOtherActive && <span className="absolute bottom-0 w-8 h-0.5 bg-navy"></span>}
-          </button>
+            {isOtherActive && !isMenuOpen && (
+              <motion.span
+                layoutId="activeIndicator"
+                className="absolute bottom-0 w-8 h-0.5 bg-navy"
+                transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+              />
+            )}
+          </motion.button>
         </div>
       </nav>
     </>
