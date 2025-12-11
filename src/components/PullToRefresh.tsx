@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 
 const PULL_THRESHOLD = 150;
-const MAX_PULL = 350;
+const MAX_PULL = 500;
 
 const PullToRefresh: React.FC = () => {
   const [pullDistance, setPullDistance] = useState(0);
