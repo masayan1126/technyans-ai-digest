@@ -19,6 +19,9 @@
 - Amazon
 - DeepMind
 - xAI
+- Adobe
+- Linux Foundation
+- Block
 
 ## 🤖 モデル・プロダクト
 
