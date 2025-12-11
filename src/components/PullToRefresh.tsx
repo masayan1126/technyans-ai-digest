@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 
-const PULL_THRESHOLD = 80;
-const MAX_PULL = 120;
+const PULL_THRESHOLD = 120;
+const MAX_PULL = 200;
 
 const PullToRefresh: React.FC = () => {
   const [pullDistance, setPullDistance] = useState(0);
@@ -102,7 +102,7 @@ const PullToRefresh: React.FC = () => {
       }}
     >
       <div
-        className="bg-cream border-1.5 border-navy p-2 rounded-full"
+        className="bg-cream border-2 border-navy p-3 rounded-full shadow-lg"
         style={{
           transform: `rotate(${rotation}deg)`,
           opacity: progress,
@@ -111,7 +111,7 @@ const PullToRefresh: React.FC = () => {
       >
         {isRefreshing ? (
           <svg
-            className="w-6 h-6 text-navy animate-spin"
+            className="w-10 h-10 text-navy animate-spin"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -134,7 +134,7 @@ const PullToRefresh: React.FC = () => {
           <img
             src="/technyan.webp"
             alt="Technyan"
-            className="w-6 h-6 object-contain"
+            className="w-10 h-10 object-contain"
             style={{
               transform: `scale(${0.8 + progress * 0.2})`,
             }}
