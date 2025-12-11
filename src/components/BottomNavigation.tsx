@@ -9,6 +9,13 @@ interface NavItem {
   icon: React.ReactNode;
 }
 
+interface SubMenuItem {
+  key: string;
+  href: string;
+  labelEn: string;
+  labelJa: string;
+}
+
 const navItems: NavItem[] = [
   {
     key: 'home',
@@ -55,10 +62,10 @@ const navItems: NavItem[] = [
     ),
   },
   {
-    key: 'history',
-    href: '/history',
-    labelEn: 'History',
-    labelJa: '歴史',
+    key: 'gallery',
+    href: '/gallery',
+    labelEn: 'Gallery',
+    labelJa: 'ギャラリー',
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -71,37 +78,23 @@ const navItems: NavItem[] = [
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
-          d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-        />
-      </svg>
-    ),
-  },
-  {
-    key: 'landscape',
-    href: '/landscape',
-    labelEn: 'Landscape',
-    labelJa: '業界',
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth={2}
-        stroke="currentColor"
-        className="w-5 h-5"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z"
+          d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
         />
       </svg>
     ),
   },
 ];
 
+const subMenuItems: SubMenuItem[] = [
+  { key: 'history', href: '/history', labelEn: 'History', labelJa: '歴史' },
+  { key: 'landscape', href: '/ai-landscape', labelEn: 'AI Landscape', labelJa: '業界マップ' },
+  { key: 'benchmarks', href: '/benchmarks', labelEn: 'Benchmarks', labelJa: 'ベンチマーク' },
+  { key: 'about', href: '/about', labelEn: 'About', labelJa: 'About' },
+];
+
 const BottomNavigationInner: React.FC = () => {
   const [currentPath, setCurrentPath] = useState('');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { locale } = useI18n();
 
   useEffect(() => {
@@ -115,31 +108,99 @@ const BottomNavigationInner: React.FC = () => {
     return currentPath.startsWith(href);
   };
 
-  return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-cream border-t-1.5 border-navy md:hidden z-40 safe-area-bottom">
-      <div className="flex items-center justify-around h-14">
-        {navItems.map((item) => {
-          const active = isActive(item.href);
-          const label = locale === 'ja' ? item.labelJa : item.labelEn;
+  const isOtherActive = subMenuItems.some((item) => currentPath.startsWith(item.href));
 
-          return (
-            <a
-              key={item.key}
-              href={item.href}
-              className={`flex flex-col items-center justify-center flex-1 h-full py-1 transition-colors ${
-                active ? 'text-navy' : 'text-navy/50'
-              }`}
+  return (
+    <>
+      {/* Overlay */}
+      {isMenuOpen && (
+        <div
+          className="fixed inset-0 bg-black/30 z-30 md:hidden"
+          onClick={() => setIsMenuOpen(false)}
+        />
+      )}
+
+      {/* Submenu popup */}
+      {isMenuOpen && (
+        <div className="fixed bottom-16 left-0 right-0 bg-cream border-t-1.5 border-navy z-40 md:hidden animate-slide-up">
+          <div className="py-2">
+            {subMenuItems.map((item) => {
+              const label = locale === 'ja' ? item.labelJa : item.labelEn;
+              const active = currentPath.startsWith(item.href);
+              return (
+                <a
+                  key={item.key}
+                  href={item.href}
+                  className={`flex items-center px-6 py-3 transition-colors ${
+                    active ? 'bg-navy/10 text-navy font-medium' : 'text-navy/70 hover:bg-navy/5'
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {label}
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      {/* Bottom navigation bar */}
+      <nav className="fixed bottom-0 left-0 right-0 bg-cream border-t-1.5 border-navy md:hidden z-40 safe-area-bottom">
+        <div className="flex items-center justify-around h-14">
+          {navItems.map((item) => {
+            const active = isActive(item.href);
+            const label = locale === 'ja' ? item.labelJa : item.labelEn;
+
+            return (
+              <a
+                key={item.key}
+                href={item.href}
+                className={`flex flex-col items-center justify-center flex-1 h-full py-1 transition-colors ${
+                  active ? 'text-navy' : 'text-navy/50'
+                }`}
+              >
+                <span className={active ? 'scale-110 transition-transform' : ''}>{item.icon}</span>
+                <span className={`text-[10px] mt-0.5 font-medium ${active ? '' : 'opacity-60'}`}>
+                  {label}
+                </span>
+                {active && <span className="absolute bottom-0 w-8 h-0.5 bg-navy"></span>}
+              </a>
+            );
+          })}
+
+          {/* Other menu button */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className={`flex flex-col items-center justify-center flex-1 h-full py-1 transition-colors ${
+              isOtherActive || isMenuOpen ? 'text-navy' : 'text-navy/50'
+            }`}
+          >
+            <span className={isOtherActive || isMenuOpen ? 'scale-110 transition-transform' : ''}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2}
+                stroke="currentColor"
+                className="w-5 h-5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+            </span>
+            <span
+              className={`text-[10px] mt-0.5 font-medium ${isOtherActive || isMenuOpen ? '' : 'opacity-60'}`}
             >
-              <span className={active ? 'scale-110 transition-transform' : ''}>{item.icon}</span>
-              <span className={`text-[10px] mt-0.5 font-medium ${active ? '' : 'opacity-60'}`}>
-                {label}
-              </span>
-              {active && <span className="absolute bottom-0 w-8 h-0.5 bg-navy"></span>}
-            </a>
-          );
-        })}
-      </div>
-    </nav>
+              {locale === 'ja' ? 'その他' : 'More'}
+            </span>
+            {isOtherActive && <span className="absolute bottom-0 w-8 h-0.5 bg-navy"></span>}
+          </button>
+        </div>
+      </nav>
+    </>
   );
 };
 
