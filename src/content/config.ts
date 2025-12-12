@@ -5,8 +5,8 @@ const commonTags = z.enum([
   // Companies
   'OpenAI', 'Google', 'Anthropic', 'Microsoft', 'Microsoft Azure', 'Nvidia', 'NVIDIA', 'Meta', 'DeepSeek', 'Amazon', 'DeepMind', 'xAI', 'Adobe', 'Linux Foundation', 'Block',
   // Models & Products
-  'ChatGPT', 'Claude', 'Claude Code', 'Claude Desktop', 'GPT', 'GPT-4', 'GPT-4o', 'GPT-5', 'GPT-5.1', 'GPT-5.1 Auto',
-  'Gemini', 'Gemini 3', 'Grok', 'LLM', 'LLaMA', 'Sora', 'o3', 'R1', 'AlphaFold', 'Haiku', 'Codex',
+  'ChatGPT', 'Claude', 'Claude Code', 'Claude Desktop', 'GPT', 'GPT-4', 'GPT-4o', 'GPT-5', 'GPT-5.1', 'GPT-5.1 Auto', 'GPT-5.2',
+  'Gemini', 'Gemini 3', 'Grok', 'LLM', 'LLaMA', 'Sora', 'o3', 'R1', 'AlphaFold', 'Haiku', 'Codex', 'Deep Research',
   // Technical areas - AI Core
   'AI', 'AI Safety', 'AI安全性', 'Multimodal', 'マルチモーダル', 'Reasoning AI', '推論AI', 'Reasoning', '推論',
   'Computer Use', 'Automation', '自動化', 'RPA', 'Agent AI', 'エージェントAI', 'AI Agents', 'AIエージェント',
@@ -28,7 +28,7 @@ const commonTags = z.enum([
   'Infrastructure', 'インフラ', 'Data Centers', 'データセンター',
   'Cost Efficiency', 'コスト効率', 'Low Cost', '低コスト',
   'Cloud Computing', 'クラウドコンピューティング',
-  'Startup', 'スタートアップ', 'Industry Analysis', '業界分析',
+  'Startup', 'スタートアップ', 'Industry Analysis', '業界分析', 'Benchmark', 'ベンチマーク',
   // Development Tools
   'Developer Tools', '開発ツール', '開発者ツール', 'Coding Assistant', 'コーディングアシスタント',
   'Code Editor', 'コードエディタ', 'IDE', 'Cursor', 'GitHub Copilot',

@@ -27,7 +27,7 @@
 
 - ChatGPT
 - Claude / Claude Code / Claude Desktop
-- GPT / GPT-4 / GPT-4o / GPT-5 / GPT-5.1 / GPT-5.1 Auto
+- GPT / GPT-4 / GPT-4o / GPT-5 / GPT-5.1 / GPT-5.1 Auto / GPT-5.2
 - Gemini / Gemini 3
 - Grok
 - LLM / LLaMA
@@ -36,6 +36,7 @@
 - AlphaFold
 - Haiku
 - Codex
+- Deep Research
 
 ## 🔬 技術分野 - AI Core
 
@@ -89,6 +90,7 @@
 - Cloud Computing / クラウドコンピューティング
 - Startup / スタートアップ
 - Industry Analysis / 業界分析
+- Benchmark / ベンチマーク
 
 ## 🛠️ 開発ツール
 
