@@ -76,10 +76,13 @@ export default function BenchmarkTable({ lang }: BenchmarkTableProps) {
         ))}
       </div>
 
-      {/* Table Container with horizontal scroll */}
-      <div className="overflow-x-auto border-1.5 border-navy" style={{ borderWidth: '1.5px' }}>
+      {/* Table Container with horizontal and vertical scroll */}
+      <div
+        className="overflow-auto border-1.5 border-navy"
+        style={{ borderWidth: '1.5px', maxHeight: '70vh' }}
+      >
         <table className="w-full min-w-[800px] font-mono text-sm bg-cream">
-          <thead className="bg-navy text-cream sticky top-0">
+          <thead className="bg-navy text-cream sticky top-0 z-10">
             <tr>
               <th className="text-left p-3 border-r-1.5 border-cream" style={{ borderWidth: '1.5px' }}>
                 {lang === 'ja' ? 'ベンチマーク' : 'Benchmark'}
