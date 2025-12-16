@@ -22,6 +22,8 @@
 - Adobe
 - Linux Foundation
 - Block
+- AMD
+- TIME
 
 ## 🤖 モデル・プロダクト
 
@@ -133,6 +135,12 @@
 - Geoffrey Hinton
 - Demis Hassabis
 - Jeff Bezos
+- Jensen Huang
+- Dario Amodei
+- Mark Zuckerberg
+- Lisa Su
+- Bob Iger
+- Elon Musk
 
 ## 🔬 科学
 
@@ -168,6 +176,9 @@
 ## 💼 ビジネスイベント
 
 - Acquisition / 買収
+- Licensing
+- Partnership
+- Person of the Year
 
 ## 📌 その他
 
