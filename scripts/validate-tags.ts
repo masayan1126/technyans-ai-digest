@@ -19,7 +19,7 @@ import { parse as parseYaml } from 'yaml';
 // src/content/config.ts から許可されたタグのリストをコピー
 const ALLOWED_TAGS = [
   // Companies
-  'OpenAI', 'Google', 'Anthropic', 'Microsoft', 'Microsoft Azure', 'Nvidia', 'NVIDIA', 'Meta', 'DeepSeek', 'Amazon', 'DeepMind', 'xAI', 'Adobe', 'Linux Foundation', 'Block',
+  'OpenAI', 'Google', 'Anthropic', 'Microsoft', 'Microsoft Azure', 'Nvidia', 'NVIDIA', 'Meta', 'DeepSeek', 'Amazon', 'DeepMind', 'xAI', 'Adobe', 'Linux Foundation', 'Block', 'AMD', 'TIME',
   // Models & Products
   'ChatGPT', 'Claude', 'Claude Code', 'Claude Desktop', 'GPT', 'GPT-4', 'GPT-4o', 'GPT-5', 'GPT-5.1', 'GPT-5.1 Auto', 'GPT-5.2',
   'Gemini', 'Gemini 3', 'Grok', 'LLM', 'LLaMA', 'Sora', 'o3', 'R1', 'AlphaFold', 'Haiku', 'Codex', 'Deep Research',
@@ -61,7 +61,7 @@ const ALLOWED_TAGS = [
   // Regional
   'Chinese AI', '中国AI', 'China', '中国',
   // People
-  'Sam Altman', 'Geoffrey Hinton', 'Demis Hassabis', 'Jeff Bezos',
+  'Sam Altman', 'Geoffrey Hinton', 'Demis Hassabis', 'Jeff Bezos', 'Jensen Huang', 'Dario Amodei', 'Mark Zuckerberg', 'Lisa Su', 'Bob Iger', 'Elon Musk',
   // Scientific
   'Nobel Prize', 'ノーベル賞', 'Mathematics', '数学',
   // Specialized Applications
@@ -76,7 +76,7 @@ const ALLOWED_TAGS = [
   // Programming Languages & Runtimes
   'JavaScript', 'TypeScript', 'Bun',
   // Business Events
-  'Acquisition', '買収',
+  'Acquisition', '買収', 'Licensing', 'Partnership', 'Person of the Year', 'Entertainment',
   // General
   'テキスト生成'
 ];
