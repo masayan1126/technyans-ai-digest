@@ -1,7 +1,7 @@
 ---
 title: "OpenAI、新画像生成モデル「GPT Image 1.5」を発表 - Google対抗で4倍高速化"
 description: "OpenAIがChatGPTの新しい画像生成モデル「GPT Image 1.5」をリリース。最大4倍の高速化、より精密な編集機能を実現し、Googleとの競争が激化。"
-date: 2024-12-17
+date: 2025-12-17
 category: "ChatGPT"
 tags: ["OpenAI", "ChatGPT", "Image Generation", "AI Competition", "Generative AI"]
 locale: "ja"

@@ -1,7 +1,7 @@
 ---
 title: "Google、Gemini Deep Researchに画像・チャート・シミュレーション生成機能を追加"
 description: "GoogleがGemini Deep Researchをアップデート。AIが自動で画像、チャート、インタラクティブシミュレーションを含むビジュアルレポートを生成可能に。"
-date: 2024-12-17
+date: 2025-12-17
 category: "Gemini"
 tags: ["Google", "Gemini", "Deep Research", "Generative AI", "Image Generation"]
 locale: "ja"
