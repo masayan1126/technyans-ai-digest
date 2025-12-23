@@ -48,10 +48,26 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # 変更がある場合のみ PR を作成
+          # デバッグ: 現在の状態を表示
+          echo "=== Git Status ==="
+          git status
+          echo "=== Git Log (last 3) ==="
+          git log --oneline -3
+
+          # 未コミットの変更がある場合はコミット
           if [ -n "$(git status --porcelain)" ]; then
+            echo "Uncommitted changes found, committing..."
             git add -A
             git commit -m "Add AI news articles for $(date +%Y-%m-%d)"
+          fi
+
+          # main との差分があるかチェック
+          COMMITS_AHEAD=$(git rev-list --count origin/main..HEAD 2>/dev/null || echo "0")
+          echo "Commits ahead of main: $COMMITS_AHEAD"
+
+          if [ "$COMMITS_AHEAD" -gt "0" ]; then
+            echo "Pushing branch and creating PR..."
+            git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
             git push -u origin ${{ steps.branch.outputs.name }}
 
             gh pr create \
@@ -69,5 +85,5 @@ jobs:
               --base main \
               --head ${{ steps.branch.outputs.name }}
           else
-            echo "No changes to commit"
+            echo "No new commits to push"
           fi
