@@ -33,6 +33,4 @@ test-results/
 playwright-report/
 playwright/.cache/
 
-CLAUDE.md
-
 .vercel
