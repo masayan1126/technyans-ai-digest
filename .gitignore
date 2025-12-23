@@ -19,8 +19,9 @@ pnpm-debug.log*
 .env.production
 .envrc
 
-# MCP configuration (contains API keys)
-.mcp.json
+# MCP configuration
+# Note: .mcp.json is now safe to commit (uses environment variable references)
+# .mcp.json
 
 # macOS-specific files
 .DS_Store
