@@ -1,0 +1,39 @@
+name: Daily AI News Generation
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # 毎日 0:00 UTC = 9:00 JST
+  workflow_dispatch:  # 手動実行も可能に
+
+jobs:
+  generate-news:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            Tavily MCP を使って今日の最新 AI ニュースを検索し、
+            重要なニュースについて記事を作成してください。
+
+            ルール：
+            - 各トピックごとに独立した記事を作成
+            - 必ず ja.md と en.md の両方を作成
+            - src/content/articles/YYYYMMDD/[article-slug]/ に配置
+            - TAGS.md のタグのみ使用
+            - npm run validate-tags で検証
+            - 記事作成後、git add と git commit を実行
+          allowed_tools: "Bash,Edit,Write,Read,mcp__tavily-mcp__tavily-search"
+        env:
+          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+
+      - name: Push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git push

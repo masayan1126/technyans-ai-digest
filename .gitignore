@@ -17,6 +17,7 @@ pnpm-debug.log*
 # environment variables
 .env
 .env.production
+.envrc
 
 # MCP configuration (contains API keys)
 .mcp.json
