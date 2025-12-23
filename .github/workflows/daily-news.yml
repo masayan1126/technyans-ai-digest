@@ -37,7 +37,7 @@ jobs:
             - TAGS.md のタグのみ使用
             - npm run validate-tags で検証
             - 記事作成後、git add と git commit を実行
-          allowed_tools: "Bash,Edit,Write,Read,mcp__tavily-mcp__tavily-search"
+          claude_args: "--allowedTools Bash,Edit,Write,Read,WebSearch,mcp__tavily-mcp__tavily-search,mcp__tavily-mcp__tavily-extract"
         env:
           TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
 
