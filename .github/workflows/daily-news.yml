@@ -1,198 +1,198 @@
-name: Daily AI News Generation
+# name: Daily AI News Generation
 
-on:
-  schedule:
-    - cron: '0 0 * * *'  # 毎日 0:00 UTC = 9:00 JST
-  workflow_dispatch:  # 手動実行も可能に
+# on:
+#   schedule:
+#     - cron: '0 0 * * *'  # 毎日 0:00 UTC = 9:00 JST
+#   workflow_dispatch:  # 手動実行も可能に
 
-jobs:
-  generate-news:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
-      id-token: write
+# jobs:
+#   generate-news:
+#     runs-on: ubuntu-latest
+#     permissions:
+#       contents: write
+#       pull-requests: write
+#       id-token: write
 
-    steps:
-      - uses: actions/checkout@v4
+#     steps:
+#       - uses: actions/checkout@v4
 
-      - name: Create branch
-        id: branch
-        run: |
-          BRANCH_NAME="ai-news/$(date +%Y%m%d-%H%M%S)"
-          echo "name=$BRANCH_NAME" >> $GITHUB_OUTPUT
-          git checkout -b $BRANCH_NAME
+#       - name: Create branch
+#         id: branch
+#         run: |
+#           BRANCH_NAME="ai-news/$(date +%Y%m%d-%H%M%S)"
+#           echo "name=$BRANCH_NAME" >> $GITHUB_OUTPUT
+#           git checkout -b $BRANCH_NAME
 
-      - name: Run Claude Code Action
-        id: claude
-        uses: anthropics/claude-code-action@v1
-        with:
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          prompt: |
-            Tavily MCP を使って今日の最新 AI ニュースを検索し、
-            重要なニュースについて記事を作成してください。
+#       - name: Run Claude Code Action
+#         id: claude
+#         uses: anthropics/claude-code-action@v1
+#         with:
+#           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+#           prompt: |
+#             Tavily MCP を使って今日の最新 AI ニュースを検索し、
+#             重要なニュースについて記事を作成してください。
 
-            ルール：
-            - 各トピックごとに独立した記事を作成
-            - 必ず ja.md と en.md の両方を作成
-            - src/content/articles/YYYYMMDD/[article-slug]/ に配置
-            - TAGS.md のタグのみ使用
-            - npm run validate-tags で検証
-            - 記事作成後、git add と git commit を実行
-          claude_args: "--model claude-haiku-4-5-20251001 --allowedTools Bash,Edit,Write,Read,WebSearch,mcp__tavily-mcp__tavily-search,mcp__tavily-mcp__tavily-extract"
-          show_full_output: true
-        env:
-          TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+#             ルール：
+#             - 各トピックごとに独立した記事を作成
+#             - 必ず ja.md と en.md の両方を作成
+#             - src/content/articles/YYYYMMDD/[article-slug]/ に配置
+#             - TAGS.md のタグのみ使用
+#             - npm run validate-tags で検証
+#             - 記事作成後、git add と git commit を実行
+#           claude_args: "--model claude-haiku-4-5-20251001 --allowedTools Bash,Edit,Write,Read,WebSearch,mcp__tavily-mcp__tavily-search,mcp__tavily-mcp__tavily-extract"
+#           show_full_output: true
+#         env:
+#           TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
 
-      - name: Create Pull Request
-        id: pr
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+#       - name: Create Pull Request
+#         id: pr
+#         env:
+#           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#         run: |
+#           git config user.name "github-actions[bot]"
+#           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # 未コミットの変更がある場合はコミット
-          if [ -n "$(git status --porcelain)" ]; then
-            git add -A
-            git commit -m "Add AI news articles for $(date +%Y-%m-%d)"
-          fi
+#           # 未コミットの変更がある場合はコミット
+#           if [ -n "$(git status --porcelain)" ]; then
+#             git add -A
+#             git commit -m "Add AI news articles for $(date +%Y-%m-%d)"
+#           fi
 
-          # main との差分があるかチェック
-          COMMITS_AHEAD=$(git rev-list --count origin/main..HEAD 2>/dev/null || echo "0")
+#           # main との差分があるかチェック
+#           COMMITS_AHEAD=$(git rev-list --count origin/main..HEAD 2>/dev/null || echo "0")
 
-          if [ "$COMMITS_AHEAD" -gt "0" ]; then
-            git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-            git push -u origin ${{ steps.branch.outputs.name }}
+#           if [ "$COMMITS_AHEAD" -gt "0" ]; then
+#             git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+#             git push -u origin ${{ steps.branch.outputs.name }}
 
-            # 作成された記事の一覧を取得
-            ARTICLES=$(git diff --name-only origin/main..HEAD | grep -E "^src/content/articles/.*/ja\.md$" | head -10)
+#             # 作成された記事の一覧を取得
+#             ARTICLES=$(git diff --name-only origin/main..HEAD | grep -E "^src/content/articles/.*/ja\.md$" | head -10)
 
-            # 記事タイトルを抽出
-            ARTICLE_SUMMARY=""
-            for file in $ARTICLES; do
-              if [ -f "$file" ]; then
-                TITLE=$(grep -m1 "^title:" "$file" | sed 's/title: //' | tr -d '"')
-                ARTICLE_SUMMARY="${ARTICLE_SUMMARY}- ${TITLE}\n"
-              fi
-            done
+#             # 記事タイトルを抽出
+#             ARTICLE_SUMMARY=""
+#             for file in $ARTICLES; do
+#               if [ -f "$file" ]; then
+#                 TITLE=$(grep -m1 "^title:" "$file" | sed 's/title: //' | tr -d '"')
+#                 ARTICLE_SUMMARY="${ARTICLE_SUMMARY}- ${TITLE}\n"
+#               fi
+#             done
 
-            # PR 作成
-            PR_URL=$(gh pr create \
-              --title "AI News: $(date +%Y-%m-%d)" \
-              --body "## Summary
+#             # PR 作成
+#             PR_URL=$(gh pr create \
+#               --title "AI News: $(date +%Y-%m-%d)" \
+#               --body "## Summary
 
-            AI ニュース記事の自動生成
+#             AI ニュース記事の自動生成
 
-            ## 作成された記事
+#             ## 作成された記事
 
-            ${ARTICLE_SUMMARY}
+#             ${ARTICLE_SUMMARY}
 
-            ## Generated by
+#             ## Generated by
 
-            GitHub Actions + Claude Code Action
+#             GitHub Actions + Claude Code Action
 
-            ---
-            *This PR was automatically generated.*" \
-              --base main \
-              --head ${{ steps.branch.outputs.name }} 2>&1 || echo "PR_FAILED")
+#             ---
+#             *This PR was automatically generated.*" \
+#               --base main \
+#               --head ${{ steps.branch.outputs.name }} 2>&1 || echo "PR_FAILED")
 
-            if [[ "$PR_URL" == *"PR_FAILED"* ]]; then
-              echo "pr_created=false" >> $GITHUB_OUTPUT
-              echo "pr_url=" >> $GITHUB_OUTPUT
-            else
-              echo "pr_created=true" >> $GITHUB_OUTPUT
-              echo "pr_url=$PR_URL" >> $GITHUB_OUTPUT
-            fi
-            echo "article_summary<<EOF" >> $GITHUB_OUTPUT
-            echo -e "$ARTICLE_SUMMARY" >> $GITHUB_OUTPUT
-            echo "EOF" >> $GITHUB_OUTPUT
-            echo "commits_ahead=$COMMITS_AHEAD" >> $GITHUB_OUTPUT
-          else
-            echo "pr_created=false" >> $GITHUB_OUTPUT
-            echo "commits_ahead=0" >> $GITHUB_OUTPUT
-            echo "article_summary=なし" >> $GITHUB_OUTPUT
-          fi
+#             if [[ "$PR_URL" == *"PR_FAILED"* ]]; then
+#               echo "pr_created=false" >> $GITHUB_OUTPUT
+#               echo "pr_url=" >> $GITHUB_OUTPUT
+#             else
+#               echo "pr_created=true" >> $GITHUB_OUTPUT
+#               echo "pr_url=$PR_URL" >> $GITHUB_OUTPUT
+#             fi
+#             echo "article_summary<<EOF" >> $GITHUB_OUTPUT
+#             echo -e "$ARTICLE_SUMMARY" >> $GITHUB_OUTPUT
+#             echo "EOF" >> $GITHUB_OUTPUT
+#             echo "commits_ahead=$COMMITS_AHEAD" >> $GITHUB_OUTPUT
+#           else
+#             echo "pr_created=false" >> $GITHUB_OUTPUT
+#             echo "commits_ahead=0" >> $GITHUB_OUTPUT
+#             echo "article_summary=なし" >> $GITHUB_OUTPUT
+#           fi
 
-      - name: Notify Discord (Success)
-        if: success() && steps.pr.outputs.commits_ahead != '0'
-        env:
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-        run: |
-          PR_URL="${{ steps.pr.outputs.pr_url }}"
-          ARTICLE_SUMMARY="${{ steps.pr.outputs.article_summary }}"
+#       - name: Notify Discord (Success)
+#         if: success() && steps.pr.outputs.commits_ahead != '0'
+#         env:
+#           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+#         run: |
+#           PR_URL="${{ steps.pr.outputs.pr_url }}"
+#           ARTICLE_SUMMARY="${{ steps.pr.outputs.article_summary }}"
 
-          # Discord に通知
-          curl -H "Content-Type: application/json" \
-            -X POST \
-            -d "{
-              \"embeds\": [{
-                \"title\": \"✅ AI ニュース記事が生成されました\",
-                \"description\": \"本日の AI ニュース記事が自動生成されました。レビューしてマージしてください。\",
-                \"color\": 5763719,
-                \"fields\": [
-                  {
-                    \"name\": \"📰 作成された記事\",
-                    \"value\": \"${ARTICLE_SUMMARY:-記事情報を取得できませんでした}\",
-                    \"inline\": false
-                  },
-                  {
-                    \"name\": \"🔗 Pull Request\",
-                    \"value\": \"${PR_URL:-ブランチ: ${{ steps.branch.outputs.name }}}\",
-                    \"inline\": false
-                  }
-                ],
-                \"footer\": {
-                  \"text\": \"GitHub Actions + Claude Code Action\"
-                },
-                \"timestamp\": \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\"
-              }]
-            }" \
-            "$DISCORD_WEBHOOK_URL"
+#           # Discord に通知
+#           curl -H "Content-Type: application/json" \
+#             -X POST \
+#             -d "{
+#               \"embeds\": [{
+#                 \"title\": \"✅ AI ニュース記事が生成されました\",
+#                 \"description\": \"本日の AI ニュース記事が自動生成されました。レビューしてマージしてください。\",
+#                 \"color\": 5763719,
+#                 \"fields\": [
+#                   {
+#                     \"name\": \"📰 作成された記事\",
+#                     \"value\": \"${ARTICLE_SUMMARY:-記事情報を取得できませんでした}\",
+#                     \"inline\": false
+#                   },
+#                   {
+#                     \"name\": \"🔗 Pull Request\",
+#                     \"value\": \"${PR_URL:-ブランチ: ${{ steps.branch.outputs.name }}}\",
+#                     \"inline\": false
+#                   }
+#                 ],
+#                 \"footer\": {
+#                   \"text\": \"GitHub Actions + Claude Code Action\"
+#                 },
+#                 \"timestamp\": \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\"
+#               }]
+#             }" \
+#             "$DISCORD_WEBHOOK_URL"
 
-      - name: Notify Discord (No Articles)
-        if: success() && steps.pr.outputs.commits_ahead == '0'
-        env:
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-        run: |
-          curl -H "Content-Type: application/json" \
-            -X POST \
-            -d "{
-              \"embeds\": [{
-                \"title\": \"ℹ️ 本日の AI ニュース\",
-                \"description\": \"本日は新しい記事が生成されませんでした。\",
-                \"color\": 9807270,
-                \"footer\": {
-                  \"text\": \"GitHub Actions + Claude Code Action\"
-                },
-                \"timestamp\": \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\"
-              }]
-            }" \
-            "$DISCORD_WEBHOOK_URL"
+#       - name: Notify Discord (No Articles)
+#         if: success() && steps.pr.outputs.commits_ahead == '0'
+#         env:
+#           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+#         run: |
+#           curl -H "Content-Type: application/json" \
+#             -X POST \
+#             -d "{
+#               \"embeds\": [{
+#                 \"title\": \"ℹ️ 本日の AI ニュース\",
+#                 \"description\": \"本日は新しい記事が生成されませんでした。\",
+#                 \"color\": 9807270,
+#                 \"footer\": {
+#                   \"text\": \"GitHub Actions + Claude Code Action\"
+#                 },
+#                 \"timestamp\": \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\"
+#               }]
+#             }" \
+#             "$DISCORD_WEBHOOK_URL"
 
-      - name: Notify Discord (Failure)
-        if: failure()
-        env:
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-        run: |
-          curl -H "Content-Type: application/json" \
-            -X POST \
-            -d "{
-              \"embeds\": [{
-                \"title\": \"❌ AI ニュース生成が失敗しました\",
-                \"description\": \"ワークフローの実行中にエラーが発生しました。\",
-                \"color\": 15548997,
-                \"fields\": [
-                  {
-                    \"name\": \"🔍 詳細\",
-                    \"value\": \"[GitHub Actions ログを確認](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})\",
-                    \"inline\": false
-                  }
-                ],
-                \"footer\": {
-                  \"text\": \"GitHub Actions + Claude Code Action\"
-                },
-                \"timestamp\": \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\"
-              }]
-            }" \
-            "$DISCORD_WEBHOOK_URL"
+#       - name: Notify Discord (Failure)
+#         if: failure()
+#         env:
+#           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+#         run: |
+#           curl -H "Content-Type: application/json" \
+#             -X POST \
+#             -d "{
+#               \"embeds\": [{
+#                 \"title\": \"❌ AI ニュース生成が失敗しました\",
+#                 \"description\": \"ワークフローの実行中にエラーが発生しました。\",
+#                 \"color\": 15548997,
+#                 \"fields\": [
+#                   {
+#                     \"name\": \"🔍 詳細\",
+#                     \"value\": \"[GitHub Actions ログを確認](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})\",
+#                     \"inline\": false
+#                   }
+#                 ],
+#                 \"footer\": {
+#                   \"text\": \"GitHub Actions + Claude Code Action\"
+#                 },
+#                 \"timestamp\": \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\"
+#               }]
+#             }" \
+#             "$DISCORD_WEBHOOK_URL"
