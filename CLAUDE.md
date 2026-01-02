@@ -76,7 +76,6 @@ When collecting multiple news stories, follow these rules:
 
 @.claude/skills/ai-news-fetcher/SKILL.md
 @.claude/skills/ai-news-fetcher/WORKFLOW.md
-@.claude/skills/ai-tech-digest/SKILL.md
 
 ## Architecture Highlights
 
