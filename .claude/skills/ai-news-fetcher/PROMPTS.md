@@ -31,6 +31,11 @@ tags: [{list of relevant tags}]
 ## {Additional sections as needed}
 
 {Wrap up with implications or next steps}
+
+## Sources
+
+- [Source Title 1](https://example.com/source1)
+- [Source Title 2](https://example.com/source2)
 ```
 
 ## Japanese Article Template
@@ -64,6 +69,11 @@ tags: [{関連タグのリスト}]
 ## {必要に応じて追加セクション}
 
 {影響や次のステップでまとめる}
+
+## 情報源
+
+- [ソースタイトル1](https://example.com/source1)
+- [ソースタイトル2](https://example.com/source2)
 ```
 
 ## Article Generation Guidelines
