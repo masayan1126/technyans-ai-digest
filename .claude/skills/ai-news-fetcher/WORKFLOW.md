@@ -42,28 +42,36 @@ Auto-generate relevant tags (3-5 per article).
 
 If content doesn't fit existing categories, suggest new category name.
 
-### 6. Generate Bilingual Markdown
+### 6. Record Source URLs
+**重要**: 記事作成時に参照したURLを必ず記録する
+- 各記事に使用したソースURLをリスト化
+- 記事末尾の「Sources」/「情報源」セクションに追加
+- 複数ソースがある場合は全て記載
+
+### 7. Generate Bilingual Markdown
 For each article:
 1. Create English version (`{slug}.md`)
 2. Create Japanese version (`{slug}-ja.md`)
+3. **必須**: 記事末尾に出典URLを追加
 
 Use templates from [PROMPTS.md](./PROMPTS.md)
 
-### 7. Update Schema if Needed
+### 8. Update Schema if Needed
 If new categories were created:
 - Update `src/content/config.ts`
 - Add new category to the enum
 
-### 8. Save Files
+### 9. Save Files
 Write all markdown files to:
 ```
 src/content/articles/{YYYYMMDD}/{slug}.md
 src/content/articles/{YYYYMMDD}/{slug}-ja.md
 ```
 
-### 9. Summary Report
+### 10. Summary Report
 Provide summary:
 - Total articles fetched
 - Total articles created (after duplicate removal)
 - New categories added (if any)
 - File paths created
+- **Source URLs used** (各記事の参照元URL一覧)
