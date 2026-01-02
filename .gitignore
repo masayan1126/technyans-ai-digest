@@ -35,3 +35,5 @@ playwright-report/
 playwright/.cache/
 
 .vercel
+
+.mcp.json
