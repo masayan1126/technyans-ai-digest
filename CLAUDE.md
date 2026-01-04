@@ -115,3 +115,16 @@ All powered by the same `aiTimeline` collection with different rendering logic.
 2. **Content translations** - Separate `.md` files per language with `locale` field
 
 React components use `I18nProvider` and `useI18n()` hook. Language preference stored in `localStorage`.
+
+## Claude Code Configuration
+
+### Extended Thinking (Ultrathink)
+
+Actively use **extended thinking** (ultrathink) for complex tasks. This enables deeper reasoning and better outcomes for:
+
+- Multi-step problem solving
+- Architecture decisions
+- Code review and debugging
+- Content planning and research
+
+Extended thinking helps Claude produce more thorough, well-reasoned responses by allowing more internal deliberation before responding.
