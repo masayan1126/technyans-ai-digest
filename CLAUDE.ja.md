@@ -70,12 +70,24 @@ technyanComment?: string
 5. **フォーマットの一貫性** - 既存の記事フォーマット（フロントマター、セクション構造）に従う
 6. **カテゴリ制限** - スキーマ enum で定義されたカテゴリのみ使用
 
-## AI ニュース収集スキル参照
+## AI ニュース & X 投稿スキル（プラグイン）
 
-> **重要**: `.claude/skills/` ディレクトリのスキルは GitHub Actions（claude-code-action）では直接利用できません。ここで `@` 構文でスキルドキュメントを参照することで、これらのドキュメントが CLAUDE.md のコンテキストとして読み込まれ、ローカル環境と CI 環境の両方で同じガイダンスが機能します。
+このプロジェクトは `masayan-uni-plugins` から以下のプラグインを使用しています：
 
-@.claude/skills/ai-news-fetcher/SKILL.md
-@.claude/skills/ai-news-fetcher/WORKFLOW.md
+1. **ai-news-fetcher** - Web から AI ニュースを収集し記事を作成
+2. **technyan-x-post-generator** - Tech-nyan キャラクターの X 投稿案を生成
+
+### 使用方法
+
+```bash
+# AI ニュースを収集して記事を作成
+/ai-news-fetcher:fetch-news
+
+# 作成した記事から X 投稿案を生成
+/technyan-x-post-generator:generate-x-post
+```
+
+> **注意**: これらのプラグインは `.claude/settings.local.json` の `enabledPlugins` で設定されています。
 
 ## アーキテクチャハイライト
 

@@ -70,12 +70,24 @@ When collecting multiple news stories, follow these rules:
 5. **Format consistency** - Follow existing article format (frontmatter, section structure)
 6. **Category restrictions** - Use ONLY categories defined in the schema enum
 
-## AI News Fetching Skills Reference
+## AI News & X Post Skills (Plugins)
 
-> **Important**: `.claude/skills/` directory skills are NOT supported in GitHub Actions (claude-code-action). By referencing skill documents with `@` syntax here, these documents are loaded as part of CLAUDE.md context, enabling the same guidance to work in both local and CI environments.
+This project uses the following plugins from `masayan-uni-plugins`:
 
-@.claude/skills/ai-news-fetcher/SKILL.md
-@.claude/skills/ai-news-fetcher/WORKFLOW.md
+1. **ai-news-fetcher** - Collects AI news from the web and creates articles
+2. **technyan-x-post-generator** - Generates X post drafts for Tech-nyan character
+
+### Usage
+
+```bash
+# Collect AI news and create articles
+/ai-news-fetcher:fetch-news
+
+# Generate X post drafts from created articles
+/technyan-x-post-generator:generate-x-post
+```
+
+> **Note**: These plugins are configured in `.claude/settings.local.json` under `enabledPlugins`.
 
 ## Architecture Highlights
 
