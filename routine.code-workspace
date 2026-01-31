@@ -1,0 +1,29 @@
+{
+	"folders": [
+		{
+			"path": "git/youtube"
+		},
+		{
+			"path": "../../gen-image-prompt-creator"
+		},
+		{
+			"path": "git/x"
+		},
+		{
+			"path": ".."
+		},
+		{
+			"path": "git/tech-info-hub"
+		},
+		{
+			"path": "git/technyans-ai-digest"
+		},
+		{
+			"path": "git/slide"
+		},
+		{
+			"path": "git/tech-blog"
+		}
+	],
+	"settings": {}
+}
