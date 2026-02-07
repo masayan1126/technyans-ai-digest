@@ -3,10 +3,10 @@ import { defineCollection, z } from 'astro:content';
 // Common tags used across articles
 const commonTags = z.enum([
   // Companies
-  'OpenAI', 'Google', 'Anthropic', 'Microsoft', 'Microsoft Azure', 'Nvidia', 'NVIDIA', 'Meta', 'DeepSeek', 'Amazon', 'DeepMind', 'xAI', 'Adobe', 'Linux Foundation', 'Block', 'Disney', 'AMD', 'TIME', 'Apple',
+  'OpenAI', 'Google', 'Anthropic', 'Microsoft', 'Microsoft Azure', 'Nvidia', 'NVIDIA', 'Meta', 'DeepSeek', 'Amazon', 'DeepMind', 'xAI', 'SpaceX', 'Adobe', 'Linux Foundation', 'Block', 'Disney', 'AMD', 'TIME', 'Apple',
   // Models & Products
   'ChatGPT', 'Claude', 'Claude Code', 'Claude Desktop', 'GPT', 'GPT-4', 'GPT-4o', 'GPT-5', 'GPT-5.1', 'GPT-5.1 Auto', 'GPT-5.2',
-  'Gemini', 'Gemini 3', 'Grok', 'LLM', 'LLaMA', 'Sora', 'o3', 'R1', 'AlphaFold', 'Haiku', 'Codex', 'Deep Research',
+  'Gemini', 'Gemini 3', 'Grok', 'LLM', 'LLaMA', 'Sora', 'o3', 'R1', 'AlphaFold', 'Haiku', 'Codex', 'Deep Research', 'GPT-5.3',
   // Technical areas - AI Core
   'AI', 'AI Safety', 'AI安全性', 'Multimodal', 'マルチモーダル', 'Reasoning AI', '推論AI', 'Reasoning', '推論',
   'Computer Use', 'Automation', '自動化', 'RPA', 'Agent AI', 'エージェントAI', 'AI Agents', 'AIエージェント',

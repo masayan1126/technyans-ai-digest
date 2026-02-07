@@ -19,6 +19,7 @@
 - Amazon
 - DeepMind
 - xAI
+- SpaceX
 - Adobe
 - Linux Foundation
 - Block
@@ -30,7 +31,7 @@
 
 - ChatGPT
 - Claude / Claude Code / Claude Desktop
-- GPT / GPT-4 / GPT-4o / GPT-5 / GPT-5.1 / GPT-5.1 Auto / GPT-5.2
+- GPT / GPT-4 / GPT-4o / GPT-5 / GPT-5.1 / GPT-5.1 Auto / GPT-5.2 / GPT-5.3
 - Gemini / Gemini 3
 - Grok
 - LLM / LLaMA

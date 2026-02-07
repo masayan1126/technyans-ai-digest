@@ -73,6 +73,20 @@ export const aiModels: AIModel[] = [
     releaseDate: '2025-12-11',
     version: '5.2',
   },
+  {
+    id: 'claude-opus-4.6',
+    name: 'Claude Opus 4.6',
+    vendor: 'Anthropic',
+    releaseDate: '2026-02-05',
+    version: '4.6',
+  },
+  {
+    id: 'gpt-5.3-codex',
+    name: 'GPT-5.3-Codex',
+    vendor: 'OpenAI',
+    releaseDate: '2026-02-05',
+    version: '5.3',
+  },
 ];
 
 // Benchmark Categories
@@ -279,6 +293,17 @@ export const benchmarks: Benchmark[] = [
     higherIsBetter: true,
   },
   {
+    id: 'gdpval-aa',
+    name: 'GDPval-AA',
+    category: 'agent',
+    description: {
+      en: 'Tests real-world knowledge work tasks across 44 occupations and 9 GDP sectors (Elo rating)',
+      ja: '44職種・9つのGDPセクターにわたる実世界の知識労働タスクをテスト（Eloレーティング）',
+    },
+    unit: 'Elo',
+    higherIsBetter: true,
+  },
+  {
     id: 'facts-benchmark',
     name: 'FACTS Benchmark Suite',
     category: 'knowledge',
@@ -416,6 +441,11 @@ export const modelScores: ModelScore[] = [
   },
   {
     modelId: 'gemini-3-pro',
+    benchmarkId: 'gdpval-aa',
+    score: { value: '1194', verified: true, source: 'https://artificialanalysis.ai/evaluations/gdpval-aa' },
+  },
+  {
+    modelId: 'gemini-3-pro',
     benchmarkId: 'facts-benchmark',
     score: { value: '70.5', verified: false, note: 'Verification pending' },
   },
@@ -510,6 +540,11 @@ export const modelScores: ModelScore[] = [
     modelId: 'gemini-2.5-pro',
     benchmarkId: 'vending-bench',
     score: { value: '573.64', verified: false, note: 'Verification pending' },
+  },
+  {
+    modelId: 'gemini-2.5-pro',
+    benchmarkId: 'gdpval-aa',
+    score: { value: '939', verified: true, source: 'https://artificialanalysis.ai/evaluations/gdpval-aa' },
   },
   {
     modelId: 'gemini-2.5-pro',
@@ -610,6 +645,11 @@ export const modelScores: ModelScore[] = [
   },
   {
     modelId: 'claude-sonnet-4.5',
+    benchmarkId: 'gdpval-aa',
+    score: { value: '1319', verified: true, source: 'https://artificialanalysis.ai/evaluations/gdpval-aa' },
+  },
+  {
+    modelId: 'claude-sonnet-4.5',
     benchmarkId: 'facts-benchmark',
     score: { value: '50.4', verified: false, note: 'Verification pending' },
   },
@@ -707,6 +747,11 @@ export const modelScores: ModelScore[] = [
   },
   {
     modelId: 'gpt-5.2',
+    benchmarkId: 'gdpval-aa',
+    score: { value: '1462', verified: true, source: 'https://artificialanalysis.ai/evaluations/gdpval-aa' },
+  },
+  {
+    modelId: 'gpt-5.2',
     benchmarkId: 'facts-benchmark',
     score: { value: '56.4', verified: false, note: 'Verification pending' },
   },
@@ -734,6 +779,210 @@ export const modelScores: ModelScore[] = [
     modelId: 'gpt-5.2',
     benchmarkId: 'mrcr-1m',
     score: { value: 'N/A', verified: false, note: 'Not supported' },
+  },
+
+  // Claude Opus 4.6 scores (official benchmark results from Anthropic - Feb 2026)
+  {
+    modelId: 'claude-opus-4.6',
+    benchmarkId: 'humanity-last-exam',
+    score: { value: '53.1', verified: true, source: 'https://www.anthropic.com/news/claude-opus-4-6', note: 'With tools' },
+  },
+  {
+    modelId: 'claude-opus-4.6',
+    benchmarkId: 'arc-agi-2',
+    score: { value: '68.8', verified: true, source: 'https://www.anthropic.com/news/claude-opus-4-6' },
+  },
+  {
+    modelId: 'claude-opus-4.6',
+    benchmarkId: 'gpqa-diamond',
+    score: { value: '91.3', verified: true, source: 'https://www.anthropic.com/news/claude-opus-4-6' },
+  },
+  {
+    modelId: 'claude-opus-4.6',
+    benchmarkId: 'mmmu-pro',
+    score: { value: '77.3', verified: true, source: 'https://www.anthropic.com/news/claude-opus-4-6', note: 'With tools' },
+  },
+  {
+    modelId: 'claude-opus-4.6',
+    benchmarkId: 'screenspot-pro',
+    score: { value: 'N/A', verified: false, note: 'Not reported' },
+  },
+  {
+    modelId: 'claude-opus-4.6',
+    benchmarkId: 'charxiv-reasoning',
+    score: { value: 'N/A', verified: false, note: 'Not reported' },
+  },
+  {
+    modelId: 'claude-opus-4.6',
+    benchmarkId: 'omnidocbench',
+    score: { value: 'N/A', verified: false, note: 'Not reported' },
+  },
+  {
+    modelId: 'claude-opus-4.6',
+    benchmarkId: 'video-mmmu',
+    score: { value: 'N/A', verified: false, note: 'Not reported' },
+  },
+  {
+    modelId: 'claude-opus-4.6',
+    benchmarkId: 'livecodebench-pro',
+    score: { value: 'N/A', verified: false, note: 'Elo not reported' },
+  },
+  {
+    modelId: 'claude-opus-4.6',
+    benchmarkId: 'terminal-bench',
+    score: { value: '65.4', verified: true, source: 'https://www.anthropic.com/news/claude-opus-4-6' },
+  },
+  {
+    modelId: 'claude-opus-4.6',
+    benchmarkId: 'swe-bench',
+    score: { value: '80.8', verified: true, source: 'https://www.anthropic.com/news/claude-opus-4-6' },
+  },
+  {
+    modelId: 'claude-opus-4.6',
+    benchmarkId: 'tau2-bench',
+    score: { value: '91.9', verified: true, source: 'https://www.anthropic.com/news/claude-opus-4-6', note: 'Retail sector' },
+  },
+  {
+    modelId: 'claude-opus-4.6',
+    benchmarkId: 'vending-bench',
+    score: { value: '8017.59', verified: false, note: 'Third-party (Andon Labs)' },
+  },
+  {
+    modelId: 'claude-opus-4.6',
+    benchmarkId: 'gdpval-aa',
+    score: { value: '1606', verified: true, source: 'https://artificialanalysis.ai/evaluations/gdpval-aa', note: 'Adaptive Reasoning' },
+  },
+  {
+    modelId: 'claude-opus-4.6',
+    benchmarkId: 'facts-benchmark',
+    score: { value: 'N/A', verified: false, note: 'Not reported' },
+  },
+  {
+    modelId: 'claude-opus-4.6',
+    benchmarkId: 'simpleqa',
+    score: { value: 'N/A', verified: false, note: 'Not reported' },
+  },
+  {
+    modelId: 'claude-opus-4.6',
+    benchmarkId: 'mmmlu',
+    score: { value: '91.1', verified: true, source: 'https://www.anthropic.com/news/claude-opus-4-6' },
+  },
+  {
+    modelId: 'claude-opus-4.6',
+    benchmarkId: 'global-piqa',
+    score: { value: 'N/A', verified: false, note: 'Not reported' },
+  },
+  {
+    modelId: 'claude-opus-4.6',
+    benchmarkId: 'mrcr-128k',
+    score: { value: 'N/A', verified: false, note: '256k: 93.0% reported, 128k not reported' },
+  },
+  {
+    modelId: 'claude-opus-4.6',
+    benchmarkId: 'mrcr-1m',
+    score: { value: '76.0', verified: true, source: 'https://www.anthropic.com/news/claude-opus-4-6' },
+  },
+
+  // GPT-5.3-Codex scores (official benchmark results from OpenAI - Feb 2026)
+  {
+    modelId: 'gpt-5.3-codex',
+    benchmarkId: 'humanity-last-exam',
+    score: { value: 'N/A', verified: false, note: 'Not reported' },
+  },
+  {
+    modelId: 'gpt-5.3-codex',
+    benchmarkId: 'arc-agi-2',
+    score: { value: 'N/A', verified: false, note: 'Not reported' },
+  },
+  {
+    modelId: 'gpt-5.3-codex',
+    benchmarkId: 'gpqa-diamond',
+    score: { value: 'N/A', verified: false, note: 'Not reported' },
+  },
+  {
+    modelId: 'gpt-5.3-codex',
+    benchmarkId: 'mmmu-pro',
+    score: { value: 'N/A', verified: false, note: 'Not reported' },
+  },
+  {
+    modelId: 'gpt-5.3-codex',
+    benchmarkId: 'screenspot-pro',
+    score: { value: 'N/A', verified: false, note: 'Not reported' },
+  },
+  {
+    modelId: 'gpt-5.3-codex',
+    benchmarkId: 'charxiv-reasoning',
+    score: { value: 'N/A', verified: false, note: 'Not reported' },
+  },
+  {
+    modelId: 'gpt-5.3-codex',
+    benchmarkId: 'omnidocbench',
+    score: { value: 'N/A', verified: false, note: 'Not reported' },
+  },
+  {
+    modelId: 'gpt-5.3-codex',
+    benchmarkId: 'video-mmmu',
+    score: { value: 'N/A', verified: false, note: 'Not reported' },
+  },
+  {
+    modelId: 'gpt-5.3-codex',
+    benchmarkId: 'livecodebench-pro',
+    score: { value: 'N/A', verified: false, note: 'Not reported' },
+  },
+  {
+    modelId: 'gpt-5.3-codex',
+    benchmarkId: 'terminal-bench',
+    score: { value: '77.3', verified: true, source: 'https://openai.com/index/introducing-gpt-5-3-codex/' },
+  },
+  {
+    modelId: 'gpt-5.3-codex',
+    benchmarkId: 'swe-bench',
+    score: { value: 'N/A', verified: false, note: 'SWE-Bench Pro reported (56.8%), Verified not reported' },
+  },
+  {
+    modelId: 'gpt-5.3-codex',
+    benchmarkId: 'tau2-bench',
+    score: { value: 'N/A', verified: false, note: 'Not reported' },
+  },
+  {
+    modelId: 'gpt-5.3-codex',
+    benchmarkId: 'vending-bench',
+    score: { value: 'N/A', verified: false, note: 'Not reported' },
+  },
+  {
+    modelId: 'gpt-5.3-codex',
+    benchmarkId: 'gdpval-aa',
+    score: { value: 'N/A', verified: false, note: 'Not yet on leaderboard' },
+  },
+  {
+    modelId: 'gpt-5.3-codex',
+    benchmarkId: 'facts-benchmark',
+    score: { value: 'N/A', verified: false, note: 'Not reported' },
+  },
+  {
+    modelId: 'gpt-5.3-codex',
+    benchmarkId: 'simpleqa',
+    score: { value: 'N/A', verified: false, note: 'Not reported' },
+  },
+  {
+    modelId: 'gpt-5.3-codex',
+    benchmarkId: 'mmmlu',
+    score: { value: 'N/A', verified: false, note: 'Not reported' },
+  },
+  {
+    modelId: 'gpt-5.3-codex',
+    benchmarkId: 'global-piqa',
+    score: { value: 'N/A', verified: false, note: 'Not reported' },
+  },
+  {
+    modelId: 'gpt-5.3-codex',
+    benchmarkId: 'mrcr-128k',
+    score: { value: 'N/A', verified: false, note: 'Not reported' },
+  },
+  {
+    modelId: 'gpt-5.3-codex',
+    benchmarkId: 'mrcr-1m',
+    score: { value: 'N/A', verified: false, note: 'Max context 400k' },
   },
 ];
 
