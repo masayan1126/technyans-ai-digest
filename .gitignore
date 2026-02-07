@@ -20,8 +20,7 @@ pnpm-debug.log*
 .envrc
 
 # MCP configuration
-# Note: .mcp.json is now safe to commit (uses environment variable references)
-# .mcp.json
+.mcp.json
 
 # macOS-specific files
 .DS_Store
@@ -35,5 +34,3 @@ playwright-report/
 playwright/.cache/
 
 .vercel
-
-.mcp.json
