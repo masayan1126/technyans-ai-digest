@@ -81,13 +81,64 @@ This project uses the following plugins from `masayan-uni-plugins`:
 
 ```bash
 # Collect AI news and create articles
-/ai-news-fetcher:fetch-news
+/ai-news-fetcher:fetch-ai-news
 
 # Generate X post drafts from created articles
 /technyan-x-post-generator:generate-x-post
 ```
 
 > **Note**: These plugins are configured in `.claude/settings.local.json` under `enabledPlugins`.
+
+### ai-news-fetcher Overrides
+
+**IMPORTANT**: When executing `ai-news-fetcher`, apply the following overrides regardless of the plugin's internal instructions:
+
+#### Use WebSearch instead of Tavily MCP
+
+- Do **NOT** use `mcp__tavily-mcp__tavily-search` or any Tavily MCP tools
+- Use the built-in **WebSearch** tool for all news collection
+- This removes the Tavily API key dependency
+
+#### Agent Team Architecture
+
+Use the **Task tool** to spawn parallel search agents for each theme. Launch all agents in a **single message** for maximum parallelism.
+
+**Agent settings**:
+```
+subagent_type: general-purpose
+model: haiku
+```
+
+**Search themes** (each theme = one agent):
+
+| # | Theme | Search Queries |
+|---|-------|---------------|
+| 1 | OpenAI / ChatGPT | `"OpenAI latest news {year}"`, `"ChatGPT GPT update {year}"` |
+| 2 | Anthropic / Claude | `"Anthropic Claude latest news {year}"`, `"Claude AI update {year}"` |
+| 3 | Google / DeepMind | `"Google AI Gemini DeepMind news {year}"` |
+| 4 | xAI / Grok | `"xAI Grok latest news {year}"` |
+| 5 | AI Industry | `"AI industry news investment startup {year}"`, `"AI partnership acquisition {year}"` |
+| 6 | AI Regulation | `"AI regulation governance safety policy {year}"` |
+| 7 | AI Dev Tools | `"AI coding tools developer IDE agent {year}"` |
+
+Each agent should use WebSearch with the above queries and return structured results.
+
+#### Proposal Table Before Article Creation
+
+After collecting news, **always present a summary table** before creating articles:
+
+```markdown
+## Collected: {N} news items found
+
+| # | Priority | Category | Title (JA) | Title (EN) | Sources |
+|---|----------|----------|------------|------------|---------|
+| 1 | 🔴 High | Claude | ... | ... | 3 |
+| 2 | 🟡 Med | Gemini | ... | ... | 2 |
+
+Select articles to create (e.g., "all", "1,2,3", "1 and 3 only")
+```
+
+Wait for user selection before proceeding with article creation.
 
 ## Architecture Highlights
 

@@ -81,13 +81,64 @@ technyanComment?: string
 
 ```bash
 # AI ニュースを収集して記事を作成
-/ai-news-fetcher:fetch-news
+/ai-news-fetcher:fetch-ai-news
 
 # 作成した記事から X 投稿案を生成
 /technyan-x-post-generator:generate-x-post
 ```
 
 > **注意**: これらのプラグインは `.claude/settings.local.json` の `enabledPlugins` で設定されています。
+
+### ai-news-fetcher 動作の上書き設定
+
+**重要**: `ai-news-fetcher` 実行時、プラグイン内部の指示に関わらず以下の上書きルールを適用すること：
+
+#### Tavily MCP ではなく WebSearch を使用
+
+- `mcp__tavily-mcp__tavily-search` や Tavily MCP ツールは**使用しない**
+- ニュース収集にはビルトインの **WebSearch** ツールを使用
+- Tavily API キーの依存を排除
+
+#### エージェントチーム構成
+
+**Task ツール**を使い、テーマ別に並列検索エージェントを起動する。全エージェントを**1つのメッセージ内**で起動し、最大限の並列性を確保する。
+
+**エージェント設定**:
+```
+subagent_type: general-purpose
+model: haiku
+```
+
+**検索テーマ**（各テーマ = 1エージェント）：
+
+| # | テーマ | 検索クエリ |
+|---|--------|-----------|
+| 1 | OpenAI / ChatGPT | `"OpenAI latest news {year}"`, `"ChatGPT GPT update {year}"` |
+| 2 | Anthropic / Claude | `"Anthropic Claude latest news {year}"`, `"Claude AI update {year}"` |
+| 3 | Google / DeepMind | `"Google AI Gemini DeepMind news {year}"` |
+| 4 | xAI / Grok | `"xAI Grok latest news {year}"` |
+| 5 | AI業界全般 | `"AI industry news investment startup {year}"`, `"AI partnership acquisition {year}"` |
+| 6 | AI規制・安全性 | `"AI regulation governance safety policy {year}"` |
+| 7 | AI開発ツール | `"AI coding tools developer IDE agent {year}"` |
+
+各エージェントは WebSearch で上記クエリを実行し、構造化された結果を返す。
+
+#### 記事作成前に提案テーブルを表示
+
+ニュース収集後、記事作成前に**必ずサマリーテーブルを表示**すること：
+
+```markdown
+## 収集結果: {N}件のニュースを発見
+
+| # | 重要度 | カテゴリ | タイトル（JA） | タイトル（EN） | ソース数 |
+|---|--------|----------|----------------|----------------|----------|
+| 1 | 🔴 高 | Claude | ... | ... | 3 |
+| 2 | 🟡 中 | Gemini | ... | ... | 2 |
+
+作成する記事を選んでください（例: 「全部」「1,2,3」「1と3だけ」）
+```
+
+ユーザーの選択を待ってから記事作成に進むこと。
 
 ## アーキテクチャハイライト
 
